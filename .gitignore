@@ -52,26 +52,24 @@
 /Redis/RedisHelper/Wdj.Redis.HelperTest/bin/
 /Redis/RedisHelper/Wdj.Redis.HelperTest/obj/
 
-/SOA/SOAConsoleApp/bin/
-/SOA/SOAConsoleApp/obj/
-/SOA/SOAWebApp/bin/
-/SOA/SOAWebApp/obj/
-/SOA/WCFHostConsoleApp/bin/
-/SOA/WCFHostConsoleApp/obj/
-/SOA/WCFHostWebApp/bin/
-/SOA/WCFHostWebApp/obj/
-/SOA/WCFInterface/bin/
-/SOA/WCFInterface/obj/
-/SOA/WCFModel/bin/
-/SOA/WCFModel/obj/
-/SOA/WCFService/bin/
-/SOA/WCFService/obj/
-/SOA/WebAPI1/bin/
-/SOA/WebAPI1/obj/
-/SOA/WebServiceHostWebApp/bin/
-/SOA/WebServiceHostWebApp/obj/
-/SOA/WebServiceModel/bin/
-/SOA/WebServiceModel/obj/
+/WebService WCF/SOAConsoleApp/bin/
+/WebService WCF/SOAConsoleApp/obj/
+/WebService WCF/SOAWebApp/bin/
+/WebService WCF/SOAWebApp/obj/
+/WebService WCF/WCFHostConsoleApp/bin/
+/WebService WCF/WCFHostConsoleApp/obj/
+/WebService WCF/WCFHostWebApp/bin/
+/WebService WCF/WCFHostWebApp/obj/
+/WebService WCF/WCFInterface/bin/
+/WebService WCF/WCFInterface/obj/
+/WebService WCF/WCFModel/bin/
+/WebService WCF/WCFModel/obj/
+/WebService WCF/WCFService/bin/
+/WebService WCF/WCFService/obj/
+/WebService WCF/WebServiceHostWebApp/bin/
+/WebService WCF/WebServiceHostWebApp/obj/
+/WebService WCF/WebServiceModel/bin/
+/WebService WCF/WebServiceModel/obj/
 
 /Util/Util/bin/
 /Util/Util/obj/

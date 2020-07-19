@@ -12,30 +12,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Note", "Note", "{F5FDF8C9-6
 		Note\T4.txt = Note\T4.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SOA", "SOA", "{754E8AA8-FFD0-4B11-AE4E-F3EA73837145}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebService WCF", "WebService WCF", "{754E8AA8-FFD0-4B11-AE4E-F3EA73837145}"
 	ProjectSection(SolutionItems) = preProject
-		SOA\SOA.txt = SOA\SOA.txt
-		SOA\WCF.txt = SOA\WCF.txt
-		SOA\WebService.txt = SOA\WebService.txt
+		WebService WCF\SOA.txt = WebService WCF\SOA.txt
+		WebService WCF\WCF.txt = WebService WCF\WCF.txt
+		WebService WCF\WebService.txt = WebService WCF\WebService.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceHostWebApp", "SOA\WebServiceHostWebApp\WebServiceHostWebApp.csproj", "{847B848A-9556-4FA2-BCD7-5609C8D4D9A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceHostWebApp", "WebService WCF\WebServiceHostWebApp\WebServiceHostWebApp.csproj", "{847B848A-9556-4FA2-BCD7-5609C8D4D9A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceModel", "SOA\WebServiceModel\WebServiceModel.csproj", "{7C0C0BB2-7DD7-4833-8CF2-625BEA294A5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceModel", "WebService WCF\WebServiceModel\WebServiceModel.csproj", "{7C0C0BB2-7DD7-4833-8CF2-625BEA294A5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFModel", "SOA\WCFModel\WCFModel.csproj", "{47C0B29D-76A1-457B-88BB-789262D1AC75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFModel", "WebService WCF\WCFModel\WCFModel.csproj", "{47C0B29D-76A1-457B-88BB-789262D1AC75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFInterface", "SOA\WCFInterface\WCFInterface.csproj", "{484758AC-5E64-40B5-9B12-4B2B94CCFD34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFInterface", "WebService WCF\WCFInterface\WCFInterface.csproj", "{484758AC-5E64-40B5-9B12-4B2B94CCFD34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "SOA\WCFService\WCFService.csproj", "{43AD5163-2EEA-48B4-AAC0-1E0389789E60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFService", "WebService WCF\WCFService\WCFService.csproj", "{43AD5163-2EEA-48B4-AAC0-1E0389789E60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHostConsoleApp", "SOA\WCFHostConsoleApp\WCFHostConsoleApp.csproj", "{9EF84864-9724-4A9B-AA86-873C349CC7A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHostConsoleApp", "WebService WCF\WCFHostConsoleApp\WCFHostConsoleApp.csproj", "{9EF84864-9724-4A9B-AA86-873C349CC7A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHostWebApp", "SOA\WCFHostWebApp\WCFHostWebApp.csproj", "{6A5D70F1-97EB-47B6-AE07-79B6B7E5E9E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHostWebApp", "WebService WCF\WCFHostWebApp\WCFHostWebApp.csproj", "{6A5D70F1-97EB-47B6-AE07-79B6B7E5E9E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAConsoleApp", "SOA\SOAConsoleApp\SOAConsoleApp.csproj", "{AEEF6838-3DAC-4D00-B4A5-63BE4728B720}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAConsoleApp", "WebService WCF\SOAConsoleApp\SOAConsoleApp.csproj", "{AEEF6838-3DAC-4D00-B4A5-63BE4728B720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAWebApp", "SOA\SOAWebApp\SOAWebApp.csproj", "{AD3793D4-942C-4F40-AE4A-836DE30AC03D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAWebApp", "WebService WCF\SOAWebApp\SOAWebApp.csproj", "{AD3793D4-942C-4F40-AE4A-836DE30AC03D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6A5D70F1-97EB-47B6-AE07-79B6B7E5E9E5} = {6A5D70F1-97EB-47B6-AE07-79B6B7E5E9E5}
 	EndProjectSection

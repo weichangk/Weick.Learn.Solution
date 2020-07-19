@@ -575,11 +575,11 @@
     <WCFMetadataStorage Include="Connected Services\WebService1Reference\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SOA\WCFModel\WCFModel.csproj">
+    <ProjectReference Include="..\WCFModel\WCFModel.csproj">
       <Project>{47c0b29d-76a1-457b-88bb-789262d1ac75}</Project>
       <Name>WCFModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SOA\WebServiceModel\WebServiceModel.csproj">
+    <ProjectReference Include="..\WebServiceModel\WebServiceModel.csproj">
       <Project>{7c0c0bb2-7dd7-4833-8cf2-625bea294a5d}</Project>
       <Name>WebServiceModel</Name>
     </ProjectReference>
