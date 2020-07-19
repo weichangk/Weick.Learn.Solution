@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <ul>
+        <li>
+            <a href="@Url.Action("index", "Student")">Student CRUD</a>
+        </li>
+        <li>
+            <a href="@Url.Action("ExceptionTest","Home")">Exception Test</a>
+        </li>
+        <li>
+            <a href="@Url.Action("LayoutTest", "Home")">Layout Test</a>
+        </li>
+        <li>
+            <a href="@Url.Action("ViewDataTest", "Home")">ViewData Test</a>
+        </li>
+        <li>
+            <a href="@Url.Action("ViewBagTest", "Home")">ViewBag Test</a>
+        </li>
+        <li>
+            <a href="@Url.Action("GetTempDataTest", "Home")">GetTempData Test</a>
+        </li>
+        <li>
+            <a href="@Url.Action("index", "Default")">跨控制器 GetTempData Test</a>
+        </li>
+    </ul>

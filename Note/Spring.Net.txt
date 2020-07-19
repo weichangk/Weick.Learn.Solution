@@ -1,0 +1,21 @@
+在WindowsForms中应该怎样使用Spring.Net
+ nuget添加Spring.Core
+ 添加Spring.Net配置文件完成对象初始化配置，在App.config进行相应配置
+
+
+在Asp.net MVC中应该怎样使用Spring.Net
+1 nuget添加Spring.Core;Spring.Web.Mvc5;Spring.Web.Extensions;Microsoft.AspNet.WebApi(这个一定要安装，不然会报错：找不到依赖项)
+2 在mvc项目Config文件夹中添加spring.net配置xml文件并进行相关配置
+3 在Web.config文件中对spring.net进行相关配置
+4 可以将spring.net配置xml文件的配置信息分离（可以将控制器的配置与业务类的配置分离）web.config文件中也要修改一下
+5 修改Global文件，继承SpringMvcApplication 
+
+使用Spring.Net可以实现：
+IoC：Inversion of Control
+控制翻转：就是创建对象的权利由开发人员自己控制New，转到了由容器来控制。
+DI:Dependency Injection
+It is a process whereby objects define their dependencies, that is, the other objects they work with, only through constructor arguments and properties that are set on the object instance after it is constructed. 
+依赖注入：就是在通过容器来创建对象的时候，在对象的初始化是可以给一些属性、构造方法的参数等注入默认值（可以是复杂的类型）
+Aop--权限校验--日志处理 Filter
+
+Unity也可以实现IoC;DI

@@ -1,0 +1,148 @@
+什么是Web API?
+简单地说，API是一种具有一组函数的接口，允许程序员访问应用程序、操作系统或其他服务的特定特性或数据。
+Web API是一种可以使用HTTP协议访问的Web API。它是一种概念而不是一种技术。
+我们可以使用不同的技术来构建Web API，如Java .net等。
+例如Twitter的REST api提供了对读和写数据的编程访问，我们可以使用它将Twitter的功能集成到我们自己的应用程序中。
+
+
+Web API特性
+是构建RESTful服务的理想平台。
+将HTTP动词映射到方法名。
+支持不同格式的响应数据。内置支持JSON, XML, BSON格式。
+可以托管在IIS、自托管或其他支持。
+Web API框架包括新的HttpClient与Web API服务器通信。HttpClient可以在ASP.MVC服务器端中使用，Windows窗体应用程序，控制台应用程序或其他应用程序。
+
+
+Web API Controller
+Web API控制器类似于asp.net MVC控制器。它处理传入的HTTP请求并将响应发送回调用者。并且必须派生自System.Web.Http.ApiController类。控制器的所有公共方法都称为动作方法。
+根据传入的请求URL和HTTP动词(GET/POST/PUT/PATCH/DELETE),Web API决定执行哪些Web API控制器和操作方法如 GET()方法将处理HTTP GET请求,POST()方法将处理HTTP POST请求,PUT()方法将处理HTTP PUT请求和DELETE()方法将为上述Web API处理HTTP DELETE请求。
+如果你想写的方法不是以HTTP动词开始，那么你可以应用适当的HTTP动词属性在方法上，如HttpGet, HttpPost, HttpPut等，就像MVC控制器一样。
+Web API控制器特性
+它必须派生自System.Web.Http.ApiController类。
+它可以在项目根文件夹的任何文件夹下创建。但是，建议按照约定在Controllers文件夹中创建controller类。
+动作方法名称可以与HTTP动词名称相同，或者它可以以带有任何后缀的HTTP动词开头(大小写敏感)，或者您可以将HTTP动词属性应用于方法。
+操作方法的返回类型可以是任何基本类型或复杂类型。
+Web API控制器中的操作方法名称扮演着重要的角色。动作方法名可以与HTTP动词(如Get、Post、Put、Patch或Delete)相同。但是，您可以使用HTTP动词附加任何后缀以提高可读性。例如，Get方法可以是GetAllNames()、GetStudents()或以Get开头的任何其他名称。
+
+
+配置Web API
+Web API支持基于代码的配置。不能在web.config中配置。我们可以配置Web API来定制Web API托管基础设施和组件的行为，如路由、格式化程序、过滤器、依赖解析器、消息处理程序、参数、属性、服务等。
+Web API项目在App_Start文件夹中包含默认的WebApiConfig类，还包含Global.asax
+
+
+Web API的路由Routing
+Web API路由类似于ASP.net MVC路由。它将传入的HTTP请求路由到Web API控制器上的特定操作方法。
+Web API支持两种路由:传统路由；特性路由。
+传统路由：Web API使用路由模板来确定要执行哪个控制器和操作方法。为了处理各种HTTP请求，必须在路由表中添加至少一个路由模板。
+可以使用HttpConfiguration对象在Web API中配置多个路由。
+特性路由：使用[Route()]属性来定义路由。Route属性可以应用于任何控制器或操作方法。
+
+
+参数绑定
+Web API控制器中的操作方法可以有一个或多个不同类型的参数。它可以是基本类型，也可以是复杂类型。
+Web API根据参数类型将操作方法参数绑定到URL的查询字符串或请求主体。
+默认情况下，如果参数类型是.net基本类型，比如int、bool、double、string、GUID、DateTime、decimal或任何其他可以从string类型转换的类型，那么它将设置查询字符串中的参数值。
+如果参数类型是复杂类型，那么默认情况下，Web API尝试从请求体获取值。
+
+查询字符串参数名和操作方法参数名必须相同(不区分大小写)。如果名称不匹配，则不会设置参数的值。参数的顺序可以不同。
+
+Web API将从请求主体中提取JSON对象，并自动将其转换为复杂对象，因为JSON对象属性的名称与Student类属性的名称相匹配(不区分大小写)。
+控制器方法包含了基本类型参数和复杂类型参数。因此，在默认情况下，Web API将从查询字符串中获取基本数据类型参数，从请求主体中获取复杂类型参数。
+Post操作方法不能包含多个复杂类型参数，因为最多允许从请求主体读取一个参数。
+
+
+[FromUri] and [FromBody]
+在默认情况下，Web API从查询字符串中获取原语参数的值，从请求主体中获取复杂类型参数。但是，如果我们想要改变这种默认行为呢?
+使用[FromUri]属性强制Web API从查询字符串中获取复杂类型的值，使用[FromBody]属性从请求主体中获取原始类型的值，与默认规则相反。
+使用[FromUri]属性时复杂类型属性的名称和查询字符串参数必须匹配。
+使用[FromBody]属性只能应用于操作方法的一个基本参数。它不能应用于同一动作方法的多个基本参数。
+
+
+Action Method Return Type
+Web API操作方法可以有以下返回类型。
+Void 
+
+Primitive type or Complex type 
+
+HttpResponseMessage：Web API控制器总是向托管基础结构返回一个HttpResponseMessage对象。
+从动作方法发送HttpResponseMessage的好处是，您可以按照自己的方式配置响应。您可以根据需要设置状态码、内容或错误消息(如果有的话)。return Request.CreateResponse(HttpStatusCode.OK, stud);
+
+IHttpActionResult
+您可以创建自己的实现IHttpActionResult的类，或者使用ApiController类的各种方法来返回实现IHttpActionResult的对象。return Ok(stud);
+
+下面列出了ApiController类的所有方法，这些方法返回实现IHttpActionResult接口的类的对象。
+BadRequest() 			Creates a BadRequestResult object with status code 400.
+Conflict() 				Creates a ConflictResult object with status code 409.
+Content() 				Creates a NegotiatedContentResult with the specified status code and data.
+Created() 				Creates a CreatedNegotiatedContentResult with status code 201 Created.
+CreatedAtRoute() 		Creates a CreatedAtRouteNegotiatedContentResult with status code 201 created.
+InternalServerError() 	Creates an InternalServerErrorResult with status code 500 Internal server error.
+NotFound() 				Creates a NotFoundResult with status code404.
+Ok() 					Creates an OkResult with status code 200.
+Redirect() 				Creates a RedirectResult with status code 302.
+RedirectToRoute() 		Creates a RedirectToRouteResult with status code 302.
+ResponseMessage() 		Creates a ResponseMessageResult with the specified HttpResponseMessage.
+StatusCode() 			Creates a StatusCodeResult with the specified http status code.
+Unauthorized() 			Creates an UnauthorizedResult with status code 401. 
+
+
+
+Web API Request/Response Data Formats
+Web API请求/响应数据格式
+在HTTP请求中，MIME类型使用Accept和Content-Type属性在请求头中指定。Accept头属性指定客户端期望的响应数据的格式，Content-Type头属性指定请求体中的数据格式，以便接收方能够将其解析为适当的格式。
+Web API将请求数据转换为CLR对象，并将CLR对象序列化为基于接受头和内容类型头的响应数据。Web API包括对JSON、XML、BSON和form-urlencoded数据的内置支持。这意味着它自动将请求/响应数据转换为这些格式OOB(开箱即用)。
+
+
+
+ASP.NET Web API: Media-Type Formatters  媒体类型格式器
+Web API基于接受头和内容类型头（Accept and Content-Type headers）处理JSON和XML格式。但是，它如何处理这些不同的格式呢?答案是:通过使用媒体类型格式化器。
+媒体类型格式化器是负责序列化请求/响应数据的类，以便Web API能够理解请求数据格式并以客户端期望的格式发送数据。
+
+Web API包括以下内置媒体类型格式化程序。
+Media Type Formatter Class 									MIME Type 									Description
+JsonMediaTypeFormatter 										application/json, text/json 				Handles JSON format
+XmlMediaTypeFormatter 										application/xml, text/json 					Handles XML format
+FormUrlEncodedMediaTypeFormatter 							application/x-www-form-urlencoded 			Handles HTML form URL-encoded data
+JQueryMvcFormUrlEncodedFormatter 							application/x-www-form-urlencoded 			Handles model-bound HTML form URL-encoded data 
+
+
+
+Web API Filters
+Web API包括过滤器，用于在操作方法执行之前或之后添加额外的逻辑。过滤器可用于提供横切特性，如日志记录、异常处理、性能度量、身份验证和授权。
+下表列出了可用于创建Web API过滤器的重要接口和类。
+Filter Type 					Interface 					Class 							Description
+Simple Filter 					IFilter 					- 								Defines the methods that are used in a filter
+Action Filter 					IActionFilter 				ActionFilterAttribute 			Used to add extra logic before or after action methods execute.
+Authentication Filter 			IAuthenticationFilter 		- 								Used to force users or clients to be authenticated before action methods execute.
+Authorization Filter 			IAuthorizationFilter 		AuthorizationFilterAttribute 	Used to restrict access to action methods to specific users or groups.
+Exception Filter 				IExceptionFilter 			ExceptionFilterAttribute 		Used to handle all unhandled exception in Web API.
+Override Filter 				IOverrideFilter 			- 								Used to customize the behaviour of other filter for individual action method. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

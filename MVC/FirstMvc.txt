@@ -1,0 +1,466 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASP.NET MVC5是一个基于MVC架构的web框架。开发人员可以使用ASP.NET MVC框架构建动态web应用程序，实现了关注点的清晰分离、快速开发。
+MVC代表模型、视图和控制器。MVC将应用程序分离为三个组件——模型、视图和控制器。
+Model: 模型表示数据的形状。c#中的类用来描述模型。模型对象存储从数据库中检索的数据。模型代表数据。
+View: MVC中的视图是一个用户界面。视图向用户显示模型数据，并允许用户修改它们。视图在ASP.NET MVC是HTML、CSS和一些特殊的语法(Razor语法)，这些语法使与模型和控制器的通信变得容易。视图是用户界面。
+Controller:控制器处理用户请求。通常，用户使用视图并发出HTTP请求，该请求将由控制器处理。控制器处理请求并返回相应的视图作为响应。控制器是请求处理程序。
+当用户在浏览器中输入URL时，它会转到web服务器并路由到控制器。控制器执行该请求的相关视图和模型，创建响应并将其发送回浏览器。
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASP.NET MVC文件夹结构:
+App_Data文件夹可以包含应用程序数据文件，如LocalDB、.mdf文件、xml文件和其他数据相关文件。IIS将永远不会提供App_Data文件夹中的文件。
+App_Start文件夹可以包含将在应用程序启动时执行的类文件。通常，这些文件是像AuthConfig.cs, BundleConfig.cs, FilterConfig.cs, RouteConfig.cs等等。
+Content文件夹包含静态文件，如css文件，图像和图标文件。
+Controllers文件夹包含控制器的类文件。控制器处理用户的请求并返回响应。MVC要求所有控制器文件的名称以“controller”结尾。
+fonts文件夹包含应用程序的自定义字体文件。
+Models文件夹包含模型类文件。典型的模型类包括公共属性，应用程序将使用这些属性来保存和操作应用程序数据。
+Script文件夹包含应用程序的JavaScript。
+Views文件夹包含应用程序的html文件。Views文件夹包括每个控制器的单独文件夹。例如，所有将由HomeController呈现的.cshtml文件将在View\Home文件夹中。
+Views文件夹下的Shared文件夹包含将在不同控制器之间共享的所有视图，例如布局文件。
+
+另外，MVC项目还包括以下配置文件:
+Global.asax文件允许你写代码来响应应用级事件，如Application_BeginRequest, application_start, application_error, session_start, session_end等。
+Packages.config文件由NuGet管理，用来跟踪你在应用程序中安装的包和版本。
+Web.config文件包含应用程序级别的配置。
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+MVC路由
+通情况下，URI代表统一资源标识符，URI是标识一个资源的字符串。从技术角度看，所有的URL都是URI。URL是URI的一种类型，它通过自身的主要访问机制来识别资源。换句话说URI是某种资源的标识符，URL是为获取该资源提供了具体信息。
+ASP.NET引入了路由，以消除将每个URL映射到物理文件的需要。路由使我们能够定义映射到请求处理程序的URL模式。这个请求处理程序可以是文件或类。在MVC中，它是控制器类和动作方法。
+Route定义了URL模式和处理程序信息。应用程序的所有已配置路由都存储在RouteTable中，路由引擎将使用它们为传入请求确定适当的处理程序类或文件。
+在MVC中URL首先告知路由机制去实例化哪个空控制器，调用哪个操作方法，并为该方法提供参数，然后控制器的方决定使用哪个视图，并对该视图进行渲染。
+
+配置路由
+每个MVC应用程序必须配置(注册)至少一个路由，默认情况下由MVC框架配置。您可以在RouteConfig类中注册一个路由，它在App_Start文件夹下的RouteConfig中。
+还可以使用MapRoute扩展方法配置自定义路由。您需要在MapRoute中提供至少两个参数:路由名称和url模式。默认参数是可选的。
+MVC框架按顺序评估每个路由。它从第一个配置的路由开始，如果传入的url不满足路由的url模式，那么它将评估第二个路由，依此类推。
+
+路由约束
+路由约束是一种条件，只有满足该条件时路由才能匹配。例如当特性路由带有二义性时，可对参数类型进行约束。
+
+注册路由
+配置RouteConfig类中的所有路由之后，需要在Global.asax中的Application_Start()事件中注册它。这样它就包括了你所有的路由到RouteTable。
+RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+当ASP.NET处理请求时，路由管道主要由以下几步组成
+1.UrlRoutingModule尝试使用RouteTable中注册的路由匹配当前请求
+2.如果RouteTable中有一个路由成功匹配，路由模板就会从匹配成功的路由中获取IRouteHandler接口对象
+3.路由模板调用的IRouteHandler接口GetHandler方法，并返回用来处理请求的IRouteHandler对象
+4.调用HTTP处理程序中的ProcessRequst方法，然后把处理的请求传递给它
+5.在ASP.NET mvc中IRouteHandler是MvcRouteHandler类的一个实例，MvcRouteHandler返回一个实现里IRouteHandler接口的MvcHandler对象。MvcHandler对象主要用来实例化控制器，并调用该实例化控制器上的操作方法
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Controller
+MVC体系结构中的控制器处理任何传入的URL请求。Controller是一个类，派生自基类System.Web.Mvc.Controller。控制器类包含动作方法的公共方法。控制器及其动作方法处理传入的浏览器请求，检索必要的模型数据并返回适当的响应。
+MVC模式中的控制器主要负责相应用户输入，并却在响应时修改模型Model。通过这种方式，MVC模式中的控制器主要关注的是应用程序流，输入数据的处理，以及对相关视图View输出数据的提供。
+
+Action method
+控制器类的所有公共方法都称为动作方法。它们与任何其他常规方法一样，有以下限制:
+动作方法必须是公开的。它不能是私有的或受保护的
+动作方法不能重载
+动作方法不能是静态方法。
+
+ActionResult
+MVC框架包括各种结果类，它们可以从操作方法中返回。结果类代表不同类型的响应，如html、文件、字符串、json、javascript等。下表列出了ASP中可用的所有结果类。
+Result Class         Description
+viewresult表示HTML和标记。
+emptyresult表示没有响应。
+contentresult表示字符串文字。
+FileContentResult/ FilePathResult/ filestreamresult表示文件的内容
+javascriptresult表示一个JavaScript脚本。
+jsonresult表示可以在AJAX中使用的JSON
+redirectresult表示指向新URL的重定向
+redirecttorouteresult表示同一控制器或其他控制器的另一个动作
+partialviewresult从部分视图返回HTML
+httpunauthorizedresult返回HTTP 403状态
+
+ActionResult类是上面所有result类的基类，所以它可以是action方法的返回类型，返回上面列出的任何类型的结果。但是，您可以指定适当的结果类作为操作方法的返回类型。
+
+Action Method Parameters
+每个操作方法都可以像常规方法一样有输入参数。它可以是基本数据类型或复杂类型参数
+默认情况下，操作方法参数的值是从请求的数据收集中检索的。数据收集包括表单数据或查询字符串值或cookie值的名称/值对。ASP.NET MVC中的模型绑定如果两个名称匹配，会自动将URL查询字符串或表单数据集合映射到动作方法参数(模型绑定)。
+
+Action Selectors
+动作选择器是可以应用于动作方法的属性。它帮助路由引擎选择正确的操作方法来处理特定的请求。MVC 5包括以下动作选择器属性:
+ActionName:允许我们指定一个与方法名不同的动作名。
+NonAction:表示控制器的公共方法不是动作方法。
+ActionVerbs:可以用相同的名称定义两个不同的操作方法，但是一个操作方法响应HTTP Get请求，另一个操作方法响应HTTP Post请求。MVC框架支持不同的动作动词，如HttpGet, HttpPost, HttpPut, HttpDelete, HttpOptions & HttpPatch。您可以将这些属性应用到动作方法，以指示动作方法支持的Http请求的类型。如果您不应用任何属性，那么默认情况下它会认为它是一个GET请求。
+
+下表列出了http方法的用法:
+GET：从服务器检索信息。参数将被追加到查询字符串中。
+POST：创建一个新资源。
+PUT：更新现有资源。
+HEAD：与GET相同，只是服务器不返回消息体。
+OPTIONS：表示对web服务器支持的通信选项的信息的请求。
+DELETE：删除现有资源。
+PATCH：更新资源的全部或部分。
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Model
+模型表示MVC体系结构中特定领域的数据和业务逻辑。它维护应用程序的数据。模型对象在持久化存储中检索和存储模型状态，就像数据库一样。
+模型类在公共属性中保存数据。所有模型类都驻留在MVC文件夹结构中的Model文件夹中。
+
+Model Binding模型绑定
+通过模型绑定，MVC框架将http请求值(从查询字符串query string或表单集合form collection)转换为操作方法参数。这些参数可以是基本类型，也可以是复杂类型(强类型绑定，如：@model FirstMvcWebApp.Models.Student)。
+
+HttpGET请求将数据嵌入到查询字符串中。MVC框架自动将查询字符串转换为操作方法参数。
+您还可以在操作方法中使用不同数据类型的多个参数。查询字符串值将根据匹配的名称转换为参数。
+模型绑定也适用于复杂类型。MVC框架中的模型绑定自动将HttpPOST请求的表单字段数据转换为动作方法的复杂类型参数的属性。
+您还可以在操作方法中包含FormCollection类型参数而不是复杂类型，以便从视图表单字段检索所有值。如参数FormCollection value 读取方式value["xxx"]
+
+Bind Attribute绑定属性
+ASP.NET MVC框架还允许您指定要绑定的模型类的哪些属性。属性将允许您指定模型绑定器在绑定中应该包含include或排除exclude的确切属性。如在控制器方法参数中[Bind(Include = "StudentId, StudentName")]
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+View
+视图是一个用户界面。视图向用户显示模型中的数据，并允许用户修改数据。
+ASP.NET MVC视图存储在views文件夹中。单个控制器类的不同操作方法可以呈现不同的视图，因此views文件夹为每个与控制器同名的控制器包含一个单独的文件夹，以便容纳多个视图。
+
+Razor视图引擎
+微软引入了Razor视图引擎并打包在MVC 3中。您可以在razor视图中混合编写html标签和服务器端代码。Razor使用@字符作为服务器端代码，而不是传统的<% %>。您可以使用c#或Visual Basic语法在razor view中编写服务器端代码。Razor视图引擎通过在编写视图时最小化所需的字符和击键数来最大限度地提高编写代码的速度。Razor视图文件具有.cshtml或vbhtml扩展名。
+ASP.NET MVC中的每个视图派生自包含在System.Web.Mvc名称空间中的WebViewPage类。
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+HTML Helpers
+HtmlHelper类使用razor视图中的模型类对象生成html元素。它将模型对象绑定到html元素，以将模型属性的值显示到html元素中，并在提交web表单时将html元素的值赋给模型属性。所以总是在razor视图中使用HtmlHelper类，而不是手动编写html标签。
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASP.NET MVC中的异常处理Exception Handling
+当您在Visual Studio中创建MVC应用程序时，它不会实现任何现成的异常处理技术。当发生异常时，它将显示一个错误页面。
+
+ASP.NET提供了以下处理异常的方法:
+Using <customErrors> element in web.config
+Using HandleErrorAttribute
+Overriding Controller.OnException method
+Using Application_Error event of HttpApplication
+
+在web.config中启用<customErrors>
+<system.web> 
+    <customErrors mode="On"></customErrors>
+</system.web> 
+
+您还需要在FilterConfig.cs文件中添加HandleErrorAttribute过滤器。
+public class FilterConfig
+{
+    public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+    {
+        filters.Add(new HandleErrorAttribute());
+    }
+}
+在启用customErrors模式后，一个ASP.NET MVC应用程序将显示默认的自定义错误页面。共享文件夹中的Error.cshtml
+
+HandleErrorAttribute
+HandleErrorAttribute是一个可用于处理操作方法或控制器抛出的异常的属性。您可以使用它来显示操作方法或整个控制器中发生的特定异常的自定义视图。
+HandleErrorAttribute属性只能用于处理状态码为500的异常。另外，它没有提供记录异常的方法。
+为了使用这个属性，您必须在FilterConfig.RegisterGlobalFilters()方法中添加HandleErrorAttribute过滤器，并且在web.config将mode属性设置为On <customErrors mode="On">，正如我们在上面的customErrors部分中所做的那样。
+之后将[HandleError]属性应用到动作方法
+[HandleError]也可以用于为不同类型的异常配置不同的页面。[HandleError(ExceptionType =typeof(NullReferenceException), View ="~/Views/Error/NullReference.cshtml")]
+[HandleError]属性作用域有限，大多数情况下不推荐使用。
+
+Overriding Controller.OnException Method
+处理控制器级异常的另一种方法是重写控制器类中的OnException()方法。此方法使用错误代码500处理所有未处理的错误。
+它允许您记录异常并重定向到特定视图。它不需要启用web.config中的<customErrors>配置。
+public class HomeController : Controller
+{
+    public ActionResult Contact()
+    {
+        string msg = null;
+        ViewBag.Message = msg.Length;
+            
+        return View();
+    }
+    
+    protected override void OnException(ExceptionContext filterContext)
+    {
+        filterContext.ExceptionHandled = true;
+
+        //Log the error!!
+     
+        //Redirect to action
+        filterContext.Result = RedirectToAction("Error", "InternalError");
+
+        // OR return specific view
+        filterContext.Result = new ViewResult
+        {
+            ViewName = "~/Views/Error/InternalError.cshtml"
+        };
+   }
+} 
+
+Using Application_Error event of HttpApplication
+记录在MVC应用程序的任何部分发生的异常的理想方法是在global.asax的Application_Error事件中处理它。
+public class MvcApplication : System.Web.HttpApplication
+{
+    //other code removed for clarity
+
+    protected void Application_Error()
+    {
+        var ex = Server.GetLastError();
+        //log an exception
+    }
+}
+Application_Error事件在任何类型的异常和错误代码上触发。所以，小心处理。
+
+建议
+在大多数web应用程序中，理想情况下应该记录异常，并向用户显示适当的错误消息或页面。因此，建议使用全局Application_Error事件来记录web中的所有异常以及<customErrors>元素。配置将其重定向到适当的页面。
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+在MVC中实现数据验证Data Validation
+DataAnnotations
+ASP.NET MVC使用DataAnnotations属性来实现验证。DataAnnotations包含用于不同验证规则的内置验证属性，可以应用于模型类的属性。ASP.NET MVC框架将自动执行这些验证规则并在视图中显示验证消息。
+Required：指示该属性是必需的字段
+StringLength ：定义字符串字段的最大长度	                
+Range ：定义数值字段的最大值和最小值	                        
+RegularExpression 	：指定字段值必须与指定的正则表达式匹配           
+CreditCard ：指定指定的字段是信用卡号	                   
+CustomValidation ：指定用于验证字段的自定义验证方法	            
+EmailAddress 	：验证与电子邮件地址格式                
+FileExtension 	:验证文件扩展名                
+MaxLength :指定字符串字段的最大长度	                    
+MinLength ：指定字符串字段的最小长度	                    
+Phone ：使用电话号码的正则表达式指定该字段为电话号码 	  
+
+ValidationMessage  [Required(ErrorMessage="Please enter student name.")]
+ValidationMessageFor [Required] 当属性验证错误发生时，会注入默认的验证消息
+ValidationSummary   ValidationSummary可用于显示所有字段的所有错误消息。它还可以用来显示自定义的错误消息。
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Layout View
+应用程序可能包含UI中的公共部分，这些部分在整个应用程序中都是相同的，比如徽标、标题、左导航栏、右导航栏或页脚部分。ASP.NET MVC引入了布局视图，其中包含了这些常见的UI部分，这样我们就不必在每个页面中编写相同的代码。布局视图与ASP.NET webform应用程序的母版页相同。
+布局视图允许您定义一个公共站点模板，该模板可以在多个视图中继承，从而在应用程序的多个页面中提供一致的外观。布局视图消除了重复编码，提高了开发速度并易于维护。
+布局视图与多个视图共享，因此它必须存储在共享文件夹中。Views\Shared\_Layout.cshtml
+布局视图包含标签html Doctype、头部head和主体body作为正常的html，唯一的区别是调用RenderBody()和RenderSection()方法。RenderBody的作用类似于其他视图的占位符。例如,指数。主文件夹中的Index.cshtml将被注入并呈现在layout视图中，其中RenderBody()方法被调用。
+
+_ViewStart。它使用layout属性为文件夹及其子文件夹中的所有视图设置默认布局页面。可以将任何布局页的有效路径分配给布局属性。您还可以覆盖_ViewStart设置的默认布局页面。通过在每个.cshtml视图中设置布局属性。
+在ActionResult方法中指定布局页面.在使用view()方法从action方法呈现视图时，还可以指定使用哪个布局页面。return View("Index", "_myLayoutPage");
+
+ASP.NET MVC布局视图使用以下方法呈现子视图。
+Method 	                        Description
+RenderBody() 	                Renders the portion of the child view that is not within a named section. Layout view must include RenderBody() method.呈现子视图中不在指定部分中的部分。布局视图必须包含RenderBody()方法。
+RenderSection(string name) 	    Renders a content of named section and specifies whether the section is required. RenderSection() is optional in Layout view. 呈现指定节的内容，并指定是否需要该节。RenderSection()在布局视图中是可选的。
+
+Partial View
+部分视图是一个可重用视图，可以作为其他多个视图中的子视图使用。它通过在多个位置重用相同的部分视图来消除重复编码。您可以在布局视图和其他内容视图中使用部分视图。
+您可以使用html帮助器方法在父视图中呈现部分视图:partial()或RenderPartial()或RenderAction()。
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASP.NET MVC - ViewBag 
+当您想要将临时数据(模型中没有包含的数据)从控制器传输到视图时，ViewBag非常有用。viewBag是ControllerBase类的一个动态类型属性。
+ViewBag只将数据从控制器传输到视图，而不是从视图传输到视图。如果发生重定向，ViewBag值将为null。
+
+ASP.NET MVC - ViewData
+ViewData是一个字典dictionary，它可以包含键-值对，其中每个键必须是字符串。
+ViewData只将数据从控制器传输到视图，反之则不然。它仅在当前请求期间有效。
+
+ASP.NET MVC - TempData
+TempData 在ASP.NET MVC可以用来存储可以在后续请求中使用的临时数据。TempData将在后续请求完成后被清除。当您希望将非敏感数据从一个操作方法传输到相同或不同控制器的另一个操作方法以及重定向时，TempData非常有用。它是字典类型，派生自TempDataDictionary。
+
+ViewBag,ViewData,TempData区别
+ViewBag和ViewData其实是互通的，他们的区别是ViewBag不再是键值对的存储形式，而是dynamic动态类型，他会在程序运行时被解析
+ViewBag本质上就是ViewData，只不过多了层dynamic控制，两个都是只针对当前action有效，和view生命周期相同。
+TempData保存的数据是存储在Session中，Controller每次请求时都是从Session中取到TemoData()，然后清除Session，获取完TempData的数据，虽然保存在内部字典中，但字典中的每个条目在访问一次后就从Contriller中删除，所以TempData最多经过一次Contrller传递，并且每个元素最多只能被访问一次然后就会被自动删除
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Redirect和return View的区别：
+Redirect是让浏览器重定向到新的地址；return View是让服务器把指定的cshtml的内容运行渲染后给到浏览器
+Redirect浏览器与服务器之间发生了两次交互，return View是一次
+Redirect由于是两次请求，所以第一次设置的ViewBag等信息，在第二次请求是取不到的，而returnview则是同一次请求，所以viewbag viewdata等信息是可以读取
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASP.NET MVC- Filters 
+ASP.NET MVC Filter是一个自定义类，在这个类中，你可以编写自定义逻辑来在动作方法执行之前或之后执行。过滤器可以以声明或编程的方式应用于操作方法或控制器。声明性方法是通过将筛选器属性应用于操作方法或控制器类，编程方法是通过实现相应的接口。
+
+Filter Type 	 	        Built-in Filter 	            Interface               Description
+Authorization filters 	    [Authorize], [RequireHttps] 	IAuthorizationFilter    在执行操作方法之前执行身份验证和授权。
+Action filters 	                                            IActionFilter           在操作方法执行之前和之后执行一些操作。
+Result filters 	 	        [OutputCache] 	                IResultFilter           在视图结果执行之前或之后执行一些操作。
+Exception filters 	        [HandleError]                   IExceptionFilter        如果在执行ASP.NET MVC管道时抛出未处理的异常，则执行一些操作。
+
+过滤器可以应用于三个级别。
+1. Global Level
+FilterConfig.RegisterGlobalFilters() mehtod在global .asax.cs文件的Application_Start事件中应用全局级别的过滤器。全局过滤器将应用于应用程序的所有控制器和操作方法。
+2. Controller level
+过滤器也可以应用于控制器类。因此，过滤器将适用于控制器类的所有动作方法，如果它被应用到控制器类。
+3. Action method level
+您还可以对单个操作方法应用过滤器。因此，filter将只适用于那个特定的操作方法。
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Bundling
+在MVC 4中引入了捆绑和小型化技术，以提高请求加载时间。绑定允许我们将静态文件从服务器加载到一个http请求中。
+
+
+
+
+Area++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+大型ASP.NET MVC应用程序包括许多控制器、视图和模型类。因此，用默认的ASP.NET MVC项目结构维护它是很困难的。ASP.NET MVC为此引入了一个名为Area的新特性。Area允许我们把大的应用分割成更小的单元，每个单元包含独立的MVC文件夹结构，与默认的MVC文件夹结构相同。例如，大型企业应用程序可能有不同的模块，如admin, finance, HR, marketing等。因此，一个区域可以为所有这些模块包含单独的MVC文件夹结构
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

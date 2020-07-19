@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "LayoutTest Page";
+    Layout = "~/Views/Shared/_myLayoutPage.cshtml";
+}
+
+<div class="jumbotron">
+    <h2>Index</h2>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <p>This is body.</p>
+    </div>
+    @section footer{
+        <p class="lead">
+            This is footer section.
+        </p>
+    }
+</div>
+

@@ -1,0 +1,15 @@
+使用Entity Framework 的Database frist时Model是VS 工具自动生成的，直接将特性加modle类上是不合理的，因为模板更新时modle类会被重新覆盖，特性也将被删除。在不适用T4模板的情况下可以使用部分类结合[MetadataType(typeof(XXX))]特性实现对实体添加各种特性或注解。
+namespace Weick.Learn.Model
+{
+    [MetadataType(typeof(UserInfo_DataAnnotations))]
+    public partial class UserInfo
+    {
+    }
+    public class UserInfo_DataAnnotations
+    {
+        [JsonIgnore]
+        public virtual ICollection<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<RoleInfo> RoleInfo { get; set; }
+    }
+}

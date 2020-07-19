@@ -1,0 +1,20 @@
+NuGet包管理器安装Memcached.ClientLibrary
+编写Memcached配置类MemcacheConfig : ConfigurationSection
+编写Memcached初始化，操作类Memcache
+添加配置文件memcached.config并配置对应Memcached配置类MemcachedConfigInfo属性参数
+<?xml version="1.0" encoding="utf-8" ?>
+<memcachedconfig ServerList="127.0.0.1:11211,10.0.0.132:11211" InitConnections = "3" MinConnections = "3" MaxConnections = "5" SocketConnectTimeout = "1000" SocketTimeout = "3000" MaintenanceSleep = "30" Failover = "true" Nagle = "false" EnableCompression = "false"></memcachedconfig>
+
+
+
+修改应用程序配置文件App.config或Web.config。在configuration节点下添加如下格式信息
+<configSections>
+<section name="memcachedconfig" type="Weick.Learn.Memcached.MemcachedConfigInfo,Weick.Learn.Memcached" />
+</configSections>
+<memcachedconfig configSource="memcached.config" />
+
+
+
+
+开启服务： E:\software\memcached-amd64\memcached.exe -d start
+问题： 好像Memcached 的log4net只能用version太低了会与其他项目中用到log4net高版本冲突会报找到的程序集清单定义与程序集引用不匹配。。。。

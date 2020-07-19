@@ -1,0 +1,49 @@
+
+
+ OOP：一切皆对象，对象交互组成功能，功能叠加组成模块，模块叠加组成系统
+      类--砖头     系统--房子
+      类--细胞     系统--人
+      面向对象是非常适合做大型系统，面向对象是静态的，应对需求变化扩展的时候改动较大
+
+ AOP：面向切面编程  编程思想  
+      在不破坏封装的前提下，去增加各种功能：非业务逻辑，是一些公共逻辑
+      是对OOP的有效补充，有了AOP之后，OOP也变得简单了
+      
+ 设计模式：在面向对象的基础上结合其他编程思想设计出灵活 可扩展 可重用 的架构  都在折腾抽象/类 
+
+
+      
+ Unity的AOP实现  依赖注入容器
+ NuGet包管理器安装Unity version="5.8.6"
+
+AOP配置Unity.Config文件
+<?xml version="1.0" encoding="utf-8"?>
+<unity>
+  <sectionExtension type="Microsoft.Practices.Unity.InterceptionExtension.Configuration.InterceptionConfigurationExtension, Unity.Interception.Configuration"/>
+  <containers>
+    <container name="aopContainer">
+      <extension type="Interception"/>
+      <register type="AOPConsoleApp.Model.IUserProcessor,AOPConsoleApp" mapTo="AOPConsoleApp.Model.UserProcessor,AOPConsoleApp">
+        <interceptor type="InterfaceInterceptor"/>
+        <interceptionBehavior type="AOPConsoleApp.UnityWay.ExceptionLoggingBehavior, AOPConsoleApp"/>
+        <interceptionBehavior type="AOPConsoleApp.UnityWay.CachingBehavior, AOPConsoleApp"/>
+        <interceptionBehavior type="AOPConsoleApp.UnityWay.LogBeforeBehavior, AOPConsoleApp"/>
+        <interceptionBehavior type="AOPConsoleApp.UnityWay.ParameterCheckBehavior, AOPConsoleApp"/>
+
+        <interceptionBehavior type="AOPConsoleApp.UnityWay.LogAfterBehavior2, AOPConsoleApp"/>
+        <interceptionBehavior type="AOPConsoleApp.UnityWay.LogAfterBehavior, AOPConsoleApp"/>
+
+
+      </register>
+    </container>
+  </containers>
+</unity>
+
+
+应用程序配置文件添加Unity.Config配置
+<configuration>
+    <configSections>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Unity.Configuration"/>
+  </configSections>
+    <unity configSource="CfgFiles\Unity.config" />
+</configuration>

@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WcfService1</title>
+</head>
+<body>
+    <div>
+        <p>@ViewBag.GetString</p>
+        <ul>
+            @foreach (var x in ViewBag.GetUserList)
+            {
+                <li> @x.Id</li>
+                <li> @x.Age</li>
+                <li> @x.Sex</li>
+                <li> @x.Name</li>
+                <li> @x.Description</li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

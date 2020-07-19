@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - XXX网</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @{
+        Html.RenderPartial("_HeaderNavBar");
+    }
+    <footer class="panel-footer">
+        @RenderSection("hander", false)
+    </footer>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="panel-footer">
+        @RenderSection("footer", false)
+    </footer>
+</body>
+</html>

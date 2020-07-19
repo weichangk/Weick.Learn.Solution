@@ -1,0 +1,8 @@
+
+首次使用上传
+git init
+touch .gitignore
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/weichangk/Weick.Learn.Solution.git
+git push -u origin master

@@ -1,0 +1,236 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CRUD</title>
+
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#addDiv").css("display", "none");
+            $("#editDiv").css("display", "none");
+            loadData();
+        });
+
+        function loadData(pars) {
+            $('#tt').datagrid({
+                url: '/WebService/Select',
+                title: '用户数据表格',
+                width: 700,
+                height: 400,
+                fitColumns: true, //列自适应
+                nowrap: false,
+                idField: 'Id',//主键列的列明
+                loadMsg: '正在加载用户的信息...',
+                pagination: false,//是否有分页
+                singleSelect: false,//是否单行选择
+                pageSize: 10,//页大小，一页多少条数据
+                pageNumber: 1,//当前页，默认的
+                pageList: [5, 10, 15],
+                queryParams: pars,//往后台传递参数
+                columns: [[//c.UserName, c.UserPass, c.Email, c.RegTime
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+                    { field: 'Id', title: '编号', width: 60 },
+                    { field: 'Name', title: '姓名', width: 80 },
+                    { field: 'PhoneNo', title: '电话', width: 80 },
+                    { field: 'EmailAddress', title: '邮箱', width: 120 },
+                    { field: 'Address', title: '地址', width: 120 }
+                ]],
+                toolbar: [{
+                    id: 'btnDelete',
+                    text: '删除',
+                    iconCls: 'icon-remove',
+                    handler: function () {
+
+                        deleteInfo();
+                    }
+                }, {
+                    id: 'btnAdd',
+                    text: '添加',
+                    iconCls: 'icon-add',
+                    handler: function () {
+
+                        addInfo();
+                    }
+                }, {
+                    id: 'btnEidt',
+                    text: '编辑',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+
+                        showEditInfo();
+                    }
+                }],
+            });
+        }
+
+        //删除数据
+        function deleteInfo() {
+            var rows = $('#tt').datagrid('getSelections');//获取所选择的行
+            if (!rows || rows.length == 0) {
+                //alert("请选择要修改的商品！");
+                $.messager.alert("提醒", "请选择要删除的记录!", "error");
+                return;
+            }
+            $.messager.confirm("提示", "确定要删除数据吗", function (r) {
+                if (r) {
+                    //获取要删除的记录的ID值。
+                    var rowsLength = rows.length;
+                    var strId = "";
+                    for (var i = 0; i < rowsLength; i++) {
+                        strId = strId + rows[i].Id + ",";//1,2,3,
+                    }
+                    //去掉最后一个逗号.
+                    strId = strId.substr(0, strId.length - 1);
+                    //将获取的要删除的记录的ID值发送到服务端.
+                    $.post("/WebService/Delete", { "strId": strId }, function (data) {
+                        if (data == "ok") {
+                            $('#tt').datagrid('reload');//加载表格不会跳到第一页。
+                            //清除上次操作的历史的记录。
+                            $('#tt').datagrid('clearSelections')
+                        } else {
+                            $.messager.alert("提醒", "删除记录失败!", "error");
+                        }
+                    });
+                }
+            });
+
+        }
+
+
+        //添加数据
+        function addInfo() {
+            $("#addDiv").css("display", "block");
+            $('#addDiv').dialog({
+                title: '添加用户数据',
+                width: 300,
+                height: 200,
+                collapsible: true,
+                maximizable: true,
+                resizable: true,
+                modal: true,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        $("#addForm").submit();//提交表单
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+                    }
+                }]
+            });
+
+        }
+        //完成添加后调用该方法
+        function afterAdd(data) {
+            if (data == "ok") {
+                $('#addDiv').dialog('close');
+                $('#tt').datagrid('reload');//加载表格不会跳到第一页。
+                $("#addForm input").val("");//清空表单input标签数据
+            }
+        }
+
+        //展示一下要修改的数据.
+        function showEditInfo() {
+            //判断一下用户是否选择了要修改的数据
+            var rows = $('#tt').datagrid('getSelections');//获取所选择的行，也只能一行
+            if (rows.length != 1) {
+                $.messager.alert("提示", "请选择要修改的数据", "error");
+                return;
+            }
+            //将要修改的数据查询出来，显示到文本框中。
+            var rowsid = rows[0].Id;//从选中的行拿id
+            //$.post异步请求
+            $.post("/WebService/ShowEdit", { "rowsid": rowsid }, function (data) {
+                $("#txtId").val(data.Id);
+                $("#txtName").val(data.Name);
+                $("#txtPhoneNo").val(data.PhoneNo);
+                $("#txtEmailAddress").val(data.EmailAddress);
+                $("#txtAddress").val(data.Address);
+            });
+            $("#editDiv").css("display", "block");
+            $('#editDiv').dialog({
+                title: '编辑用户数据',
+                width: 300,
+                height: 200,
+                collapsible: true,
+                maximizable: true,
+                resizable: true,
+                modal: true,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        $("#editForm").submit();//提交表单
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#editDiv').dialog('close');
+                    }
+                }]
+            });
+        }
+        //更新以后调用该方法.
+        function afterEdit(data) {
+            if (data == "ok") {
+                $('#editDiv').dialog('close');
+                $('#tt').datagrid('reload');//加载表格不会跳到第一页。
+            } else {
+                $.messager.alert("提示", "修改的数据失败", "error");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table id="tt" style="width: 700px;" title="标题，可以使用代码进行初始化，也可以使用这种属性的方式" iconcls="icon-edit">
+        </table>
+    </div>
+    <!--------------添加数据---------------------->
+    <div id="addDiv">
+        @using (Ajax.BeginForm("Insert", "WebService", new { }, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "addForm" }))
+        {
+            <table>
+                <tr><td>姓名</td><td><input type="text" name="Name" /></td></tr>
+                <tr><td>电话</td><td><input type="password" name="PhoneNo" /></td></tr>
+                <tr><td>邮箱</td><td><input type="text" name="EmailAddress" /></td></tr>
+                <tr><td>地址</td><td><input type="text" name="Address" /></td></tr>
+            </table>
+        }
+    </div>
+    <!--------------修改数据---------------------->
+    <div id="editDiv">
+        @using (Ajax.BeginForm("Edit", "WebService", new { }, new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterEdit" }, new { id = "editForm" }))
+        {
+            <input type="hidden" name="Id" id="txtId" />
+            <table>
+                <tr><td>姓名</td><td><input type="text" name="Name" id="txtName" /></td></tr>
+                <tr><td>电话</td><td><input type="text" name="PhoneNo" id="txtPhoneNo" /></td></tr>
+                <tr><td>邮箱</td><td><input type="text" name="EmailAddress" id="txtEmailAddress" /></td></tr>
+                <tr><td>地址</td><td><input type="text" name="Address" id="txtAddress" /></td></tr>
+            </table>
+        }
+    </div>
+</body>
+</html>
+
+
+
+

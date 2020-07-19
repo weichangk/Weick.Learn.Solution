@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WeatherWebService</title>
+</head>
+<body>
+    <div>
+        <ul>
+            @foreach (var x in ViewBag.getWeatherbyCityName)
+            {
+                <li>@x</li>
+
+            }
+        </ul>
+    </div>
+</body>
+</html>

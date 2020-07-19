@@ -1,0 +1,123 @@
+///////////////////////////////////////////////
+Web Services 简介：
+Web Services 可使您的应用程序成为 Web 应用程序。
+Web Services 通过 Web 进行发布、查找和使用。
+Web Service是一个平台独立的，低耦合的，自包含的、基于可编程的web的应用程序，可使用开放的XML（标准通用标记语言下的一个子集）标准来描述、发布、发现、协调和配置这些应用程序，用于开发分布式的交互操作的应用程序。
+Web Service技术，能使得运行在不同机器上的不同应用无须借助附加的、专门的第三方软件或硬件，就可相互交换数据或集成。
+依据Web Service规范实施的应用之间，无论它们所使用的语言、平台或内部协议是什么，都可以相互交换数据。
+Web Service是自描述、自包含的可用网络模块，可以执行具体的业务功能。
+Web Service也很容易部署，因为它们基于一些常规的产业标准以及已有的一些技术，诸如标准通用标记语言下的子集XML、HTTP。
+Web Service减少了应用接口的花费。Web Service为整个企业甚至多个组织之间的业务流程的集成提供了一个通用机制。
+
+///////////////////////////////////////////////
+什么是Web Services：
+Web Services 是应用程序组件
+Web Services 使用开放协议进行通信
+Web Services 是独立的（self-contained）并可自我描述
+Web Services 可通过使用UDDI来发现
+Web Services 可被其他应用程序使用
+XML 是 Web Services 的基础
+
+///////////////////////////////////////////////
+它如何工作：
+基础的 Web Services 平台是 XML + HTTP。
+HTTP 协议是最常用的因特网协议。
+XML 提供了一种可用于不同的平台和编程语言之间的语言。
+
+///////////////////////////////////////////////
+Web services 平台的元素：
+Web Services 拥有三种基本的元素:SOAP、WSDL 以及 UDDI。
+SOAP (简易对象访问协议)
+UDDI (通用描述、发现及整合)
+WSDL (Web services 描述语言)
+
+什么是 SOAP？
+基本的 Web services 平台是 XML + HTTP。
+SOAP 指简易对象访问协议
+SOAP 是一种通信协议
+SOAP 用于应用程序之间的通信
+SOAP 是一种用于发送消息的格式
+SOAP 被设计用来通过因特网进行通信
+SOAP 独立于平台
+SOAP 独立于语言
+SOAP 基于 XML
+SOAP 很简单并可扩展
+SOAP 允许您绕过防火墙
+SOAP 将作为 W3C 标准来发展
+
+什么是 WSDL?
+WSDL 是基于 XML 的用于描述 Web Services 以及如何访问 Web Services 的语言。
+WSDL 指网络服务描述语言
+WSDL 使用 XML 编写
+WSDL 是一种 XML 文档
+WSDL 用于描述网络服务
+WSDL 也可用于定位网络服务
+WSDL 还不是 W3C 标准
+
+什么是UDDI？
+UDDI 是一种目录服务，通过它，企业可注册并搜索 Web services。
+UDDI 指通用的描述、发现以及整合（Universal Description, Discovery and Integration）。
+UDDI 是一种用于存储有关 web services 的信息的目录。
+UDDI 是一种由 WSDL 描述的网络服务接口目录。
+UDDI 经由 SOAP 进行通迅。
+UDDI 被构建于 Microsoft .NET 平台之中。
+
+///////////////////////////////////////////////
+为什么要使用WebService：
+最重要的事情是协同工作。
+由于所有主要的平台均可通过 Web 浏览器来访问 Web，不同的平台可以借此进行交互。为了让这些平台协同工作，Web 应用程序被开发了出来。
+Web 应用程序是运行在 Web 上的简易应用程序。它们围绕 Web 浏览器标准被进行构建，几乎可被任何平台之上的任何浏览器来使用。
+1.跨平台调用（WebService不局限于操作系统，你可以在Windows上调用linux上的WebService服务，反之亦然，其他系统同理）；
+2.跨语言调用（WebService不局限于编程语言，你可以在Java语言中调用C#语言提供的WebService服务，反之亦然，其他语言同理）；
+3.可远程调用（通过使用WebService，您的应用程序可以向全世界发布信息，或提供某项功能，只要有Internet）。
+
+Web services 把 Web 应用程序提升到了另外一个层面
+通过使用 Web services，您的应用程序可向全世界发布功能或消息。
+Web services 使用 XML 来编解码数据，并使用 SOAP 借由开放的协议来传输数据。
+通过 Web services，您的会计部门的 Win 2k 服务器可与 IT 供应商的 UNIX 服务器进行连接。
+
+Web services 有两种类型的应用
+可重复使用的应用程序组件
+有一些功能是不同的应用程序常常会用到的。那么为什么要周而复始地开发它们呢？
+Web services 可以把应用程序组件作为服务来提供，比如汇率转换、天气预报或者甚至是语言翻译等等。
+比较理想的情况是，每种应用程序组件只有一个最优秀的版本，这样任何人都可以在其应用程序中使用它。
+连接现有的软件
+通过为不同的应用程序提供一种链接其数据的途径，Web services有助于解决协同工作的问题。
+通过使用 Web services，您可以在不同的应用程序与平台之间来交换数据。
+
+///////////////////////////////////////////////
+
+打开电脑的Internet Information Service (IIC)管理器即可查看添加IIC服务
+
+
+
+WebService:托管于IIC web形式 http/https
+WebService5个层次：
+1 Http协议：基于Http完成的请求/响应，数据是以header/body去request，以header/body来response 通过code确定响应
+2 XML格式：跨平台
+3 SOAP协议：header/body 放入的是XML数据，SOAP协议是用来把一个操作翻译成XML,也可以把XML还原成操作
+4 WSDL：webservice的描述语言
+5 UDDI：找服务的机制
+
+http是传输协议，soap是解析协议
+WebSerive不能泛型 
+
+对外是webapi  对内WCF
+WebService都可以，都没那么犀利
+js是可以直接调用WebService
+
+WebService安全问题：
+1 内部使用，不存在
+2 Form  windows身份,通过配置
+3 服务方法加个参数，token 定时更新+沟通
+4 SoapHeader验证
+
+
+WebXml.com.cn 天气预报 Web 服务 http://ws.webxml.com.cn/WebServices/WeatherWebService.asmx
+直接添加服务引用成功了，但是运行报错：System.ServiceModel.FaultException:“服务器无法处理请求。 ---> 未将对象引用设置到对象的实例。”
+解决办法：
+这是ASP.NET的问题，Microsoft原想用服务引用完全兼容web引用，但是有时候会出现问题。
+你调用的是一个WebService当然最好是使用Web引用的方式了。毕竟WCF是后来出的，说是兼容WebService，但是总归没有原生态的好。所以建议如果是WebService客户端引用一律用Web引用（好像是.NET2.0时就叫Web引用）。
+操作步骤：删除之前的服务引用（如果有的话）；点击服务引用，点击最底下的高级，点击兼容性中的web引用，输入你的webservice地址
+
+
