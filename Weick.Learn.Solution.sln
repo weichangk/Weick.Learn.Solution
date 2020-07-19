@@ -141,6 +141,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPattern.ToyotaMotor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethodPattern", "Design Patterns\Factory Pattern\FactoryMethodPattern\FactoryMethodPattern.csproj", "{AE9B8E2D-E625-4253-9FBC-72A96C57AC13}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{7C3C9112-5E61-4577-8020-1D8372542D74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiAjaxCRUD", "WebApi\WebApiAjaxCRUD\WebApiAjaxCRUD.csproj", "{51339030-BE17-457B-9CCC-CFEDDDD20D30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -303,6 +307,10 @@ Global
 		{AE9B8E2D-E625-4253-9FBC-72A96C57AC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE9B8E2D-E625-4253-9FBC-72A96C57AC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE9B8E2D-E625-4253-9FBC-72A96C57AC13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51339030-BE17-457B-9CCC-CFEDDDD20D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51339030-BE17-457B-9CCC-CFEDDDD20D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51339030-BE17-457B-9CCC-CFEDDDD20D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51339030-BE17-457B-9CCC-CFEDDDD20D30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -350,6 +358,7 @@ Global
 		{E7FF6184-CF7D-4CA9-893D-0955B605A2C4} = {2FDDFDA5-116F-42CA-8923-747D64776B0A}
 		{BB3E4186-1174-4A38-9DD2-16F2924CF31F} = {2FDDFDA5-116F-42CA-8923-747D64776B0A}
 		{AE9B8E2D-E625-4253-9FBC-72A96C57AC13} = {2FDDFDA5-116F-42CA-8923-747D64776B0A}
+		{51339030-BE17-457B-9CCC-CFEDDDD20D30} = {7C3C9112-5E61-4577-8020-1D8372542D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
