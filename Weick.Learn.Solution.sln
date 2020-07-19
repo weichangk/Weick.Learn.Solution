@@ -16,7 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SOA", "SOA", "{754E8AA8-FFD
 	ProjectSection(SolutionItems) = preProject
 		SOA\SOA.txt = SOA\SOA.txt
 		SOA\WCF.txt = SOA\WCF.txt
-		SOA\WebAPI.txt = SOA\WebAPI.txt
 		SOA\WebService.txt = SOA\WebService.txt
 	EndProjectSection
 EndProject
@@ -142,6 +141,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethodPattern", "Design Patterns\Factory Pattern\FactoryMethodPattern\FactoryMethodPattern.csproj", "{AE9B8E2D-E625-4253-9FBC-72A96C57AC13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{7C3C9112-5E61-4577-8020-1D8372542D74}"
+	ProjectSection(SolutionItems) = preProject
+		WebApi\WebAPI.txt = WebApi\WebAPI.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiAjaxCRUD", "WebApi\WebApiAjaxCRUD\WebApiAjaxCRUD.csproj", "{51339030-BE17-457B-9CCC-CFEDDDD20D30}"
 EndProject
