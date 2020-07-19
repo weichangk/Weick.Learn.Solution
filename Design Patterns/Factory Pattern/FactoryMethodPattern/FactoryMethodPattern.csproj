@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE9B8E2D-E625-4253-9FBC-72A96C57AC13}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FactoryMethodPattern</RootNamespace>
+    <AssemblyName>FactoryMethodPattern</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FactoryMethod\AlphardFactory.cs" />
+    <Compile Include="FactoryMethod\CamryFactory.cs" />
+    <Compile Include="FactoryMethod\CorollaFactory.cs" />
+    <Compile Include="FactoryMethod\Fujiwara85Factory.cs" />
+    <Compile Include="FactoryMethod\IFactoryMethod.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FactoryPattern.ToyotaMotor.Interface\FactoryPattern.ToyotaMotor.Interface.csproj">
+      <Project>{4e852640-e89e-4bd2-ab4e-ed0681fd5a6c}</Project>
+      <Name>FactoryPattern.ToyotaMotor.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FactoryPattern.ToyotaMotor.ServiceExtend\FactoryPattern.ToyotaMotor.ServiceExtend.csproj">
+      <Project>{bb3e4186-1174-4a38-9dd2-16f2924cf31f}</Project>
+      <Name>FactoryPattern.ToyotaMotor.ServiceExtend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FactoryPattern.ToyotaMotor.Service\FactoryPattern.ToyotaMotor.Service.csproj">
+      <Project>{e7ff6184-cf7d-4ca9-893d-0955b605a2c4}</Project>
+      <Name>FactoryPattern.ToyotaMotor.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleFactoryPattern\SimpleFactoryPattern.csproj">
+      <Project>{ceb2b721-1516-4e7a-b35a-3fb52ba5488b}</Project>
+      <Name>SimpleFactoryPattern</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,8 +1,16 @@
 
-首次使用上传
+首次上传 需要git remote add origin https://github.com/weichangk/Weick.Learn.Solution.git
 git init
 touch .gitignore
 git add .
 git commit -m "first commit"
 git remote add origin https://github.com/weichangk/Weick.Learn.Solution.git
 git push -u origin master
+
+
+
+新增文件
+git status  查看状态
+git add .  在有文件过滤的条件下可以git add .      或者一个个文件添加
+git commit -m "xxx"   提交新增的文件并备注信息
+git push -u origin master   推送到仓库
