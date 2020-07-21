@@ -40,7 +40,7 @@ Web APIÖ§³ÖÁ½ÖÖÂ·ÓÉ:´«Í³Â·ÓÉ£»ÌØĞÔÂ·ÓÉ¡£
 
 ²ÎÊı°ó¶¨
 Web API¿ØÖÆÆ÷ÖĞµÄ²Ù×÷·½·¨¿ÉÒÔÓĞÒ»¸ö»ò¶à¸ö²»Í¬ÀàĞÍµÄ²ÎÊı¡£Ëü¿ÉÒÔÊÇ»ù±¾ÀàĞÍ£¬Ò²¿ÉÒÔÊÇ¸´ÔÓÀàĞÍ¡£
-Web API¸ù¾İ²ÎÊıÀàĞÍ½«²Ù×÷·½·¨²ÎÊı°ó¶¨µ½URLµÄ²éÑ¯×Ö·û´®»òÇëÇóÖ÷Ìå¡£
+Web API¸ù¾İ²ÎÊıÀàĞÍ½«²Ù×÷·½·¨²ÎÊı°ó¶¨µ½URLµÄ²éÑ¯×Ö·û´®»òÇëÇóÖ÷Ìårequest body¡£
 Ä¬ÈÏÇé¿öÏÂ£¬Èç¹û²ÎÊıÀàĞÍÊÇ.net»ù±¾ÀàĞÍ£¬±ÈÈçint¡¢bool¡¢double¡¢string¡¢GUID¡¢DateTime¡¢decimal»òÈÎºÎÆäËû¿ÉÒÔ´ÓstringÀàĞÍ×ª»»µÄÀàĞÍ£¬ÄÇÃ´Ëü½«ÉèÖÃ²éÑ¯×Ö·û´®ÖĞµÄ²ÎÊıÖµ¡£
 Èç¹û²ÎÊıÀàĞÍÊÇ¸´ÔÓÀàĞÍ£¬ÄÇÃ´Ä¬ÈÏÇé¿öÏÂ£¬Web API³¢ÊÔ´ÓÇëÇóÌå»ñÈ¡Öµ¡£
 
@@ -61,29 +61,24 @@ Post²Ù×÷·½·¨²»ÄÜ°üº¬¶à¸ö¸´ÔÓÀàĞÍ²ÎÊı£¬ÒòÎª×î¶àÔÊĞí´ÓÇëÇóÖ÷Ìå¶ÁÈ¡Ò»¸ö²ÎÊı¡£
 Action Method Return Type
 Web API²Ù×÷·½·¨¿ÉÒÔÓĞÒÔÏÂ·µ»ØÀàĞÍ¡£
 Void 
-
-Primitive type or Complex type 
-
-HttpResponseMessage£ºWeb API¿ØÖÆÆ÷×ÜÊÇÏòÍĞ¹Ü»ù´¡½á¹¹·µ»ØÒ»¸öHttpResponseMessage¶ÔÏó¡£
-´Ó¶¯×÷·½·¨·¢ËÍHttpResponseMessageµÄºÃ´¦ÊÇ£¬Äú¿ÉÒÔ°´ÕÕ×Ô¼ºµÄ·½Ê½ÅäÖÃÏìÓ¦¡£Äú¿ÉÒÔ¸ù¾İĞèÒªÉèÖÃ×´Ì¬Âë¡¢ÄÚÈİ»ò´íÎóÏûÏ¢(Èç¹ûÓĞµÄ»°)¡£return Request.CreateResponse(HttpStatusCode.OK, stud);
-
-IHttpActionResult
-Äú¿ÉÒÔ´´½¨×Ô¼ºµÄÊµÏÖIHttpActionResultµÄÀà£¬»òÕßÊ¹ÓÃApiControllerÀàµÄ¸÷ÖÖ·½·¨À´·µ»ØÊµÏÖIHttpActionResultµÄ¶ÔÏó¡£return Ok(stud);
-
+Primitive type £º»ù±¾Êı¾İÀàĞÍ
+Complex type £º×Ô¶¨Òå¸´ÔÓÊı¾İÀàĞÍ
+HttpResponseMessage£ºWeb API¿ØÖÆÆ÷×ÜÊÇÏòÍĞ¹Ü»ù´¡½á¹¹·µ»ØÒ»¸öHttpResponseMessage¶ÔÏó¡£´Ó¶¯×÷·½·¨·¢ËÍHttpResponseMessageµÄºÃ´¦ÊÇ£¬Äú¿ÉÒÔ°´ÕÕ×Ô¼ºµÄ·½Ê½ÅäÖÃÏìÓ¦¡£Äú¿ÉÒÔ¸ù¾İĞèÒªÉèÖÃ×´Ì¬Âë¡¢ÄÚÈİ»ò´íÎóÏûÏ¢(Èç¹ûÓĞµÄ»°)¡£return Request.CreateResponse(HttpStatusCode.OK, stud);
+IHttpActionResult£ºÄú¿ÉÒÔ´´½¨×Ô¼ºµÄÊµÏÖIHttpActionResultµÄÀà£¬»òÕßÊ¹ÓÃApiControllerÀàµÄ¸÷ÖÖ·½·¨À´·µ»ØÊµÏÖIHttpActionResultµÄ¶ÔÏó¡£return Ok(stud);
 ÏÂÃæÁĞ³öÁËApiControllerÀàµÄËùÓĞ·½·¨£¬ÕâĞ©·½·¨·µ»ØÊµÏÖIHttpActionResult½Ó¿ÚµÄÀàµÄ¶ÔÏó¡£
-BadRequest() 			Creates a BadRequestResult object with status code 400.
-Conflict() 				Creates a ConflictResult object with status code 409.
-Content() 				Creates a NegotiatedContentResult with the specified status code and data.
-Created() 				Creates a CreatedNegotiatedContentResult with status code 201 Created.
-CreatedAtRoute() 		Creates a CreatedAtRouteNegotiatedContentResult with status code 201 created.
-InternalServerError() 	Creates an InternalServerErrorResult with status code 500 Internal server error.
-NotFound() 				Creates a NotFoundResult with status code404.
-Ok() 					Creates an OkResult with status code 200.
-Redirect() 				Creates a RedirectResult with status code 302.
-RedirectToRoute() 		Creates a RedirectToRouteResult with status code 302.
-ResponseMessage() 		Creates a ResponseMessageResult with the specified HttpResponseMessage.
-StatusCode() 			Creates a StatusCodeResult with the specified http status code.
-Unauthorized() 			Creates an UnauthorizedResult with status code 401. 
+BadRequest()´´½¨Ò»¸ö×´Ì¬´úÂëÎª400µÄBadRequestResult¶ÔÏó¡£
+Conflict()´´½¨Ò»¸ö×´Ì¬´úÂëÎª409µÄConflictResult¶ÔÏó¡£
+Content()´´½¨Ò»¸ö¾ßÓĞÖ¸¶¨×´Ì¬´úÂëºÍÊı¾İµÄNegotiatedContentResult¡£
+Created()´´½¨Ò»¸ö×´Ì¬´úÂë201 CreatedµÄCreatedNegotiatedContentResult¡£
+CreatedAtRoute()´´½¨Ò»¸ö×´Ì¬ÂëÎª201µÄcreatedatrouteneatedcontentresult¡£
+InternalServerError()´´½¨Ò»¸ö×´Ì¬ÂëÎª500ÄÚ²¿·şÎñÆ÷´íÎóµÄÄÚ²¿·şÎñÆ÷´íÎó¡£
+NotFound()´´½¨Ò»¸ö×´Ì¬´úÂëÎª404µÄNotFoundResult¡£
+Ok()´´½¨Ò»¸ö×´Ì¬ÂëÎª200µÄOkResult¡£
+Redirect()´´½¨Ò»¸ö×´Ì¬´úÂëÎª302µÄÖØ¶¨ÏòRedirectResult ¡£
+RedirectToRoute()´´½¨Ò»¸ö×´Ì¬ÂëÎª302µÄRedirectToRouteResult¡£
+ResponseMessage()Ê¹ÓÃÖ¸¶¨µÄHttpResponseMessage´´½¨Ò»¸öResponseMessageResult¡£
+StatusCode()Ê¹ÓÃÖ¸¶¨µÄhttp×´Ì¬´úÂë´´½¨Ò»¸öStatusCodeResult¡£
+Unauthorized()´´½¨Ò»¸öUnauthorizedResult£¬×´Ì¬´úÂë401¡£
 
 
 
@@ -91,6 +86,8 @@ Web API Request/Response Data Formats
 Web APIÇëÇó/ÏìÓ¦Êı¾İ¸ñÊ½
 ÔÚHTTPÇëÇóÖĞ£¬MIMEÀàĞÍÊ¹ÓÃAcceptºÍContent-TypeÊôĞÔÔÚÇëÇóÍ·ÖĞÖ¸¶¨¡£AcceptÍ·ÊôĞÔÖ¸¶¨¿Í»§¶ËÆÚÍûµÄÏìÓ¦Êı¾İµÄ¸ñÊ½£¬Content-TypeÍ·ÊôĞÔÖ¸¶¨ÇëÇóÌåÖĞµÄÊı¾İ¸ñÊ½£¬ÒÔ±ã½ÓÊÕ·½ÄÜ¹»½«Æä½âÎöÎªÊÊµ±µÄ¸ñÊ½¡£
 Web API½«ÇëÇóÊı¾İ×ª»»ÎªCLR¶ÔÏó£¬²¢½«CLR¶ÔÏóĞòÁĞ»¯Îª»ùÓÚ½ÓÊÜÍ·ºÍÄÚÈİÀàĞÍÍ·µÄÏìÓ¦Êı¾İ¡£Web API°üÀ¨¶ÔJSON¡¢XML¡¢BSONºÍform-urlencodedÊı¾İµÄÄÚÖÃÖ§³Ö¡£ÕâÒâÎ¶×ÅËü×Ô¶¯½«ÇëÇó/ÏìÓ¦Êı¾İ×ª»»ÎªÕâĞ©¸ñÊ½OOB(¿ªÏä¼´ÓÃ)¡£
+Accept£ºtext/xml
+Content-Type: application/json
 
 
 
@@ -99,24 +96,24 @@ Web API»ùÓÚ½ÓÊÜÍ·ºÍÄÚÈİÀàĞÍÍ·£¨Accept and Content-Type headers£©´¦ÀíJSONºÍXML¸ñÊ
 Ã½ÌåÀàĞÍ¸ñÊ½»¯Æ÷ÊÇ¸ºÔğĞòÁĞ»¯ÇëÇó/ÏìÓ¦Êı¾İµÄÀà£¬ÒÔ±ãWeb APIÄÜ¹»Àí½âÇëÇóÊı¾İ¸ñÊ½²¢ÒÔ¿Í»§¶ËÆÚÍûµÄ¸ñÊ½·¢ËÍÊı¾İ¡£
 
 Web API°üÀ¨ÒÔÏÂÄÚÖÃÃ½ÌåÀàĞÍ¸ñÊ½»¯³ÌĞò¡£
-Media Type Formatter Class 									MIME Type 									Description
-JsonMediaTypeFormatter 										application/json, text/json 				Handles JSON format
-XmlMediaTypeFormatter 										application/xml, text/json 					Handles XML format
-FormUrlEncodedMediaTypeFormatter 							application/x-www-form-urlencoded 			Handles HTML form URL-encoded data
-JQueryMvcFormUrlEncodedFormatter 							application/x-www-form-urlencoded 			Handles model-bound HTML form URL-encoded data 
+Media Type Formatter Class 									--MIME Type 									--Description
+JsonMediaTypeFormatter 										--application/json, text/json 				    --Handles JSON format
+XmlMediaTypeFormatter 										--application/xml, text/json 					--Handles XML format
+FormUrlEncodedMediaTypeFormatter 							--application/x-www-form-urlencoded 			--Handles HTML form URL-encoded data
+JQueryMvcFormUrlEncodedFormatter 							--application/x-www-form-urlencoded 			--Handles model-bound HTML form URL-encoded data 
 
 
 
 Web API Filters
 Web API°üÀ¨¹ıÂËÆ÷£¬ÓÃÓÚÔÚ²Ù×÷·½·¨Ö´ĞĞÖ®Ç°»òÖ®ºóÌí¼Ó¶îÍâµÄÂß¼­¡£¹ıÂËÆ÷¿ÉÓÃÓÚÌá¹©ºáÇĞÌØĞÔ£¬ÈçÈÕÖ¾¼ÇÂ¼¡¢Òì³£´¦Àí¡¢ĞÔÄÜ¶ÈÁ¿¡¢Éí·İÑéÖ¤ºÍÊÚÈ¨¡£
 ÏÂ±íÁĞ³öÁË¿ÉÓÃÓÚ´´½¨Web API¹ıÂËÆ÷µÄÖØÒª½Ó¿ÚºÍÀà¡£
-Filter Type 					Interface 					Class 							Description
-Simple Filter 					IFilter 					- 								Defines the methods that are used in a filter
-Action Filter 					IActionFilter 				ActionFilterAttribute 			Used to add extra logic before or after action methods execute.
-Authentication Filter 			IAuthenticationFilter 		- 								Used to force users or clients to be authenticated before action methods execute.
-Authorization Filter 			IAuthorizationFilter 		AuthorizationFilterAttribute 	Used to restrict access to action methods to specific users or groups.
-Exception Filter 				IExceptionFilter 			ExceptionFilterAttribute 		Used to handle all unhandled exception in Web API.
-Override Filter 				IOverrideFilter 			- 								Used to customize the behaviour of other filter for individual action method. 
+Filter Type 					--Interface 					--Class 							--Description
+Simple Filter 					--IFilter 						--- 								--Defines the methods that are used in a filter
+Action Filter 					--IActionFilter 				--ActionFilterAttribute 			--Used to add extra logic before or after action methods execute.
+Authentication Filter 			--IAuthenticationFilter 		--- 								--Used to force users or clients to be authenticated before action methods execute.
+Authorization Filter 			--IAuthorizationFilter 			--AuthorizationFilterAttribute 		--Used to restrict access to action methods to specific users or groups.
+Exception Filter 				--IExceptionFilter 				--ExceptionFilterAttribute 			--Used to handle all unhandled exception in Web API.
+Override Filter 				--IOverrideFilter 				--- 								--Used to customize the behaviour of other filter for individual action method. 
 
 
 
@@ -126,7 +123,20 @@ Override Filter 				IOverrideFilter 			- 								Used to customize the behaviour
 
 
 
+*************************************************************************************************************************************************************************************************************************
+ÔÚ ASP.NET Web API ÖĞÂ·ÓÉ
+ÊìÏ¤ASP.NET MVC£¬Ôò Web API Â·ÓÉÓë MVC Â·ÓÉ·Ç³£ÏàËÆ¡£ Ö÷ÒªÇø±ğÊÇ Web API Ê¹ÓÃ HTTP Î½´Ê£¨¶ø²»ÊÇ URI Â·¾¶£©À´Ñ¡Ôñ²Ù×÷¡£ 
+Â·ÓÉ±íÖĞµÄÃ¿¸öÌõÄ¿¶¼°üº¬Ò»¸öÂ·ÓÉÄ£°å¡£ Web API µÄÄ¬ÈÏÂ·ÓÉÄ£°å"ÊÇ api/{controller}/{id}¡£" ÔÚ´ËÄ£°åÖĞ"£¬api"ÊÇÎÄ±¾Â·¾¶¶Î£¬{controller} ºÍ {id} ÊÇÕ¼Î»·û±äÁ¿¡£
+µ± Web API ¿ò¼ÜÊÕµ½ HTTP ÇëÇóÊ±£¬Ëü»á³¢ÊÔ½« URI ÓëÂ·ÓÉ±íÖĞµÄÂ·ÓÉÄ£°åÖ®Ò»Æ¥Åä¡£ Èç¹ûÃ»ÓĞÂ·ÓÉÆ¥Åä£¬¿Í»§¶Ë½«ÊÕµ½ 404 ´íÎó¡£
 
+HTTP Î½´Ê£º
+[HttpGet]
+[HttpPut]
+[HttpPost]
+[HttpDelete]
+[HttpHead]
+[HttpOptions]
+[HttpPatch]
 
 
 
