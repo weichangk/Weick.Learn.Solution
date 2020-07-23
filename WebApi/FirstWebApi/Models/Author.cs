@@ -12,5 +12,7 @@ namespace FirstWebApi.Models
         public int AuthorId { get; set; }
         [Required]
         public string Name { get; set; }
+
+        //public ICollection<Book> Books { get; set; }//Book中已经有Author的属性，在这Author添加Book属性将出现循环引用导致在序列化模型时出现问题
     }
 }

@@ -18,7 +18,7 @@ namespace FirstWebApi.Models
         public DateTime PublishDate { get; set; }
         public string Description { get; set; }
         public int AuthorId { get; set; }
-        [ForeignKey("AuthorId")]
-        public Author Author { get; set; }
+        [ForeignKey("AuthorId")]//外键关联
+        public Author Author { get; set; }//Virtual navigation property   启用延迟加载   virtual修饰
     }
 }
