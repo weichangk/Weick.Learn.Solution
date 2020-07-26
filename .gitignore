@@ -2,6 +2,9 @@
 
 /packages/
 
+/UnitTestProject/bin/
+/UnitTestProject/obj/
+
 /AOP/AOPConsoleApp/bin/
 /AOP/AOPConsoleApp/obj/
 
@@ -92,7 +95,8 @@
 /WebApi/FirstWebApi/obj/
 /WebApi/WebApiAjaxCRUD/bin/
 /WebApi/WebApiAjaxCRUD/obj/
-
+/WebApi/SecondWebApi/bin/
+/WebApi/SecondWebApi/obj/
 
 
 

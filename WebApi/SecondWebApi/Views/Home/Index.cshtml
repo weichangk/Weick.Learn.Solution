@@ -1,0 +1,175 @@
+﻿<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
+            a broad range of clients, including browsers and mobile devices. ASP.NET Web API
+            is an ideal platform for building RESTful applications on the .NET Framework.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<form  method="post" action="">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Test </h2>
+
+            <p><input type="text" id="txtId" name="id" /> </p>
+            <p>
+                <input type="button" id="btnGet1" value="Get1" />
+                <input type="button" id="btnGet2" value="Get2" />
+                <input type="button" id="btnGet3" value="Get3" />
+                <input type="button" id="btnGet4" value="Get4" />
+            </p>
+            <p>
+                <input type="button" id="btnGet5" value="Get5" />
+                <input type="button" id="btnGet6" value="Get6" />
+                <input type="button" id="btnGet7" value="Get7" />
+                <input type="button" id="btnGet8" value="Get8" />
+                <input type="button" id="btnGet9" value="Get9" />
+            </p>
+
+            <p>
+                <input type="button" id="btnPost1" value="Post1" />
+                <input type="button" id="btnPost2" value="Post2" />
+                <input type="button" id="btnPost3" value="Post3" />
+                <input type="button" id="btnPost4" value="Post4" />
+            </p>
+            <p>
+                <input type="button" id="btnPost5" value="Post5" />
+                <input type="button" id="btnPost6" value="Post6" />
+            </p>
+            <p>
+                <input type="button" id="btnPut1" value="Put1" />
+                <input type="button" id="btnPut2" value="Put2" />
+                <input type="button" id="btnPut3" value="Put3" />
+                <input type="button" id="btnPut4" value="Put4" />
+                <input type="button" id="btnPut5" value="Put5" />
+                <input type="button" id="btnPut6" value="Put6" />
+            </p>
+        </div>
+    </div>
+</form>
+
+@section scripts{
+    <script>
+        $(function () {
+            var user = { UserID: "11", UserName: "Eleven", UserEmail: "57265177@qq.com" };
+            var info = "this is muti model";
+            var ids = ["1", "2", "3", "4"];
+            var userList = [
+                { UserID: "111", UserName: "Eleven1", UserEmail: "157265177@qq.com" },
+                { UserID: "112", UserName: "Eleven2", UserEmail: "257265177@qq.com" },
+                { UserID: "113", UserName: "Eleven3", UserEmail: "357265177@qq.com" }
+            ];
+            //get请求 参数拼装到url  Get最长是1024 参数不要太多
+            $("#btnGet1").on("click", function () {//单个参数 指向接口，参数匹配的，大小写不区分
+                $.ajax({ url: "/userapi/users/GetuserByName", type: "get", data: { "userName": "Superman" }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet2").on("click", function () {//单个参数 获取输入信息
+                $.ajax({ url: "/userapi/users/GetUserById", type: "get", data: { "id": $("#txtId").val() }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet3").on("click", function () {//两个参数
+                $.ajax({ url: "/userapi/users/GetUserByNameId", type: "get", data: { "userName": "Superman", "id": $("#txtId").val() }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet4").on("click", function () {//无参数
+                $.ajax({ url: "/userapi/users/Get", type: "get", data: "", success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet5").on("click", function () {//传递实体 json对象 json格式  默认[FromBody]是无法获取参数
+                $.ajax({ url: "/userapi/users/GetUserByModel", type: "get", data: user, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet6").on("click", function () {//传递实体 带[FromUri]可以自动绑定
+                $.ajax({ url: "/userapi/users/GetUserByModelUri", type: "get", data: user, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet7").on("click", function () {//传递实体,序列化后传递  对象之间换成字符串(性能几乎无差别)
+                $.ajax({ url: "/userapi/users/GetUserByModelSerialize", type: "get", data: { userString: JSON.stringify(user) }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet8").on("click", function () {//传递实体,序列化后传递   没有[HttpGet]，但是有开头
+                $.ajax({ url: "/userapi/users/GetUserByModelSerializeWithoutGet", type: "get", data: { userString: JSON.stringify(user) }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet9").on("click", function () {//传递实体,序列化后传递  405 Method Not Allowed    不带httpget需要用get开头
+                $.ajax({ url: "/userapi/users/NoGetUserByModelSerializeWithoutGet", type: "get", data: { userString: JSON.stringify(user) }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+
+            //post 参数是form参数
+            //post请求 [FromBody] 绑定表单参数，不是按照key-value   =value    只有一个数据不要key
+            //想传递key-value  对象倒是可以的
+            //想传递json字符串，要配置contenttype
+            $("#btnPost1").on("click", function () {//单个值传递，json数据不要key，这样后台才能获取
+                $.ajax({ url: "/userapi/users/RegisterNoKey", type: "post", data: { "": $("#txtId").val() }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnPost2").on("click", function () {//key-value形式后台拿不到这个参数，但是可以直接访问
+                $.ajax({ url: "/userapi/users/Register", type: "post", data: { "id": $("#txtId").val() }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnPost3").on("click", function () {//传递json格式的，后台可以用实体接收
+                $.ajax({ url: "/userapi/users/RegisterUser", type: "post", data: user, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnPost4").on("click", function () {//传递json序列化后的格式，后台可以用实体接收,需要指定contentType
+                $.ajax({ url: "/userapi/users/RegisterUser", type: "post", data: JSON.stringify(user), success: function (data) { alert(data); console.log(data); }, datatype: "json", contentType: 'application/json' });
+            });
+            //FormCollection可以收藏任何参数
+            //传递2个参数  包一个json对象，后台也得建一个实体
+            $("#btnPost5").on("click", function () {//JObject接收
+                $.ajax({ url: "/userapi/users/RegisterObject", type: "post", data: { "User": user, "Info": info }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnPost6").on("click", function () {//Dynamic
+                $.ajax({ url: "/userapi/users/RegisterObjectDynamic", type: "post", data: { "User": user, "Info": info }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            //数组 ids   后台直接声明 string[] ids 可以获取的
+            //数组 userList     字符串反序列化contenttype    直接传递对象 后台直接List<Users>
+
+
+            $("#btnPut1").on("click", function () {//单个值传递，json数据不要key，这样后台才能获取
+                $.ajax({ url: "/userapi/users/RegisterNoKeyPut", type: "put", data: { "": $("#txtId").val() }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnPut2").on("click", function () {//key-value形式后台拿不到
+                $.ajax({ url: "/userapi/users/RegisterPut", type: "put", data: { "id": $("#txtId").val() }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnPut3").on("click", function () {//传递json格式的，后台可以用实体接收
+                $.ajax({ url: "/userapi/users/RegisterUserPut", type: "put", data: user, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+
+            $("#btnPut4").on("click", function () {//传递json序列化后的格式，后台可以用实体接收,需要指定contentType
+                $.ajax({ url: "/userapi/users/RegisterUserPut", type: "put", data: JSON.stringify(user), success: function (data) { alert(data); console.log(data); }, datatype: "json", contentType: 'application/json', });
+            });
+
+            $("#btnPut5").on("click", function () {//JObject接收
+                $.ajax({ url: "/userapi/users/RegisterObjectPut", type: "put", data: { "User": user, "Info": info }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnPut6").on("click", function () {//Dynamic  失败了
+                $.ajax({ url: "/userapi/users/RegisterObjectDynamicPut", type: "put", data: { "User": user, "Info": info }, success: function (data) { alert(data); console.log(data); }, datatype: "json", contentType: 'application/json' });
+            });
+
+            //delete一样 type换成delete
+
+
+
+
+
+            //跨域测试
+            //microsoft.aspnet.webapi.cors
+            jQuery.support.cors = true;
+            var location = "http://localhost:9008";
+            $("#btnGetCors1").on("click", function () {
+                $.ajax({ url: location + "/userapi/users/GetUserByID", type: "get", data: { "id": 1 }, success: function (data) { alert(data); }, datatype: "json" });
+            });
+
+        });
+    </script>
+}
