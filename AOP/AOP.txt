@@ -16,6 +16,14 @@
  Unity的AOP实现  依赖注入容器
  NuGet包管理器安装Unity version="5.8.6"
 
+ 注意：配置AOP时需要配置下面两行代码，只配置IOC则不需要
+ <sectionExtension type="Microsoft.Practices.Unity.InterceptionExtension.Configuration.InterceptionConfigurationExtension, Unity.Interception.Configuration"/>
+ <extension type="Interception"/>
+
+
+
+
+
 AOP配置Unity.Config文件
 <?xml version="1.0" encoding="utf-8"?>
 <unity>

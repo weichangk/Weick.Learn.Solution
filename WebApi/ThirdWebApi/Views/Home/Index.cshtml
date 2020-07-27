@@ -1,0 +1,112 @@
+﻿<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
+            a broad range of clients, including browsers and mobile devices. ASP.NET Web API
+            is an ideal platform for building RESTful applications on the .NET Framework.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+    </div>
+</div>
+
+<form method="post" action="">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Test </h2>
+            <p>
+                <input type="text" id="txtAccount" name="账号" />
+                <input type="text" id="txtPassword" name="密码" />
+                <input type="button" id="btnLogin" value="登陆" />
+            </p>
+
+
+            <p><input type="text" id="txtId" name="id" /> </p>
+
+
+            <p>
+                <input type="button" id="btnGet1" value="Get1" />
+                <input type="button" id="btnGet2" value="Get2 需要参数" />
+                <input type="button" id="btnGet3" value="Get3 身份验证测试 需要参数" />
+                <input type="button" id="btnGet4" value="Get4 IOC DI AOP测试" />
+
+                <input type="button" id="btnGetCors1" value="跨域测试" />
+            </p>
+        </div>
+    </div>
+</form>
+
+
+@section scripts{
+    <script>
+        $(function () {
+
+
+            //模拟登录；获取票证Ticket
+            $("#btnLogin").on("click", function () {
+                $.ajax({
+                    url: "/api/Login", type: "GET", data: { "Account": $("#txtAccount").val(), "Password": $("#txtPassword").val() }, success: function (data) {
+                        var result = JSON.parse(data);
+                        if (result.Result) {
+                            ticket = result.Ticket;
+                            alert(result.Ticket);
+                        }
+                        else {
+                            alert("failed");
+                        }
+                    }, datatype: "json"
+                });
+            });
+
+            $("#btnGet1").on("click", function () {
+                $.ajax({ url: "/api/Values", type: "get", data: "", success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+            $("#btnGet2").on("click", function () {
+                $.ajax({ url: "/api/Values", type: "get", data: { "id": $("#txtId").val() }, success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+
+
+            var ticket = "";//登陆后票证Ticket放在某个html里面，测试用，刷新页面将失效
+            //测试用户身份验证，有票证Ticket，可以验证通过
+            $("#btnGet3").on("click", function () {
+                $.ajax({
+                    url: '/api/ValuesGet/' + $("#txtId").val(), type: "get", 
+                    beforeSend: function (XHR) { //xhr XML Http Request
+                        //发送ajax请求之前向http的head里面加入验证信息，所有需要用户身份验证的ajax都要带上，可以封装js实现
+                        XHR.setRequestHeader('Authorization', 'BasicAuth ' + ticket);
+                    }, 
+                    success: function (data) {
+                        alert(data);
+                    }, datatype: "json"
+                });
+            });
+
+            $("#btnGet4").on("click", function () {
+                $.ajax({ url: "/api/Users", type: "get", data: "", success: function (data) { alert(data); console.log(data); }, datatype: "json" });
+            });
+
+            //microsoft.aspnet.webapi.cors
+            jQuery.support.cors = true;
+            var location = "http://localhost:9008";
+            $("#btnGetCors1").on("click", function () {
+                $.ajax({ url: location + "/userapi/users/GetUserByID", type: "get", data: { "id": 1 }, success: function (data) { alert(data); }, datatype: "json" });
+            });
+
+        });
+    </script>
+}

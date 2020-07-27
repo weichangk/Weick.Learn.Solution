@@ -151,6 +151,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondWebApi", "WebApi\Seco
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{B31DFA02-CA00-4E44-9949-79F7198FE551}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdWebApi", "WebApi\ThirdWebApi\ThirdWebApi.csproj", "{BF4FF511-3F52-44FF-92CE-0250654AE779}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -325,6 +327,10 @@ Global
 		{B31DFA02-CA00-4E44-9949-79F7198FE551}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B31DFA02-CA00-4E44-9949-79F7198FE551}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B31DFA02-CA00-4E44-9949-79F7198FE551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4FF511-3F52-44FF-92CE-0250654AE779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4FF511-3F52-44FF-92CE-0250654AE779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4FF511-3F52-44FF-92CE-0250654AE779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4FF511-3F52-44FF-92CE-0250654AE779}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -374,6 +380,7 @@ Global
 		{51339030-BE17-457B-9CCC-CFEDDDD20D30} = {7C3C9112-5E61-4577-8020-1D8372542D74}
 		{B666D12A-A3F3-410B-A48D-9B6BA1292212} = {7C3C9112-5E61-4577-8020-1D8372542D74}
 		{0C7E68C6-9A7E-40F5-9009-FA80A327AC45} = {7C3C9112-5E61-4577-8020-1D8372542D74}
+		{BF4FF511-3F52-44FF-92CE-0250654AE779} = {7C3C9112-5E61-4577-8020-1D8372542D74}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}

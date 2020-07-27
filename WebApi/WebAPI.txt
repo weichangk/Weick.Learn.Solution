@@ -271,6 +271,51 @@ CORS 引用，指定下cors配置  就支持跨域
 
 
 
+****************************************分界线：WebApi用户身份验证
+用户身份验证
+Form身份验证  Basic  window集成 摘要  OAuth
+案例使用basic验证；BasicAuthorizeAttribute : AuthorizeAttribute   只要带有BasicAuthorizeAttribute特性的控制器或控制器api都会在api执行前进行身份验证
+
+
+
+
+****************************************分界线：IOC是怎么跟WebApi结合
+IOC是怎么跟WebApi结合
+1 UnityDependencyResolver 实现一个IDependencyResolver，里面用自己的容器UnityContainerFactory；把webapi的DependencyResolver换成自己的Unity版本的
+2 启动时config.DependencyResolver=自定义的；在WebApiConfig.Register中注册容器。config.DependencyResolver = new UnityDependencyResolver(UnityContainerFactory.GetContainer());
+
+在控制器构造函数传入容器对象接口参数，可以利用容器自动构造注入。DI  依赖注入
+
+
+AOP：面向切面编程，可以在不破坏封装的前提下，去增加了权限认证功能
+     权限认证：可以在方法执行前完成验证
+     异常处理：可以在方法执行期间出现异常，被处理掉
+               有局限性:只有控制器实例化后，方法执行完之前，出现的异常才能被抓住
+               全局异常：控制器实例化/方法错误 ExceptionHandler
+ actionfilter：可以在action执行前/后分别增加逻辑
+
+
+ 注意：配置AOP时比配置DI需要多配置下面两行代码
+ <sectionExtension type="Microsoft.Practices.Unity.InterceptionExtension.Configuration.InterceptionConfigurationExtension, Unity.Interception.Configuration"/>
+ <extension type="Interception"/>
+
+
+容器配置信息参考ioc.config配置文件格式如下：
+ <?xml version="1.0" encoding="utf-8"?>
+<unity>
+  <sectionExtension type="Microsoft.Practices.Unity.InterceptionExtension.Configuration.InterceptionConfigurationExtension, Unity.Interception.Configuration"/>
+  <containers>
+    <container name="IOCcontainer">
+      <extension type="Interception"/>
+      <register type="ThirdWebApi.Unity.Interface.DbContext,ThirdWebApi" mapTo="ThirdWebApi.Unity.Service.CustomDbContext, ThirdWebApi"/>
+      <register type="ThirdWebApi.Unity.Interface.IUserService,ThirdWebApi" mapTo="ThirdWebApi.Unity.Service.UserService, ThirdWebApi">
+      <interceptor type="InterfaceInterceptor"/>
+          <interceptionBehavior type="ThirdWebApi.Unity.AOP.LogBeforeBehavior, ThirdWebApi"/>
+      </register>
+    </container>
+  </containers>
+</unity>
+
 
 
 
