@@ -62,6 +62,9 @@
                 <input type="button" id="btnPut4" value="Put4" />
                 <input type="button" id="btnPut5" value="Put5" />
                 <input type="button" id="btnPut6" value="Put6" />
+
+
+                <input type="button" id="btnGetCors1" value="跨域测试" />
             </p>
         </div>
     </div>
@@ -164,11 +167,12 @@
 
             //跨域测试
             //microsoft.aspnet.webapi.cors
-            jQuery.support.cors = true;
-            var location = "http://localhost:9008";
+            //jQuery.support.cors = true;
+            var location = "https://localhost:44317";
             $("#btnGetCors1").on("click", function () {
-                $.ajax({ url: location + "/userapi/users/GetUserByID", type: "get", data: { "id": 1 }, success: function (data) { alert(data); }, datatype: "json" });
+                $.ajax({ url: location + "/api/values", type: "get", data:"", success: function (data) { alert(data); }, datatype: "json" });
             });
+
 
         });
     </script>

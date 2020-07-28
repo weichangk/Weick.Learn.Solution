@@ -252,33 +252,6 @@ Http协议：无状态的协议  客户端和服务端就是一次性的
 
 
 
-****************************************分界线：了解WebApi前端跨域问题
-webapi:客户端请求，会有一个跨域问题
- //从9008向9099网站后台发起ajax请求---请求到了9099后台--也正确的返回了数据--success没有执行
-请求会报错 not allowed access   是由于浏览器的同源策略
-浏览器是一个应用程序，有很多限制，不能访问/使用电脑信息，只有临时文件夹(cookie)
-网络请求：限制了js请求的结果使用，除非服务器允许(防钓鱼)，只有浏览器直接请求才会有跨域的问题
-为什么一定要跨域？
-1 就是了能分摊压力  一个页面其实有N多个请求，希望分一点到别的服务器
-2 多种域名 同一个数据源 不后台访问
-Jsonp   跨域请求  js不能直接跨域 但是浏览器自己可以通过标签去访问别的域名
-用scripts标签请求数据---后台代码单独处理请求---返回业务数据--前端通过js获取标签内容--做个剪切
- 
-CORS 引用，指定下cors配置  就支持跨域
-或者actionexcuted特性完成
-不要全部允许！！！
-
-
-
-
-****************************************分界线：WebApi用户身份验证
-用户身份验证
-Form身份验证  Basic  window集成 摘要  OAuth
-案例使用basic验证；BasicAuthorizeAttribute : AuthorizeAttribute   只要带有BasicAuthorizeAttribute特性的控制器或控制器api都会在api执行前进行身份验证
-
-
-
-
 ****************************************分界线：IOC是怎么跟WebApi结合
 IOC是怎么跟WebApi结合
 1 UnityDependencyResolver 实现一个IDependencyResolver，里面用自己的容器UnityContainerFactory；把webapi的DependencyResolver换成自己的Unity版本的
@@ -286,13 +259,7 @@ IOC是怎么跟WebApi结合
 
 在控制器构造函数传入容器对象接口参数，可以利用容器自动构造注入。DI  依赖注入
 
-
-AOP：面向切面编程，可以在不破坏封装的前提下，去增加了权限认证功能
-     权限认证：可以在方法执行前完成验证
-     异常处理：可以在方法执行期间出现异常，被处理掉
-               有局限性:只有控制器实例化后，方法执行完之前，出现的异常才能被抓住
-               全局异常：控制器实例化/方法错误 ExceptionHandler
- actionfilter：可以在action执行前/后分别增加逻辑
+AOP：面向切面编程，可以在不破坏封装的前提下，去增加其他非业务逻辑功能：如：记录日志，异常处理，缓存处理，权限认证等。。。
 
 
  注意：配置AOP时比配置DI需要多配置下面两行代码
@@ -321,12 +288,255 @@ AOP：面向切面编程，可以在不破坏封装的前提下，去增加了权限认证功能
 
 
 
+****************************************分界线：WebApi用户身份验证
+用户身份验证
+Form身份验证  Basic  window集成 摘要  OAuth
+案例使用basic验证；BasicAuthorizeAttribute : AuthorizeAttribute   只要带有BasicAuthorizeAttribute特性的控制器或控制器api都会在api执行前进行身份验证
+
+验证流程
+//后端模拟登录，向前端返回加密票证Ticket（用户账号密码加密字符串）可存session中，也可以利用其他缓存技术存储实现多服务器共享用户身份验证，跨域验证。。。
+[HttpGet]
+[Route("api/Login")]
+[AllowAnonymous]
+public string Login(string account, string password)
+{
+    if (account.Equals("Admin") && password.Equals("123456"))
+    {
+        FormsAuthenticationTicket ticketObject = new FormsAuthenticationTicket(0, account, DateTime.Now,
+                    DateTime.Now.AddHours(1), true, string.Format("{0}&{1}", account, password),
+                    FormsAuthentication.FormsCookiePath);
+        var result = new { Result = true, Ticket = FormsAuthentication.Encrypt(ticketObject) };
+        return JsonConvert.SerializeObject(result);
+    }
+    else
+    {
+        var result = new { Result = false };
+        return JsonConvert.SerializeObject(result);
+    }
+}
+
+浏览器客户端调用webapi时需要在执行ajax请求时向Request Header设置authorization: BasicAuth 票证Ticket； XHR.setRequestHeader('Authorization', 'BasicAuth ' + ticket);（可封装js）
+//测试用户身份验证，有票证Ticket，可以验证通过
+var ticket = "";//登陆后票证Ticket放在某个html里面，测试用，刷新页面将失效
+$("#btnGet3").on("click", function () {
+    $.ajax({
+        url: '/api/ValuesGet/' + $("#txtId").val(), type: "get", 
+        beforeSend: function (XHR) { //xhr XML Http Request
+            //发送ajax请求之前向http的head里面加入验证信息，所有需要用户身份验证的ajax都要带上，可以封装js实现
+            XHR.setRequestHeader('Authorization', 'BasicAuth ' + ticket);
+        }, 
+        success: function (data) {
+            alert(data);
+        }, datatype: "json"
+    });
+});
+
+后端在带有 [BasicAuthorizeAttribute]特性api在被执行前会进行身份验证；[AllowAnonymous]特性跳过身份验证
+/// <summary>
+/// basic验证
+/// </summary>
+public class BasicAuthorizeAttribute : AuthorizeAttribute
+{
+    /// <summary>
+    /// 发生请求前去完成验证
+    /// </summary>
+    /// <param name="actionContext"></param>
+    public override void OnAuthorization(System.Web.Http.Controllers.HttpActionContext actionContext)
+    {
+        var authorization = actionContext.Request.Headers.Authorization;
+
+        if (actionContext.ActionDescriptor.GetCustomAttributes<AllowAnonymousAttribute>(true).Count != 0
+            || actionContext.ActionDescriptor.ControllerDescriptor.GetCustomAttributes<AllowAnonymousAttribute>(true).Count != 0)
+        {
+            base.OnAuthorization(actionContext);//正确的访问方法
+        }
+        else if (authorization != null && authorization.Parameter != null)
+        {
+            //用户验证逻辑
+            if (ValidateTicket(authorization.Parameter))
+            {
+                base.IsAuthorized(actionContext);//正确的访问方法
+            }
+            else
+            {
+                this.HandleUnauthorizedRequest(actionContext);//没有权限
+            }
+        }
+        else
+        {
+            this.HandleUnauthorizedRequest(actionContext);//没有权限
+        }
+    }
+
+    protected override void HandleUnauthorizedRequest(System.Web.Http.Controllers.HttpActionContext actionContext)
+    {
+        var challengeMessage = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);//告诉浏览器要验证
+        challengeMessage.Headers.Add("WWW-Authenticate", "Basic");//权限信息放在basic
+        //throw new System.Web.Http.HttpResponseException(challengeMessage);
+
+        base.HandleUnauthorizedRequest(actionContext);//返回没有授权
+    }
+
+    private bool ValidateTicket(string encryptTicket)
+    {
+        //解密Ticket
+        var strTicket = FormsAuthentication.Decrypt(encryptTicket).UserData;
+        return string.Equals(strTicket, string.Format("{0}&{1}", "Admin", "123456"));
+        //应该分拆后去数据库验证
+    }
+}
 
 
 
 
 
+****************************************分界线：了解WebApi异常处理
+ExceptionFilterAttribute异常过滤器特性：可以在方法执行期间出现异常，被处理掉，有局限性:只有控制器实例化后，方法执行完之前，出现的异常才能被抓住
+在WebApiConfig.cs Register方法中注册实现全部webapi异常捕获：config.Filters.Add(new CustomExceptionAttribute());
+在控制器名上添加特性[CustomExceptionAttribute]实现该控制器注册webapi异常捕获。也可以单独对某api方法上添加特性[CustomExceptionAttribute]注册异常捕获
+如果异常被try{}catch (Exception ex){}处理掉则ExceptionFilterAttribute异常过滤器特性将不会捕获到异常
 
+public class CustomExceptionAttribute : ExceptionFilterAttribute
+{
+    /// <summary>
+    /// api异常过滤器特性
+    /// api在出现异常时触发（控制器构造异常无法捕获）
+    /// 可以在这里写入异常日志
+    /// </summary>
+    /// <param name="actionExecutedContext"></param>
+    public override void OnException(HttpActionExecutedContext actionExecutedContext)
+    {
+        Console.WriteLine($"{actionExecutedContext.Request.RequestUri.AbsoluteUri}:{actionExecutedContext.Exception.Message}");
+
+        //把出现异常的api请求返回指定内容供前端解析
+        actionExecutedContext.Response = actionExecutedContext.Request.CreateResponse(
+            HttpStatusCode.OK, new
+            {
+                Result = false,
+                Msg = $"{"请联系管理员:" + actionExecutedContext.Request.RequestUri.AbsoluteUri}:{actionExecutedContext.Exception.Message}"
+            });
+
+        //base.OnException(actionExecutedContext);
+    }
+}
+
+
+全局异常处理：控制器实例化/方法错误 GlobalExceptionHandler : ExceptionHandler；不会覆盖异常过滤器特性CustomExceptionAttribute : ExceptionFilterAttribute
+在WebApiConfig.cs Register方法中注册实现全部webapi全局异常捕获：config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
+
+/// <summary>
+/// 全局异常处理
+/// </summary>
+public class GlobalExceptionHandler : ExceptionHandler
+{
+    ///// <summary>
+    ///// 判断是不是要异常处理
+    ///// </summary>
+    ///// <param name="context"></param>
+    ///// <returns></returns>
+    //public override bool ShouldHandle(ExceptionHandlerContext context)
+    //{
+    //    return context.Request.RequestUri.AbsoluteUri.Contains("api") && base.ShouldHandle(context);
+    //}
+
+    /// <summary>
+    /// 异常处理
+    /// </summary>
+    /// <param name="context"></param>
+    public override void Handle(ExceptionHandlerContext context)
+    {
+        Console.WriteLine(context.Exception.Message);
+
+        //把出现异常返回指定内容供前端解析
+        context.Result = new ResponseMessageResult(context.Request.CreateResponse(
+            HttpStatusCode.OK, new
+            {
+                Result = false,
+                Msg = $"{"请联系管理员:" + context.Exception.Message}"
+            }));
+    }
+
+}
+
+
+
+****************************************分界线：了解WebApi ActionFilterAttribute
+操作过滤器特性ActionFilterAttribute：可以在action执行前/后分别增加非业务逻辑
+在WebApiConfig.cs Register方法中对全部webapi全部注册：config.Filters.Add(new CustomActionAttribute());
+在控制器名上添加特性[CustomActionAttribute]实现该控制器下的所有方法注册。也可以单独对某api方法上添加特性[CustomActionAttribute]注册
+
+public class CustomActionAttribute : ActionFilterAttribute
+{
+    /// <summary>
+    /// 方法执行前
+    /// </summary>
+    /// <param name="actionContext"></param>
+    public override void OnActionExecuting(HttpActionContext actionContext)
+    {
+        Console.WriteLine("OnActionExecuting" + actionContext.Request.RequestUri.AbsoluteUri);
+        //可以完成数据验证
+        //actionContext.ModelState.IsValid 方法执行前完成检测
+        //actionContext.Response
+        base.OnActionExecuting(actionContext);
+    }
+
+    /// <summary>
+    /// 方法执行后
+    /// </summary>
+    /// <param name="actionExecutedContext"></param>
+    public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
+    {
+        Console.WriteLine("OnActionExecuted");
+        //actionExecutedContext.Response
+        base.OnActionExecuted(actionExecutedContext);
+    }
+}
+
+
+
+
+
+****************************************分界线：了解WebApi前端跨域问题
+webapi:客户端请求，会有一个跨域问题。比如从9008向9099网站后台发起ajax请求---请求到了9099后台；
+但是9008网站客户端请求的回调函数success没有执行无法获取数据；请求会报错 not allowed access   是由于浏览器的同源策略。
+浏览器是一个应用程序，有很多限制，不能访问/使用电脑信息，只有临时文件夹(cookie)
+网络请求：限制了js请求的结果使用，除非服务器允许(防钓鱼)，只有浏览器直接请求才会有跨域的问题
+
+为什么一定要跨域？
+多种域名 同一个数据源 不经过后台访问，前端直接访问后端api；就是了能分摊压力  一个页面其实有N多个请求，希望分一点到别的服务器
+
+解决跨域请求的方法：
+Jsonp   跨域请求  js不能直接跨域 但是浏览器自己可以通过标签去访问别的域名
+用scripts标签请求数据---后台代码单独处理请求---返回业务数据--前端通过js获取标签内容--做个剪切
+ 
+CORS 引用，指定下cors配置；或者在方法过滤器特性ActionFilterAttribute.actionexcuted中完成cors配置；就支持跨域
+为了安全起见不建议全部允许跨域！！！
+
+
+CORS实现操作方法：
+服务端：
+1.NuGet添加Microsoft.AspNet.WebApi.Cors
+2.在WebApiConfig.cs Register方法中注册：config.EnableCors(new EnableCorsAttribute("*", "*", "*"))；所有域名能跨域访问WebApi
+3.设置为只允许某域名能跨域访问WebApi：config.EnableCors(new EnableCorsAttribute("https://localhost:44315", "*", "*"));
+4.设置多个域名能跨域访问WebApi，可用逗号隔开：config.EnableCors(new EnableCorsAttribute("https://localhost:57777,https://localhost:57447", "*", "*"));
+5.通过配置文件设置跨域参数
+配置文件添加
+<appSettings>
+    <add key = "cors:allowedOrigins" value = "https://localhost:44315" />
+    <add key = "cors:allowedHeaders" value = "*" />
+    <add key = "cors:allowedMethods" value = "*" />
+<appSettings />
+在WebApiConfig.cs Register方法中注册
+string origins = ConfigurationManager.AppSettings["cors:allowedOrigins"];
+string headers = ConfigurationManager.AppSettings["cors:allowedHeaders"];
+string methods = ConfigurationManager.AppSettings["cors:allowedMethods"];
+config.EnableCors(new EnableCorsAttribute(origins, headers, methods));
+
+6.细粒度设置跨域
+在WebApiConfig.cs Register方法中注册：config.EnableCors();
+在指定api上添加特性[EnableCors(origins:"https://localhost:44315", headers:"*", methods:"*")]
+
+客户端：
 
 
 
