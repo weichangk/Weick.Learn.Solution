@@ -89,7 +89,14 @@
 /Design Patterns/Factory Pattern/FactoryPattern.ToyotaMotor.ServiceExtend/obj/
 /Design Patterns/Factory Pattern/SimpleFactoryPattern/bin/
 /Design Patterns/Factory Pattern/SimpleFactoryPattern/obj/
-
+/Design Patterns/Abstract Pattern/AbstractFactoryPattern/bin/
+/Design Patterns/Abstract Pattern/AbstractFactoryPattern/obj/
+/Design Patterns/Abstract Pattern/Sanguosha.Factory/bin/
+/Design Patterns/Abstract Pattern/Sanguosha.Factory/obj/
+/Design Patterns/Abstract Pattern/Sanguosha.Interface/bin/
+/Design Patterns/Abstract Pattern/Sanguosha.Interface/obj/
+/Design Patterns/Abstract Pattern/Sanguosha.Service/bin/
+/Design Patterns/Abstract Pattern/Sanguosha.Service/obj/
 
 /WebApi/FirstWebApi/bin/
 /WebApi/FirstWebApi/obj/
