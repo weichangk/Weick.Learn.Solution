@@ -2,6 +2,25 @@
 
 /packages/
 
+/CSharpProfessional/DelegatesAndEvents/AnonymousMethods/bin/
+/CSharpProfessional/DelegatesAndEvents/AnonymousMethods/obj/
+/CSharpProfessional/DelegatesAndEvents/BubbleSorter/bin/
+/CSharpProfessional/DelegatesAndEvents/BubbleSorter/obj/
+/CSharpProfessional/DelegatesAndEvents/EventsSample/bin/
+/CSharpProfessional/DelegatesAndEvents/EventsSample/obj/
+/CSharpProfessional/DelegatesAndEvents/GetAStringDemo/bin/
+/CSharpProfessional/DelegatesAndEvents/GetAStringDemo/obj/
+/CSharpProfessional/DelegatesAndEvents/LambdaExpressions/bin/
+/CSharpProfessional/DelegatesAndEvents/LambdaExpressions/obj/
+/CSharpProfessional/DelegatesAndEvents/MulticastDelegates/bin/
+/CSharpProfessional/DelegatesAndEvents/MulticastDelegates/obj/
+/CSharpProfessional/DelegatesAndEvents/MulticastDelegateWithIteration/bin/
+/CSharpProfessional/DelegatesAndEvents/MulticastDelegateWithIteration/obj/
+/CSharpProfessional/DelegatesAndEvents/SimpleDelegates/bin/
+/CSharpProfessional/DelegatesAndEvents/SimpleDelegates/obj/
+/CSharpProfessional/DelegatesAndEvents/WeakEventsGenericSample/bin/
+/CSharpProfessional/DelegatesAndEvents/WeakEventsGenericSample/obj/
+
 /UnitTestProject/bin/
 /UnitTestProject/obj/
 
