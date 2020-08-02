@@ -1,0 +1,47 @@
+什么是LINQ？
+语言集成查询(Language Integrated Query，LINQ)在C#编程语言中集成了查询语法，可以用相同的语法访问不同的数据源。LINQ提供了不同数据源的抽象层，所以可以使用相同的语法。
+
+LINQ特点：
+熟悉的语言:开发人员不必为每种类型的数据源或数据格式学习新的查询语言。
+更少的编码:与更传统的方法相比，它减少了要编写的代码量。
+增强代码可读性:LINQ使代码更具可读性，因此其他开发人员可以很容易地理解和维护它。
+查询多个数据源的标准化方式:相同的LINQ语法可用于查询多个数据源。
+查询的编译时安全性:它在编译时提供对象的类型检查。
+智能感知支持:LINQ为泛型集合提供智能感知。
+
+我们可以为实现IEnumerable<T>或IQueryable<T>接口的类编写LINQ查询。System.Linq名称空间包括Linq查询所需的接口。
+LINQ查询为实现IEnumerable或IQueryable接口的类使用扩展方法。Enumerable和Queryable是两个静态类，它们包含用于编写LINQ查询的扩展方法。
+相关文档
+https://docs.microsoft.com/en-us/dotnet/api/system.linq?view=netframework-4.8
+https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=netframework-4.8
+https://docs.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1?view=netframework-4.8
+
+Enumerable类中包含的扩展方法，可与c#或VB.Net中的通用集合一起使用。
+Queryable类中可用的扩展方法可以与各种本地或第三方数据提供程序一起使用。
+
+有两种基本的方法可以为IEnumerable集合或IQueryable数据源编写LINQ查询。
+查询语法或查询表达式语法：询语法类似于数据库的SQL(结构化查询语言)。
+from <range variable> in <IEnumerable<T> or IQueryable<T> Collection>
+<Standard Query Operators> <lambda expression>
+<select or groupBy operator> <result formation>
+
+方法语法或方法扩展语法
+var result = stringList.Where(s => s.Contains("Tutorials"));
+
+
+LINQ中的标准查询操作符实际上是IEnumerable<T>和IQueryable<T>类型的扩展方法。它们在System.Linq中定义。可列举的,来。可查询类。在LINQ中有超过50种标准的查询操作符，它们提供了过滤、排序、分组、聚合、连接等不同的功能。
+Filtering>>Where, OfType
+Sorting>>OrderBy, OrderByDescending, ThenBy, ThenByDescending, Reverse
+Grouping>>GroupBy, ToLookup
+Join>>GroupJoin, Join
+Projection>>elect, SelectMany
+Aggregation>>Aggregate, Average, Count, LongCount, Max, Min, Sum
+Quantifiers>>All, Any, Contains
+Elements>>ElementAt, ElementAtOrDefault, First, FirstOrDefault, Last, LastOrDefault, Single, SingleOrDefault
+Set>>Distinct, Except, Intersect, Union
+Partitioning>>Skip, SkipWhile, Take, TakeWhile
+Concatenation>>Concat
+Equality>>SequenceEqual
+Generation>>DefaultEmpty, Empty, Range, Repeat
+Conversion>>AsEnumerable, AsQueryable, Cast, ToArray, ToDictionary, ToList 
+参考API文档

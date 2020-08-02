@@ -188,6 +188,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsSample", "CSharpProfe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeakEventsGenericSample", "CSharpProfessional\DelegatesAndEvents\WeakEventsGenericSample\WeakEventsGenericSample.csproj", "{994A5232-3346-4237-9566-FC1CDC78D83E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LINQSamples", "LINQSamples", "{D46EDE6C-AA70-4BA5-9F31-9F1C72F10046}"
+	ProjectSection(SolutionItems) = preProject
+		CSharpProfessional\LINQSamples\LINQ.txt = CSharpProfessional\LINQSamples\LINQ.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQLearn", "CSharpProfessional\LINQSamples\LINQLearn\LINQLearn.csproj", "{AC2C951B-2B6E-434C-8644-6067C7B2CA8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -418,6 +425,10 @@ Global
 		{994A5232-3346-4237-9566-FC1CDC78D83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{994A5232-3346-4237-9566-FC1CDC78D83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{994A5232-3346-4237-9566-FC1CDC78D83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC2C951B-2B6E-434C-8644-6067C7B2CA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2C951B-2B6E-434C-8644-6067C7B2CA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2C951B-2B6E-434C-8644-6067C7B2CA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2C951B-2B6E-434C-8644-6067C7B2CA8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -483,6 +494,8 @@ Global
 		{9153607A-42A9-4B4D-82AA-0F12C1DBF17C} = {33719B41-DA63-4533-9891-21B65DBC122A}
 		{9072D73E-853B-4C7A-8665-C61C7D0CDD4A} = {33719B41-DA63-4533-9891-21B65DBC122A}
 		{994A5232-3346-4237-9566-FC1CDC78D83E} = {33719B41-DA63-4533-9891-21B65DBC122A}
+		{D46EDE6C-AA70-4BA5-9F31-9F1C72F10046} = {37208B47-C811-4CF3-86B4-0D72B4632CF0}
+		{AC2C951B-2B6E-434C-8644-6067C7B2CA8C} = {D46EDE6C-AA70-4BA5-9F31-9F1C72F10046}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
