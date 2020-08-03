@@ -23,6 +23,16 @@
 
 /CSharpProfessional/LINQSamples/LINQLearn/bin/
 /CSharpProfessional/LINQSamples/LINQLearn/obj/
+/CSharpProfessional/LINQSamples/DataLib/bin/
+/CSharpProfessional/LINQSamples/DataLib/obj/
+/CSharpProfessional/LINQSamples/EnumerableSample/bin/
+/CSharpProfessional/LINQSamples/EnumerableSample/obj/
+/CSharpProfessional/LINQSamples/ExpressionTreeSample/bin/
+/CSharpProfessional/LINQSamples/ExpressionTreeSample/obj/
+/CSharpProfessional/LINQSamples/LINQIntro/bin/
+/CSharpProfessional/LINQSamples/LINQIntro/obj/
+/CSharpProfessional/LINQSamples/ParallelLinqSample/bin/
+/CSharpProfessional/LINQSamples/ParallelLinqSample/obj/
 
 /UnitTestProject/bin/
 /UnitTestProject/obj/
