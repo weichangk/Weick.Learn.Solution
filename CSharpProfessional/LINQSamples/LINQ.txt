@@ -45,3 +45,42 @@ Equality>>SequenceEqual
 Generation>>DefaultEmpty, Empty, Range, Repeat
 Conversion>>AsEnumerable, AsQueryable, Cast, ToArray, ToDictionary, ToList 
 参考API文档
+
+
+Expression in LINQ
+LINQ引入了名为Expression的新类型，它表示强类型的lambda表达式。这意味着lambda表达式也可以被分配给表达式<TDelegate>类型。
+.net编译器将分配给expression <TDelegate>的lambda表达式转换成表达式树，而不是可执行代码。这个表达式树被远程LINQ查询提供程序用作数据结构来构建运行时查询(例如LINQ-to- sql, EntityFramework或任何其他实现IQueryable<T>接口的LINQ查询提供程序)。
+
+Define an Expression
+Func<Student, bool> isTeenAger = s => s.Age > 12 && s.Age < 20;
+
+可以用Expresson包装Func委托，将上面的Func类型委托转换为表达式
+Expression<Func<Student, bool>> isTeenAgerExpr = s => s.Age > 12 && s.Age < 20;
+Expression<Action<Student>> printStudentName = s => Console.WriteLine(s.StudentName);
+
+Invoke an Expression
+可以以与委托相同的方式调用由表达式包装的委托，但首先需要使用compile()方法对其进行编译。Compile()返回Func或Action类型的delegateof，以便可以像调用委托一样调用它。
+Expression<Func<Student, bool>> isTeenAgerExpr = s => s.Age > 12 && s.Age < 20;
+//compile Expression using Compile method to invoke it as Delegate
+Func<Student, bool>  isTeenAger = isTeenAgerExpr.Compile();
+//Invoke
+bool result = isTeenAger(new Student(){ StudentID = 1, StudentName = "Steve", Age = 20});
+
+Expression Tree
+表达式树顾名思义就是用树形数据结构排列的表达式。表达式树中的每个节点都是一个表达式。
+表达式树是lambda表达式在内存中的表示。它保存查询的实际元素，而不是查询的结果。
+在LINQ to Objects中，扩展方法需要将一个委托类型作为参数,这样就可以将lambda表达式赋予参数。
+lambda表达式也可以赋予Expression<T>类型的参数。C#编译器根据类型给lambda表达式定义不同的行为。如果类型是Expression<T>，编译器就从lambda表达式中创建一个表达式树，并存储在程序集中。
+这样就可以在运行期间分析表达式树，并进行优化，以便于查询数据源。
+
+
+
+延迟执行意味着表达式的求值被延迟到实际需要它的实现值时。它通过避免不必要的执行大大提高了性能。
+延迟执行适用于任何内存收集以及远程LINQ提供程序，如LINQ-to- sql、LINQ-to- entities、LINQ-to- xml等等。
+在执行查询语法代码时没有执行查询语句；查询在使用foreach循环进行迭代时被具体化并执行。这叫做延迟执行。
+延迟执行对每次执行重新评估;这称为惰性求值。这是延迟执行的主要优点之一:它总是为您提供最新的数据。
+可以使用c#的yield关键字为您的IEnumerable定制扩展方法实现延迟执行。
+
+立即执行是延迟执行的反面。它强制执行LINQ查询并立即获得结果。'To'转换操作符执行给定的查询并立即给出结果。
+ToList()扩展方法立即执行查询并返回结果。
+IList<Student> teenAgerStudents = studentList.Where(s => s.age > 12 && s.age < 20).ToList();
