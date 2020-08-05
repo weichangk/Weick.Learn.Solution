@@ -1,0 +1,573 @@
+
+EF 6 Code-First 约定
+约定是一组默认规则，在使用代码优先方法时，它们会根据域类自动配置概念模型。可以使用DataAnnotation或Fluent API重写这些约定。
+注意:EF 6不包括一对一和多对多关系的默认约定。需要使用Fluent API或DataAnnotation对它们进行配置。
+Schema : 默认情况下，EF将所有DB对象创建到dbo模式中。
+Table Name : <实体类名> + 's' EF将创建一个以“s”为后缀的实体类名的DB表。例如Student域类(entity)将映射到Students表。
+Primary key Name : 1)Id; 2)<Entity Class Name> + "Id"(大小写不敏感)。EF将为名为Id或<实体类名> + "Id"(大小写不敏感)的属性创建一个主键列。
+Foreign key property Name ：默认情况下，EF将寻找与主实体主键名称相同的外键属性。如果外键属性不存在，那么EF将在Db表中创建一个FK列，其属性为<依赖导航属性名> + "_" + <主体实体主键属性名>。例如，如果Student实体不包含年级的foreignkey属性，EF将在Students表中创建Grade_GradeId外键列。
+Null column ：EF为所有引用类型属性和可空基元属性创建一个空列，例如string, null <int>， Student, Grade(所有类类型属性)。
+Not Null Column ：EF为主键属性和非空值类型属性(例如int, float, decimal, datetime等)创建NotNull列。
+DB Columns order ：EF将按照与实体类中的属性相同的顺序创建DB列。但是，主键列将首先被移动。
+Properties mapping to DB ：默认情况下，所有属性都将映射到数据库。使用[NotMapped]属性从DB映射中排除属性或类。
+Cascade delete ：级联删除，默认情况下为所有类型的关系启用。
+-------------------------------
+
+
+
+c#数据类型与SQL Server数据类型的映射。
+int - int
+string - nvarchar(Max)
+decimal - decimal(18,2)
+float - real
+byte[] - varbinary(Max)
+datetime - datetime
+bool - bit
+byte - tinyint
+short - smallint
+long - bigint
+double - float
+char - No mapping
+sbyte - No mapping(throws exception)
+object - No mapping 
+-------------------------------
+
+
+
+Entity Framework 6 数据库初始化
+基于上下文类的基构造函数传递的参数，该构造函数派生自DbContext:
+上下文类的基本构造函数可以有以下参数。
+No Parameter
+Database Name
+Connection String Name
+
+namespace SchoolDataLayer
+{
+    public class Context: DbContext 
+    {
+        public Context(): base()//public Context(): base("MySchoolDB") //public SchoolDBContext() : base("name=SchoolDBConnectionString") 
+        {
+            
+        }
+    }
+}
+
+ App.config:
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <connectionStrings>
+    <add name="Context" or "MySchoolDB" or "SchoolDBConnectionString" 
+    connectionString="Data Source=.;Initial Catalog=SchoolDB-ByConnectionString;Integrated Security=true" 
+    providerName="System.Data.SqlClient"/>
+    </connectionStrings>
+</configuration>
+-------------------------------
+
+
+EF 6 Code-First数据库初始化策略
+CreateDatabaseIfNotExists: 这是默认的初始化器。顾名思义，如果数据库不存在，它将根据配置创建数据库。但是，如果更改了模型类，然后用这个初始化器运行应用程序，那么它将抛出一个异常。
+DropCreateDatabaseIfModelChanges: 如果模型类(实体类)发生了更改，这个初始化器会删除现有的数据库并创建一个新的数据库。因此，当模型类发生变化时，不必担心维护数据库模式。
+DropCreateDatabaseAlways: 该初始化器每次运行应用程序时都会删除现有的数据库，而不管模型类是否已更改。当您每次运行应用程序时(例如在开发应用程序时)都需要更新数据库时，这将非常有用。
+Custom DB Initializer: 还可以创建自己的自定义初始化器，如果上述初始化器不满足您的要求，或者您想使用上述初始化器执行一些其他过程来初始化数据库。
+
+使用上下文类中的数据库类来设置数据库初始化器，如下所示:
+public class SchoolDBContext: DbContext 
+{
+    public SchoolDBContext(): base("SchoolDBConnectionString") 
+    {
+        Database.SetInitializer<SchoolDBContext>(new CreateDatabaseIfNotExists<SchoolDBContext>());
+        //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseIfModelChanges<SchoolDBContext>());
+        //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseAlways<SchoolDBContext>());
+        //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
+    }
+
+    public DbSet<Student> Students { get; set; }
+    public DbSet<Standard> Standards { get; set; }
+}
+也可以通过继承一个初始化器来创建你的自定义DB初始化器，如下所示:
+public class SchoolDBInitializer :  CreateDatabaseIfNotExists<SchoolDBContext>
+{
+    protected override void Seed(SchoolDBContext context)
+    {
+        base.Seed(context);
+    }
+}
+
+可以关闭应用程序的数据库初始化器。假设您不想在生产环境中丢失现有数据，那么您可以关闭初始化器，如下所示:
+public class SchoolDBContext: DbContext 
+{
+    public SchoolDBContext() : base("SchoolDBConnectionString")
+    {            
+        //Disable initializer
+        Database.SetInitializer<SchoolDBContext>(null);
+    }
+    public DbSet<Student> Students { get; set; }
+    public DbSet<Standard> Standards { get; set; }
+}
+       
+在配置文件中设置DB初始化器
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appSettings>    
+    <add key="DatabaseInitializerForType SchoolDataLayer.SchoolDBContext, SchoolDataLayer"
+            value="SchoolDataLayer.SchoolDBInitializer, SchoolDataLayer" />
+    </appSettings>
+</configuration>
+
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appSettings>    
+    <add key="DatabaseInitializerForType SchoolDataLayer.SchoolDBContext, SchoolDataLayer"
+            value="Disabled" />
+    </appSettings>
+</configuration>
+-------------------------------
+
+
+Configure Domain Classes in Entity Framework 6
+可以通过配置域类来为EF提供它需要的信息来重写这些约定。有两种方式配置你的域类:
+Data Annotation Attributes : 数据注释是一种简单的基于属性的配置，您可以将其应用于域类及其属性。这些属性不仅适用于EF，也适用于ASP。NET web表单或MVC等，包含在单独的名称空间System.ComponentModel.DataAnnotations中。
+Fluent API : 数据注释属性不支持实体框架的所有配置选项。因此，您可以使用Fluent API，它为EF提供了所有配置选项。
+
+System.ComponentModel.DataAnnotations Attributes
+-------------------------------
+Key：在实体中指定一个键属性，并使相应的列在数据库中成为PrimaryKey列。[Key]
+-------------------------------
+Timestamp：将数据库中对应列的数据类型指定为rowversion。[Timestamp]
+-------------------------------
+ConcurrencyCheck：指定在乐观并发性检查中应包括相应的列。
+-------------------------------
+Required：指定对应的列是数据库中的NotNull列。[Required]
+-------------------------------
+MinLength：在数据库中对应的列中指定允许的最小字符串长度。
+-------------------------------
+MaxLength：指定数据库中对应列中允许的最大字符串长度。[MaxLength(50)]
+-------------------------------
+StringLength：指定数据库中对应列中允许的最大字符串长度。[StringLength(50)]
+-------------------------------
+
+System.ComponentModel.DataAnnotations.Schema Attributes
+-------------------------------
+Table：可应用于实体类，以配置数据库中相应的表名和模式。[Table("StudentMaster", Schema="Admin")]
+-------------------------------
+Column：可应用于属性，以配置数据库中相应的列名、顺序和数据类型。[Column("DoB", TypeName="DateTime2")]//[Column("DoB", Order = 5)]
+-------------------------------
+Index：可应用于属性，以配置数据库中相应的列应有索引。(只适用于EF 6.1以上)[Index]。还可以通过指定IsClustered =true使其成为聚集索引，或者通过指定IsUnique=true创建唯一索引。[Index( "INDEX_REGNUM", IsClustered=true, IsUnique=true )]
+-------------------------------
+ForeignKey：可应用于属性，将其标记为外键属性。
+public class Student
+{
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+        
+    //Foreign key for Standard
+    public int StandardId { get; set; }
+    public Standard Standard { get; set; }
+}
+public class Standard
+{
+    public int StandardId { get; set; }
+    public string StandardName { get; set; }
+    
+    public ICollection<Student> Students { get; set; }
+}
+/////////
+public class Student
+{
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+        
+    [ForeignKey("Standard")]
+    public int StandardRefId { get; set; }
+    public Standard Standard { get; set; }
+}
+public class Standard
+{
+    public int StandardId { get; set; }
+    public string StandardName { get; set; }
+    
+    public ICollection<Student> Students { get; set; }
+}
+/////////
+public class Student
+{
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+        
+    public int StandardRefId { get; set; }
+    
+    [ForeignKey("StandardRefId")]
+    public Standard Standard { get; set; }
+}
+public class Standard
+{
+    public int StandardId { get; set; }
+    public string StandardName { get; set; }
+    
+    public ICollection<Student> Students { get; set; }
+}
+/////////
+public class Student
+{
+    public int StudentID { get; set; }
+    public string StudentName { get; set; }
+        
+    public int StandardRefId { get; set; }
+    public Standard Standard { get; set; }
+}
+public class Standard
+{
+    public int StandardId { get; set; }
+    public string StandardName { get; set; }
+    
+    [ForeignKey("StandardRefId")]
+    public ICollection<Student> Students { get; set; }
+}
+-------------------------------
+NotMapped：可应用于应从模型中排除且不应在数据库中生成相应列或表的属性或实体类。[NotMapped]
+-------------------------------
+DatabaseGenerated ：可应用于属性来配置底层数据库如何为相应的列生成值，例如identity、computed或none。
+[DatabaseGenerated(DatabaseGeneratedOption.None)]如果希望为id属性提供自己的值，而不是数据库生成的值，请使用None选项。每次都必须在调用SaveChanges()方法之前提供Id属性的值。
+[DatabaseGenerated(DatabaseGeneratedOption.Identity)]EF将在SQL Server数据库中为这个属性自动创建一个标识列
+[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+public DateTime CreatedDate { get; set; }
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+            
+    modelBuilder.Entity<Student>()
+            .Property(s => s.CreatedDate)
+            .HasDefaultValueSql("GETDATE()");
+}
+GETDATE()设置为默认值SQL，它将在每个插入命令中插入当前日期和时间。
+-------------------------------
+InverseProperty：可应用于属性，当两个实体有一个以上的关系时，使用InverseProperty属性。
+public class Course
+{
+    public int CourseId { get; set; }
+    public string CourseName { get; set; }
+    public string Description { get; set; }
+
+    public Teacher OnlineTeacher { get; set; }
+    public Teacher ClassRoomTeacher { get; set; }
+}
+public class Teacher
+{
+    public int TeacherId { get; set; }
+    public string Name { get; set; }
+
+    [InverseProperty("OnlineTeacher")]
+    public ICollection<Course> OnlineCourses { get; set; }
+    [InverseProperty("ClassRoomTeacher")]
+    public ICollection<Course> ClassRoomCourses { get; set; }
+}
+可以使用InverseProperty和ForeignKey属性来配置相同实体之间的多种关系。
+public class Course
+{
+    public int CourseId { get; set; }
+    public string CourseName { get; set; }
+    public string Description { get; set; }
+
+    [ForeignKey("OnlineTeacher")]
+    public int? OnlineTeacherId { get; set; }
+    public Teacher OnlineTeacher { get; set; }
+
+    [ForeignKey("ClassRoomTeacher")]
+    public int? ClassRoomTeacherId { get; set; }
+    public Teacher ClassRoomTeacher { get; set; }
+}
+public class Teacher
+{
+    public int TeacherId { get; set; }
+    public string Name { get; set; }
+
+    [InverseProperty("OnlineTeacher")]
+    public ICollection<Course> OnlineCourses { get; set; }
+    [InverseProperty("ClassRoomTeacher")]
+    public ICollection<Course> ClassRoomCourses { get; set; }
+}
+-------------------------------
+ComplexType：在EF 6中将类标记为复杂类型。EF Core 2.0不支持此属性。
+-------------------------------
+
+
+Fluent API 
+实体框架Fluent API用于配置域类以覆盖约定。
+要编写Fluent API配置，请在上下文类中重写DbContext的onmodelcreate()方法
+可以同时使用数据注释属性和Fluent API。实体框架优先于Fluent API，而不是数据注释属性。
+
+Model-wide Configurations
+HasDefaultSchema()指定默认的数据库模式。
+ComplexType()将类配置为复杂类型。
+
+Entity Configurations
+HasIndex()配置实体类型的索引属性。
+HasKey()配置实体类型的主键属性。
+HasMany()为一对多或多对多关系配置多关系。
+HasOptional()配置一个可选关系，该关系将在数据库中创建一个可为空的外键。
+HasRequired()配置所需的关系，该关系将在数据库中创建一个非空的外键列。
+Ignore()配置不应将类或属性映射到表或列。
+Map()允许与实体如何映射到数据库模式相关的高级配置。
+MapToStoredProcedures()将实体类型配置为使用插入、更新和删除存储过程。
+ToTable()配置实体的表名。
+
+Property Configurations
+HasColumnAnnotation()在模型中为用于存储属性的数据库列设置注释。
+IsRequired()配置SaveChanges()上需要的属性。
+IsConcurrencyToken()将属性配置为乐观并发标记使用
+IsOptional()将属性配置为可选的，这将在数据库中创建一个可空的列。
+HasParameterName()为属性配置存储过程中使用的参数的名称。
+HasDatabaseGeneratedOption()配置如何为数据库中的对应列生成值，例如computed、identity或none。
+HasColumnOrder()配置用于存储属性的数据库列的顺序。
+HasColumnType()配置数据库中属性对应列的数据类型。
+HasColumnName()配置数据库中属性的对应列名。
+IsConcurrencyToken()将属性配置为乐观并发标记使用。
+public class SchoolContext: DbContext 
+{
+	public SchoolDBContext(): base() 
+	{
+	}
+
+	public DbSet<Student> Students { get; set; }
+	public DbSet<Standard> Standards { get; set; }
+	
+	protected override void OnModelCreating(DbModelBuilder modelBuilder)
+	{
+		//Configure default schema
+		modelBuilder.HasDefaultSchema("Admin");
+				
+		//Map entity to table
+		modelBuilder.Entity<Student>().ToTable("StudentInfo");
+		modelBuilder.Entity<Standard>().ToTable("StandardInfo","dbo");
+		modelBuilder.Entity<Student>()
+			.Property(p => p.DateOfBirth)
+			.HasColumnName("DoB")
+			.HasColumnOrder(3)
+			.HasColumnType("datetime2");
+	}
+}
+-------------------------------
+
+
+configure-one-to-one
+public class Student
+{
+    public int StudentId { get; set; }
+    public string StudentName { get; set; }
+
+    public virtual StudentAddress Address { get; set; }
+}  
+public class StudentAddress 
+{
+    public int StudentAddressId { get; set; }
+    public string Address1 { get; set; }
+    public string Address2 { get; set; }
+    public string City { get; set; }
+    public int Zipcode { get; set; }
+    public string State { get; set; }
+    public string Country { get; set; }
+
+    public virtual Student Student { get; set; }
+}
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+    // Configure Student & StudentAddress entity
+    modelBuilder.Entity<Student>()
+                .HasOptional(s => s.Address) // Mark Address property optional in Student entity
+                .WithRequired(ad => ad.Student); // mark Student property as required in StudentAddress entity. Cannot save StudentAddress without Student
+}
+-------------------------------
+
+
+configure-one-to-many
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    public int CurrentGradeId { get; set; }
+    public Grade CurrentGrade { get; set; }
+}
+public class Grade
+{
+    public int GradeId { get; set; }
+    public string GradeName { get; set; }
+    public string Section { get; set; }
+
+    public ICollection<Student> Students { get; set; }
+}
+public class SchoolContext : DbContext
+{
+    public DbSet<Student> Students { get; set; }
+    public DbSet<Grade> Grades { get; set; }
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        // configures one-to-many relationship
+        modelBuilder.Entity<Student>()
+            .HasRequired<Grade>(s => s.CurrentGrade)
+            .WithMany(g => g.Students)
+            .HasForeignKey<int>(s => s.CurrentGradeId);          }
+    }
+}
+-------------------------------
+
+
+configure-many-to-many
+EF 6包含了多对多关系的默认约定
+public class Student
+{
+    public Student() 
+    {
+        this.Courses = new HashSet<Course>();
+    }
+
+    public int StudentId { get; set; }
+    [Required]
+    public string StudentName { get; set; }
+
+    public virtual ICollection<Course> Courses { get; set; }
+}   
+public class Course
+{
+    public Course()
+    {
+        this.Students = new HashSet<Student>();
+    }
+
+    public int CourseId { get; set; }
+    public string CourseName { get; set; }
+
+    public virtual ICollection<Student> Students { get; set; }
+}
+EF API将在数据库中创建学生、课程和连接表StudentCourses。StudentCourses表将包含两个表Student_StudentId和Course_CourseId
+使用Fluent API定制联接表名和列名
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+
+    modelBuilder.Entity<Student>()
+                .HasMany<Course>(s => s.Courses)
+                .WithMany(c => c.Students)
+                .Map(cs =>
+                        {
+                            cs.MapLeftKey("StudentRefId");
+                            cs.MapRightKey("CourseRefId");
+                            cs.ToTable("StudentCourse");
+                        });
+
+}
+-------------------------------
+
+
+用EF 6代码优先的方法从现有数据库中生成上下文和实体类
+实体框架提供了一种对现有数据库使用代码优先方法的简单方法。它将为现有数据库中的所有表和视图创建实体类，并使用数据注释属性和Fluent API对它们进行配置。
+-------------------------------
+
+
+Cascade Delete
+级联删除自动删除依赖记录，或在数据库中删除父记录时将null设置为外键列。
+级联删除在Entity Framework中默认为所有类型的关系(如一对一、一对多和多对多)。EF默认情况下为所有实体启用级联删除效果。
+Cascade Delete in One-to-One Relationships：EF将删除stud以及StudentAddress表中相应的记录。因此，EF默认启用级联删除。
+Cascade Delete in One-to-Many Relationships：EF从数据库中删除了standard1，并且还将Students表中的standard_StandardId FK列设置为null。如果删除了一个或另一个实体，EF会自动删除中间表中的多对多关系实体的相关记录。
+
+关闭级联删除
+使用Fluent API配置实体，使用WillCascadeOnDelete()方法关闭级联删除
+protected override void OnModelCreating(DbModelBuilder modelBuilder)
+{
+	modelBuilder.Entity<Student>()
+		.HasOptional<Standard>(s => s.Standard)
+		.WithMany()
+		.WillCascadeOnDelete(false);
+}
+-------------------------------	
+
+
+可以将与Student实体相关的所有配置移动到一个单独的类中，该类派生自EntityTypeConfiguration<TEntity>。	
+public class StudentEntityConfiguration: EntityTypeConfiguration<Student>
+{
+    public StudentEntityConfiguration()
+    {
+            this.ToTable("StudentInfo");
+                
+            this.HasKey<int>(s => s.StudentKey);
+                
+            this.Property(p => p.DateOfBirth)
+                    .HasColumnName("DoB")
+                    .HasColumnOrder(3)
+                    .HasColumnType("datetime2");
+
+            this.Property(p => p.StudentName)
+                    .HasMaxLength(50);
+                        
+            this.Property(p => p.StudentName)
+                    .IsConcurrencyToken();
+                
+            this.HasMany<Course>(s => s.Courses)
+                .WithMany(c => c.Students)
+                .Map(cs =>
+                        {
+                            cs.MapLeftKey("StudentId");
+                            cs.MapRightKey("CourseId");
+                            cs.ToTable("StudentCourse");
+                        });
+    }
+}	
+public class SchoolDBContext: DbContext 
+{
+    public SchoolDBContext(): base() 
+    {
+    }
+
+    public DbSet<Student> Students { get; set; }
+        
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        // Moved all Student related configuration to StudentEntityConfiguration class
+        modelBuilder.Configurations.Add(new StudentEntityConfiguration());
+    }
+}	
+-------------------------------
+
+
+Seed Data
+可以在数据库初始化过程中将数据插入到数据库表中。如果您想为应用程序提供一些测试数据，或者为应用程序提供一些默认的主数据，那么这一点非常重要。
+要将数据种子化到数据库中，你必须创建一个自定义的数据库初始化器，就像你在数据库初始化策略一章中创建的那样，并覆盖seed方法。	
+public class SchoolDBInitializer : DropCreateDatabaseAlways<SchoolDBContext>
+{
+    protected override void Seed(SchoolDBContext context)
+    {
+        IList<Standard> defaultStandards = new List<Standard>();
+
+        defaultStandards.Add(new Standard() { StandardName = "Standard 1", Description = "First Standard" });
+        defaultStandards.Add(new Standard() { StandardName = "Standard 2", Description = "Second Standard" });
+        defaultStandards.Add(new Standard() { StandardName = "Standard 3", Description = "Third Standard" });
+
+        context.Standards.AddRange(defaultStandards);
+
+        base.Seed(context);
+    }
+}	
+public class SchoolContext: DbContext 
+{
+    public SchoolContext(): base("SchoolDB") 
+    {
+        Database.SetInitializer(new SchoolDBInitializer());
+    }
+    
+    public DbSet<Student> Students { get; set; }
+    public DbSet<Standard> Standards { get; set; }
+}	
+-------------------------------
+
+
+Migration in EF 6 Code-First	
+实体框架代码—首先具有不同的数据库初始化策略，如CreateDatabaseIfNotExists、DropCreateDatabaseIfModelChanges和DropCreateDatabaseAlways。
+但是，这些策略也存在一些问题，例如，如果您的数据库中已经有数据(除了种子数据)或现有的存储过程、触发器等。这些策略用于删除整个数据库并重新创建它，因此您将丢失数据和其他DB对象。	
+Entity Framework引入了一个迁移工具，它可以在模型更改时自动更新数据库模式，而不会丢失任何现有数据或其他数据库对象。它使用一个名为MigrateDatabaseToLatestVersion的新的数据库初始化器。	
+	
+有两种迁移:	（后续补充）
+Automated Migration	
+Code-based Migration	
+-------------------------------	
+	
+	
+	

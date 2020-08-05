@@ -205,6 +205,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTreeSample", "CSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelLinqSample", "CSharpProfessional\LINQSamples\ParallelLinqSample\ParallelLinqSample.csproj", "{69EBCCEB-6AB9-4076-9F11-C8CCA387F52C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{99F1F9A0-7B3D-4DC6-B2A7-164C7EBA7242}"
+	ProjectSection(SolutionItems) = preProject
+		EF\EF.txt = EF\EF.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6CodeFirst", "EF\EF6CodeFirst\EF6CodeFirst.csproj", "{77A673B4-6DE9-496D-B22E-0DE556F41096}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -459,6 +466,10 @@ Global
 		{69EBCCEB-6AB9-4076-9F11-C8CCA387F52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69EBCCEB-6AB9-4076-9F11-C8CCA387F52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69EBCCEB-6AB9-4076-9F11-C8CCA387F52C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A673B4-6DE9-496D-B22E-0DE556F41096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A673B4-6DE9-496D-B22E-0DE556F41096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A673B4-6DE9-496D-B22E-0DE556F41096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A673B4-6DE9-496D-B22E-0DE556F41096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -531,6 +542,7 @@ Global
 		{DB4F4309-0CCB-4EAE-8647-695BB6E6225C} = {D46EDE6C-AA70-4BA5-9F31-9F1C72F10046}
 		{B7AC56F6-C193-4290-B018-4953F11E63AE} = {D46EDE6C-AA70-4BA5-9F31-9F1C72F10046}
 		{69EBCCEB-6AB9-4076-9F11-C8CCA387F52C} = {D46EDE6C-AA70-4BA5-9F31-9F1C72F10046}
+		{77A673B4-6DE9-496D-B22E-0DE556F41096} = {99F1F9A0-7B3D-4DC6-B2A7-164C7EBA7242}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
