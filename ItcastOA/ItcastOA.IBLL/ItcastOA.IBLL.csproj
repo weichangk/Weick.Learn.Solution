@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="IUserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ItcastOA.IDAL\ItcastOA.IDAL.csproj">
+      <Project>{A9A3968E-9AD4-4F16-B0C5-C238CA95E15F}</Project>
+      <Name>ItcastOA.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ItcastOA.Model\ItcastOA.Model.csproj">
+      <Project>{58E46408-143E-4823-8583-F28D228A166E}</Project>
+      <Name>ItcastOA.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

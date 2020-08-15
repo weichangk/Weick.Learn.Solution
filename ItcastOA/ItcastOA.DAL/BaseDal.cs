@@ -9,20 +9,21 @@ using System.Threading.Tasks;
 
 namespace ItcastOA.DAL
 {
-    //泛型实体数据访问层公共抽象类；用来对实体数据公共访问泛型接口的公共实现
+    //泛型实体数据访问实现公共抽象类；用来对所有实体数据公共访问泛型接口的公共实现
     public abstract class BaseDal<T> where T: class, new()
     {
-        ItcastOAEntities Db = new ItcastOAEntities();
+        //ItcastOAEntities Db = new ItcastOAEntities();
+        readonly DbContext Db = DBContextFactory.CreateDbcontext();
         public bool Delete(T model)
         {
             Db.Entry<T>(model).State = EntityState.Deleted;
-            return Db.SaveChanges() > 0;
+            return true;//return Db.SaveChanges() > 0;
         }
 
         public T Insert(T model)
         {
             Db.Set<T>().Add(model);
-            Db.SaveChanges();
+            //Db.SaveChanges();
             return model;
         }
 
@@ -49,7 +50,7 @@ namespace ItcastOA.DAL
         public bool Update(T model)
         {
             Db.Entry<T>(model).State = EntityState.Modified;
-            return Db.SaveChanges() > 0;
+            return true;//return Db.SaveChanges() > 0;
         }
     }
 }

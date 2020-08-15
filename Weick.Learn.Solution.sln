@@ -215,6 +215,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6CodeFirst1", "EF\EF6CodeFirst1\EF6CodeFirst1.csproj", "{66A1FBF0-6149-4B95-8F66-EE798D1F27B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ItcastOA", "ItcastOA", "{9B007743-6694-490F-A10A-96DF692709E9}"
+	ProjectSection(SolutionItems) = preProject
+		ItcastOA\ItcastOA.txt = ItcastOA\ItcastOA.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItcastOA.IDAL", "ItcastOA\ItcastOA.IDAL\ItcastOA.IDAL.csproj", "{A9A3968E-9AD4-4F16-B0C5-C238CA95E15F}"
 EndProject

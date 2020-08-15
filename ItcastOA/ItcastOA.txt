@@ -1,0 +1,359 @@
+
+EF+数据访问层+数据会话层+业务层+MVC表现层多层架构
+
+表现层 调 业务层
+业务层 调 数据会话层
+数据会话层 调 数据访问层
+数据访问层，数据会话层，业务层，都各自对外提供接口
+
+数据访问层：
+数据操作上下文实例DbContext线程内唯一。
+利用EF操作实体对象。
+数据访问层中用抽象类+泛型封装了所有实体对象的公共操作方法（增删查改）；另外具体实体对象的自定义数据操作方法可以在自行扩展接口和实现
+
+
+数据会话层：
+数据会话实例IDBSession线程内唯一。
+就是一个工厂类。负责所有实体数据操作类实例的创建。
+工作单元模式，复杂的业务中经常涉及到对多个实体模型（表）的操作，有了数据会话层可以连接一次数据库，完成对多个实体模型的操作，完成所有数据的保存，要么都提交，要么都回滚。提高性。
+数据会话DBSession类中包括：
+线程内唯一的数据操作上下文实例DbContext。
+通过反射创建所有实体数据操作类实例。
+一个完整业务操作的数据提交方法SaveChanges()。
+
+业务层：
+业务层层中用抽象类+泛型封装了所有实体对象的公共业务（增删查改）和数据会话DBSession实例。
+抽象类（父类）无法知道通过数据会话层DBSession获取哪个数据操作类的实例；需要通过多态在所有业务子类的重载方法中指定具体的数据操作类实例
+另外具体实体对象的自定义业务可以在自行扩展接口和实现
+
+*********************************************************************************************
+#########数据访问层#########
+namespace ItcastOA.IDAL
+{
+    //泛型实体数据访问公共接口；用来对所有实体公共数据访问接口封装基类接口
+    public interface IBaseDal<T> where T: class, new()
+    {
+        IQueryable<T> Select(Expression<Func<T, bool>> whereLambda);
+
+        IQueryable<T> SelectPage<s>(int pageIndex, int pageSize, out int totalCount, Expression<Func<T, bool>> whereLambda, Expression<Func<T, s>> orderbyLambda, bool isAsc);
+
+        bool Delete(T model);
+
+        bool Update(T model);
+
+        T Insert(T model);
+    }
+}
+
+namespace ItcastOA.IDAL
+{
+    //具体实体数据访问接口；用来对具体实体数据访问自定义接口
+    public interface IUserInfoDal:IBaseDal<UserInfo>//拥有基类接口的所有公共方法
+    {
+        //还可自定义UserInfo数据访问层接口方法
+    }
+}
+
+
+namespace ItcastOA.IDAL
+{
+    //数据会话层接口，提供业务层调用
+    public interface IDBSession
+    {
+        DbContext Db { get; }
+        IUserInfoDal UserInfoDal { get; set; }
+        bool SaveChanges();
+    }
+}
+
+
+
+namespace ItcastOA.DAL
+{
+    //泛型实体数据访问实现公共抽象类；用来对所有实体数据公共访问泛型接口的公共实现
+    public abstract class BaseDal<T> where T: class, new()
+    {
+        //ItcastOAEntities Db = new ItcastOAEntities();
+        readonly DbContext Db = DBContextFactory.CreateDbcontext();
+        public bool Delete(T model)
+        {
+            Db.Entry<T>(model).State = EntityState.Deleted;
+            return true;//return Db.SaveChanges() > 0;
+        }
+
+        public T Insert(T model)
+        {
+            Db.Set<T>().Add(model);
+            //Db.SaveChanges();
+            return model;
+        }
+
+        public IQueryable<T> Select(Expression<Func<T, bool>> whereLambda)
+        {
+            return Db.Set<T>().Where<T>(whereLambda);
+        }
+
+        public IQueryable<T> SelectPage<s>(int pageIndex, int pageSize, out int totalCount, Expression<Func<T, bool>> whereLambda, Expression<Func<T, s>> orderbyLambda, bool isAsc)
+        {
+            var temp = Db.Set<T>().Where<T>(whereLambda);
+            totalCount = temp.Count();
+            if (isAsc)
+            {
+                temp = temp.OrderBy<T, s>(orderbyLambda).Skip<T>((pageIndex - 1) * pageSize).Take<T>(pageSize);
+            }
+            else
+            {
+                temp = temp.OrderByDescending<T, s>(orderbyLambda).Skip<T>((pageIndex - 1) * pageSize).Take<T>(pageSize);
+            }
+            return temp;
+        }
+
+        public bool Update(T model)
+        {
+            Db.Entry<T>(model).State = EntityState.Modified;
+            return true;//return Db.SaveChanges() > 0;
+        }
+    }
+}
+
+
+namespace ItcastOA.DAL
+{
+    //UserInfo数据访问层；具体实体数据访问实现；用来对具体实体数据访问自定义接口的实现，也可以自定义方法
+    public class UserInfoDal : BaseDal<UserInfo>, IUserInfoDal//拥有BaseDal<UserInfo>泛型抽象类的所有实体公共数据访问方法，已经在抽象类中实现不用再次实现；继承IUserInfoDal接口方法需要实现
+    {
+        //除了有用抽象类的所有实体公共数据访问方法，还能实现接口方法，还可以自定义方法
+    }
+}
+
+
+namespace ItcastOA.DAL
+{
+    //负责创建EF数据操作上下文实例，必须保证线程内唯一。
+    public class DBContextFactory
+    {
+        public static DbContext CreateDbcontext()
+        {
+            DbContext dbContext = (DbContext)CallContext.GetData("dbContext");
+            if (dbContext == null)
+            {
+                dbContext = new ItcastOAEntities();
+                CallContext.SetData("dbContext", dbContext);
+            }
+            return dbContext;
+        }
+    }
+}
+
+*********************************************************************************************
+
+
+
+
+*********************************************************************************************
+#########数据会话层#########
+namespace ItcastOA.DALFactory
+{
+    //数据会话层：就是一个工厂类。负责所有实体数据操作类实例的创建。
+    //业务层通过数据会话层获取具体数据操作类的实例，数据会话层实现业务层与数据层的解耦
+    public class DBSession : IDBSession
+    {
+        //ItcastOAEntities Db = new ItcastOAEntities();
+        //由于数据会话层和数据会话层调用的数据访问层都实例化EF对象，导致对象不唯一，
+        //应该将EF对象创建封装成线程内唯一；在数据会话层和数据会话层调用的数据访问层中使用EF线程内唯一的对象创建方法
+        public DbContext Db
+        {
+            get
+            {
+                return DBContextFactory.CreateDbcontext();
+            }
+        }
+
+
+        private IUserInfoDal userInfoDal;
+        public IUserInfoDal UserInfoDal
+        {
+            get
+            {
+                if (userInfoDal == null)
+                {
+                    //userInfoDal = new DAL.UserInfoDal();
+                    //这里直接new数据层数据操作对象，导致数据会话层和数据层耦合了。
+                    //将对数据层数据操作对象的创建封装为抽象工厂。
+                    userInfoDal = AbstractFactory.CreatUserInfoDal();
+                }
+                return userInfoDal;
+            }
+            set
+            {
+                userInfoDal = value;
+            }
+        }
+
+        //工作单元模式
+        //一个业务中经常涉及到对多个实体模型（表）的操作，我们希望连接一次数据库，完成对多个实体模型的操作，提高性能，涉及多张表的操作，完成所有数据的保存，要么都提交，要么都回滚。
+        public bool SaveChanges()
+        {
+            return Db.SaveChanges() > 0;//由于数据会话层调用数据访问层，所以数据访问层中的SaveChanges需要注释掉
+        }
+    }
+}
+
+namespace ItcastOA.DALFactory
+{
+    //负责创建数据会话实例IDBSession，必须保证线程内唯一。
+    public class DBSessionFactory
+    {
+        public static IDAL.IDBSession CreateDBSession()
+        {
+            IDAL.IDBSession dbSession = (IDAL.IDBSession)CallContext.GetData("dbSession");
+            if (dbSession == null)
+            {
+                dbSession = new DALFactory.DBSession();
+                CallContext.SetData("dbSession", dbSession);
+            }
+            return dbSession;
+        }
+    }
+}
+
+namespace ItcastOA.DALFactory
+{
+    //抽象工厂+反射 为数据会话层DBSession提供创建数据操作类实例的方法
+    public class AbstractFactory
+    {
+        private static readonly string AssemblyPath = ConfigurationManager.AppSettings["AssemblyPath"];
+        private static readonly string NameSpace = ConfigurationManager.AppSettings["NameSpace"];
+
+        public static IUserInfoDal CreatUserInfoDal()
+        {
+            string fullClassName = NameSpace + ".UserInfoDal";
+            return  CreateInstance(fullClassName) as IUserInfoDal;
+        }
+        private static Object CreateInstance(string className)
+        {
+            var assmbly = Assembly.Load(AssemblyPath);
+            return assmbly.CreateInstance(className);
+        }
+    }
+} 
+*********************************************************************************************
+
+
+
+*********************************************************************************************
+#########业务层#########
+namespace ItcastOA.IBLL
+{
+    //泛型实体业务公共接口；用来对所有实体业务公共数据访问接口封装基类接口
+    public interface IBaseService<T> where T:class, new()
+    {   
+        IDBSession CurrentDBSession { get; }
+
+        IDAL.IBaseDal<T> CurrentDal { get; set; }
+
+        bool Delete(T model);
+
+        T Insert(T model);
+        IQueryable<T> Select(Expression<Func<T, bool>> whereLambda);
+
+        IQueryable<T> SelectPage<s>(int pageIndex, int pageSize, out int totalCount, Expression<Func<T, bool>> whereLambda, Expression<Func<T, s>> orderbyLambda, bool isAsc);
+
+        bool Update(T model);
+    }
+}
+
+namespace ItcastOA.IBLL
+{
+    //具体实体业务数据访问接口；用来对具体实体业务数据访问自定义接口
+    public interface IUserInfoService:IBaseService<UserInfo>
+    {
+        //还可自定义UserInfo业务层接口方法
+    }
+}
+
+namespace ItcastOA.BLL
+{
+    //泛型实体业务层公共抽象类；用来对所有实体业务公共访问泛型接口的公共实现
+    public abstract class BaseService<T> where T: class, new()
+    {
+        //业务层调数据会话层；需要获取数据会话DBSession实例
+        public IDBSession CurrentDBSession
+        {
+            //get { return new DBSession(); }//为了防止业务操作类中多次调用CurrentDBSession造成实例化多个DBSession，应该对DBSession的创建封装为线程内唯一
+            get
+            {
+                return DBSessionFactory.CreateDBSession();
+            }
+        }
+
+        //父类无法知道通过数据会话层DBSession获取哪个数据操作类的实例；需要通过多态在需要实例化的子类对象中指定
+        public IDAL.IBaseDal<T> CurrentDal { get; set; }
+        public abstract void SetCurrentDal();//提供数据操作业务子类重载，在业务子类中对具体的数据操作类进行实例
+        public BaseService()
+        {
+            SetCurrentDal();//业务子类被构造时该抽象方法被调用，业务子类重载了该抽象方法也将被调用
+        }
+
+        public bool Delete(T model)
+        {
+            CurrentDal.Delete(model);
+            return CurrentDBSession.SaveChanges();
+        }
+
+        public T Insert(T model)
+        {
+            CurrentDal.Insert(model);
+            CurrentDBSession.SaveChanges();
+            return model;
+        }
+
+        public IQueryable<T> Select(Expression<Func<T, bool>> whereLambda)
+        {
+            return CurrentDal.Select(whereLambda);
+        }
+
+        public IQueryable<T> SelectPage<s>(int pageIndex, int pageSize, out int totalCount, Expression<Func<T, bool>> whereLambda, Expression<Func<T, s>> orderbyLambda, bool isAsc)
+        {
+            return CurrentDal.SelectPage(pageIndex, pageSize, out totalCount, whereLambda, orderbyLambda, isAsc);
+        }
+
+        public bool Update(T model)
+        {
+            CurrentDal.Update(model);
+            return CurrentDBSession.SaveChanges();
+        }
+    }
+}
+
+namespace ItcastOA.BLL
+{
+    //业务层UserInfoService业务实现
+    public class UserInfoService : BaseService<UserInfo>, IUserInfoService
+    {
+        public override void SetCurrentDal()//重载抽象类抽象方法，在对象实例化时对具体的数据操作类进行实例
+        {
+            this.CurrentDal = this.CurrentDBSession.UserInfoDal;
+        }
+
+
+        //复杂业务中经常涉及到对多个实体模型（表）的操作，我们希望连接一次数据库，完成对多个实体模型的操作，
+        //提高性能，涉及多张表的操作，完成所有数据的保存，要么都提交，要么都回滚。
+        //可以通过数据会话层CurrentDBSession操作多个具体数据操作类，再统一CurrentDBSession.SaveChanges();如：
+        //public void xxx()
+        //{
+        //    //this.CurrentDBSession.UserInfoDal.Insert();
+        //    //this.CurrentDBSession.UserInfoDal.Delete     
+        //    //this.CurrentDBSession.xxxDal.xxx();
+        //    //this.CurrentDBSession.yyyDal.yyy();
+        //    //this.CurrentDBSession.SaveChanges();
+        //}
+    }
+}
+*********************************************************************************************
+
+
+
+
+
+

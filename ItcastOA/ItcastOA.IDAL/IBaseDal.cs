@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ItcastOA.IDAL
 {
-    //数据访问层泛型公共接口；用来对所有实体公共数据访问接口封装基类接口
+    //泛型实体数据访问公共接口；用来对所有实体公共数据访问接口封装基类接口
     public interface IBaseDal<T> where T: class, new()
     {
         IQueryable<T> Select(Expression<Func<T, bool>> whereLambda);
