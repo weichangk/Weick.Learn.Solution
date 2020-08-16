@@ -51,6 +51,9 @@
     <Compile Include="BaseDal.cs" />
     <Compile Include="DBContextFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleInfoDal.cs" />
+    <Compile Include="R_UserInfo_ActionInfoDal.cs" />
+    <Compile Include="ActionInfoDal.cs" />
     <Compile Include="UserInfoDal.cs" />
   </ItemGroup>
   <ItemGroup>

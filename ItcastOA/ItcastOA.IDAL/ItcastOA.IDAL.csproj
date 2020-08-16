@@ -50,6 +50,9 @@
   <ItemGroup>
     <Compile Include="IBaseDal.cs" />
     <Compile Include="IDBSession.cs" />
+    <Compile Include="IRoleInfoDal.cs" />
+    <Compile Include="IR_UserInfo_ActionInfoDal.cs" />
+    <Compile Include="IActionInfoDal.cs" />
     <Compile Include="IUserInfoDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
