@@ -54,7 +54,7 @@ https://github.com/dmajkic/redis/downloads
 redis启动:
 管理员模式打开控制台(配置成自己的路径)
 win10非管理员也可以
-E:\practice\Weick.Learn.Solution\Doc\Redis\redis-2.4.5-win32-win64\64bit\redis-server.exe E:\practice\Weick.Learn.Solution\Doc\Redis\redis-2.4.5-win32-win64\64bit\redis.conf 
+E:\practice\Weick.Learn.Doc\Redis\redis-2.4.5-win32-win64\64bit\redis-server.exe E:\practice\Weick.Learn.Doc\Redis\redis-2.4.5-win32-win64\64bit\redis.conf 
 
 可以打开redis-cli.exe尝试使用，
 输入：set key value  

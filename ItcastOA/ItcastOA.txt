@@ -357,3 +357,87 @@ namespace ItcastOA.BLL
 
 
 
+*********************************************************************************************
+redis随笔：
+20200818
+
+redis key-value string类型可以直接读写对象
+cache.Write<Model.UserInfo>(sessionId, userInfo, DateTime.Now.AddMinutes(30));
+Model.UserInfo userInfoTemp = cache.Read<Model.UserInfo>(sessionId);
+
+redis key-value string类型的读写过程中自己实现序列化和反序列化
+问题一：如果实体对象启动了延迟加载，导致查询的实体中包含多个实体，redis key-value string类型写入实体对象时出现卡死问题。
+解决方法：使用DTO临时对象或关闭延迟加载。可以在实体导航属性去掉virtual关闭延迟加载。也可以在Entities上下文对象构造函数中添加this.Configuration.LazyLoadingEnabled = false;关闭所有实体的延迟加载：如果使用DBFirst不能在生成代码修改，有什么办法？？？？
+
+问题二：将对象转json字符串在写入redis key-value string类型中有可能产生转义字符的问题；不知是否可以对redis进行配置解决该问题？？？？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

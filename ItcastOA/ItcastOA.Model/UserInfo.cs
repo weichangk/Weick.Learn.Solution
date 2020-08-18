@@ -11,7 +11,7 @@ namespace ItcastOA.Model
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class UserInfo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +20,7 @@ namespace ItcastOA.Model
             this.R_UserInfo_ActionInfo = new HashSet<R_UserInfo_ActionInfo>();
             this.RoleInfo = new HashSet<RoleInfo>();
         }
-    
+
         public long Id { get; set; }
         public string UName { get; set; }
         public string UPwd { get; set; }
@@ -29,7 +29,7 @@ namespace ItcastOA.Model
         public System.DateTime ModifiedOn { get; set; }
         public string Remark { get; set; }
         public string Sort { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
