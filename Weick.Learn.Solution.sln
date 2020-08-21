@@ -233,6 +233,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItcastOA.Model", "ItcastOA\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItcastOA.WebApp", "ItcastOA\ItcastOA.WebApp\ItcastOA.WebApp.csproj", "{7A2E1EBF-1763-4439-9BD2-0EBC2CE0E0F0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Observer Pattern", "Observer Pattern", "{0D5EC8F8-D047-4281-8F78-DD35F9698EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "Design Patterns\Observer Pattern\ObserverPattern\ObserverPattern.csproj", "{430515A6-AED5-43B9-B10A-0E3E57A38AAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -523,6 +527,10 @@ Global
 		{7A2E1EBF-1763-4439-9BD2-0EBC2CE0E0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A2E1EBF-1763-4439-9BD2-0EBC2CE0E0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A2E1EBF-1763-4439-9BD2-0EBC2CE0E0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430515A6-AED5-43B9-B10A-0E3E57A38AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430515A6-AED5-43B9-B10A-0E3E57A38AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430515A6-AED5-43B9-B10A-0E3E57A38AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430515A6-AED5-43B9-B10A-0E3E57A38AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -604,6 +612,8 @@ Global
 		{8C2348A6-D105-4FC2-A8FA-8C79372895B1} = {9B007743-6694-490F-A10A-96DF692709E9}
 		{58E46408-143E-4823-8583-F28D228A166E} = {9B007743-6694-490F-A10A-96DF692709E9}
 		{7A2E1EBF-1763-4439-9BD2-0EBC2CE0E0F0} = {9B007743-6694-490F-A10A-96DF692709E9}
+		{0D5EC8F8-D047-4281-8F78-DD35F9698EB8} = {1B3798FA-E5EE-45AC-BA9F-77B4F954D988}
+		{430515A6-AED5-43B9-B10A-0E3E57A38AAF} = {0D5EC8F8-D047-4281-8F78-DD35F9698EB8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
