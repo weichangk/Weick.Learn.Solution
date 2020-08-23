@@ -250,6 +250,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThreadBased", "ThreadBased"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadBased", "MultiThreading\ThreadBased\ThreadBased\ThreadBased.csproj", "{B7124181-EA71-47F2-9E73-7E4461314891}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThreadSync", "ThreadSync", "{07330FD0-8EF5-4395-B1CD-3298ED8CE397}"
+	ProjectSection(SolutionItems) = preProject
+		MultiThreading\ThreadSync\ThreadSync.txt = MultiThreading\ThreadSync\ThreadSync.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadSync", "MultiThreading\ThreadSync\ThreadSync\ThreadSync.csproj", "{84971052-B11D-465F-93A9-8DD8D4DD7DAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -552,6 +559,10 @@ Global
 		{B7124181-EA71-47F2-9E73-7E4461314891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7124181-EA71-47F2-9E73-7E4461314891}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7124181-EA71-47F2-9E73-7E4461314891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84971052-B11D-465F-93A9-8DD8D4DD7DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84971052-B11D-465F-93A9-8DD8D4DD7DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84971052-B11D-465F-93A9-8DD8D4DD7DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84971052-B11D-465F-93A9-8DD8D4DD7DAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -639,6 +650,8 @@ Global
 		{80C48817-60EC-4B7F-8155-F972CDCCB030} = {624417DA-7D29-4F29-879E-8C1313825296}
 		{F36CE942-80F4-41FC-94A0-D609A992D730} = {71C46684-108B-4F27-80DB-F85733DC5B8D}
 		{B7124181-EA71-47F2-9E73-7E4461314891} = {F36CE942-80F4-41FC-94A0-D609A992D730}
+		{07330FD0-8EF5-4395-B1CD-3298ED8CE397} = {71C46684-108B-4F27-80DB-F85733DC5B8D}
+		{84971052-B11D-465F-93A9-8DD8D4DD7DAD} = {07330FD0-8EF5-4395-B1CD-3298ED8CE397}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
