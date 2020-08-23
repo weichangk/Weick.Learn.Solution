@@ -1,0 +1,114 @@
+创建线程
+暂停线程
+线程等待
+终止线程
+检测线程状态
+线程优先级
+前台线程和后台线程
+向线程传参
+线程使用lock关键字
+线程使用Monitor类锁定资源
+线程处理异常
+
+进程是系统进行资源分配和调度的一个独立单位。线程是进程的一个实体，是独立运行和独立调度的基本单位。可以认为线程是一个虚拟的进程。
+请记住线程会消耗大量的操作系统资源。多个线程共享一个物理处理器将导致操作系统忙于管理这些线程，而无法运行程序。
+
+创建线程：
+static void PrintNumbers()
+{
+    Console.WriteLine("PrintNumbers Starting...");
+    for (int i = 0; i < 10; i++)
+    {
+        Console.WriteLine(i);
+        System.Threading.Thread.Sleep(100);
+    }
+}
+Thread t = new Thread(PrintNumbers);
+t.Start();//不会马上的执行
+
+
+暂停线程：
+当线程处于休眠状态时,它会占用尽可能少的CPU时间。
+Thread.Sleep(TimeSpan.FromSeconds(2));//线程阻塞暂停
+
+
+线程等待：
+t.Join();//主线程等待子线程终止后继续往下执行；此时主线程处于阻塞状态，实现两线程间的同步执行
+
+
+终止线程：
+t.Abort();//强制终止线程；这很危险，不推荐使用
+这给线程注入了ThreadAbortException方法，导致线程被终结。这非常危险，因为该异常可以在任何时刻发生并可能彻底摧毁应用程序。
+另外，使用该技术也不一定总能终止线程。目标线程可以通过处理该异常并调用Thread.ResetAbort方法来拒绝被终止。
+因此并不推荐使用Abort方法来关闭线程。可优先使用一些其他方法，比如提供一个CancellationToken方法来取消线程的执行。
+
+
+
+检测线程状态：
+t.ThreadState.ToString()
+
+
+线程优先级：
+线程优先级决定了该线程可占用多少cpu时间
+threadOne.Priority = System.Threading.ThreadPriority.Highest;
+threadTwo.Priority = System.Threading.ThreadPriority.Lowest;
+
+
+前台线程和后台线程：
+进程会等待所有前台线程都结束后再结束工作，如果只剩下后台程序则直接结束工作。
+默认情况下显示创建的线程为前台线程，如果程序定义了一个不会完成的前台线程，主程序并不会正常结束。
+
+
+带参数线程：
+var threadTwo = new Thread(Count);//带参线程，线程启动的方法必须接收object类型的单个参数
+threadTwo.Start(8);
+var threadThree = new Thread(() => CountNumbers(12));//使用lambda表达式可是不用object类型的单个参数；使用lambda表达式引用对象的方式被称为闭包，当表达式中使用任何局部变量，C#会自动生成类，并将该变量作为类的属性。
+threadThree.Start();
+
+
+线程使用lock关键字:
+多线程访问同一对象（竞争条件）导致数据不安全。
+如果锁定被多线程访问的对象，需要访问该对象的其他线程会处于阻塞状态，并等待直到该对象解除锁定，确保对象访问的安全性，但是导致严重的性能问题。
+lock关键字线程锁，隐患：有可能导致死锁。
+private readonly object _syncRoot = new Object();//线程锁
+lock (_syncRoot)
+{
+	Count++;
+}
+
+
+线程使用Monitor类锁定资源：
+lock关键字可能造成死锁。由于死锁将导致程序停止工作，可以使用Monitor类来避免死锁。
+实际上lock关键字是Monitor类用例的一个语法糖。
+因此，我们可以直接使用Monitor类。其拥有TryEnter方法，该方法接受一个超时参数。如果在我们能够获取被lock保护的资源之前，超时参数过期，则该方法会返回false。
+lock (lock2)
+{
+	Thread.Sleep(1000);
+	Console.WriteLine("Monitor.TryEnter allows not to get stuck, returning false after a specified timeout is elapsed");
+	if (Monitor.TryEnter(lock1, TimeSpan.FromSeconds(5)))
+	{
+		Console.WriteLine("Acquired a protected resource succesfully");
+	}
+	else
+	{
+		Console.WriteLine("Timeout acquiring a resource!");
+	}
+}
+
+
+
+
+线程处理异常：
+如果是线程启动，不能向上抛出异常，线程外的try/catch也捕获不到线程启动函数异常，向上抛上层也捕获不了还是会程序崩溃。
+而是在线程代码中使用try/catch代码块，可以捕获不处理异常避免应用程序强制结束，不建议隐藏异常！
+
+
+
+
+
+
+
+
+
+
+
