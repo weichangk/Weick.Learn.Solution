@@ -52,6 +52,11 @@
 /IOC/IOC.Service/obj/
 /IOC/IOC.ServiceExt/bin/
 /IOC/IOC.ServiceExt/obj/
+/IOC/Spring.Net/Spring.Net.IOC.Factory/bin/
+/IOC/Spring.Net/Spring.Net.IOC.Factory/obj/
+/IOC/Spring.Net/Spring.Net.IOC.Test/bin/
+/IOC/Spring.Net/Spring.Net.IOC.Test/obj/
+
 
 /Loger/Loger/bin/
 /Loger/Loger/obj/
