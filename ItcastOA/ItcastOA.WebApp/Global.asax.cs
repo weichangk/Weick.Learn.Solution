@@ -1,5 +1,6 @@
 using ItcastOA.Model;
 using ServiceStack;
+using Spring.Web.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Web.Routing;
 
 namespace ItcastOA.WebApp
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : SpringMvcApplication//System.Web.HttpApplication
     {
         protected void Application_Start()
         {

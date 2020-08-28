@@ -13,8 +13,8 @@ namespace ItcastOA.WebApp.Controllers
     public class LoginController : Controller
     {
         private ICache cache = CacheFactory.CaChe();
-        //IBLL.IUserInfoService UserInfoService { get; set; }
-        IBLL.IUserInfoService UserInfoService = new BLL.UserInfoService();
+        IBLL.IUserInfoService UserInfoService { get; set; }//Spring.Net IOC注入
+        //IBLL.IUserInfoService UserInfoService = new BLL.UserInfoService();
 
         // GET: Login
         public ActionResult Index()

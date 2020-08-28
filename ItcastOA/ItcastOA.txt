@@ -375,6 +375,49 @@ redis key-value string类型的读写过程中自己实现序列化和反序列化
 
 
 
+*********************************************************************************************
+Spring.Net IOC 在MVC中的使用笔记：
+
+1 nuget添加Spring.Core;Spring.Web.Mvc5;Spring.Web.Extensions;Microsoft.AspNet.WebApi(这个一定要安装，不然会报错：找不到依赖项)
+2 在Web.config文件中对spring.net进行相关配置
+  <configSections>
+    <sectionGroup name="spring">
+      <!--spring.net-->
+      <section name="context" type="Spring.Context.Support.MvcContextHandler, Spring.Web.Mvc5" />
+      <section name="objects" type="Spring.Context.Support.DefaultSectionHandler, Spring.Core" />
+    </sectionGroup>
+  </configSections>
+  <spring>
+    <!-- spring.net 配置关联-->
+    <context>
+      <resource uri="file://~/XmlConfig/controllers.config" />
+      <resource uri="file://~/XmlConfig/service.config" />
+    </context>
+  </spring>
+
+3 可以将spring.net配置xml文件的配置信息分离（可以将控制器的配置与业务类的配置分离）
+controllers.config：
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object type="ItcastOA.WebApp.Controllers.LoginController, ItcastOA.WebApp" singleton="false" >
+    <property name="UserInfoService" ref="UserInfoService" />
+  </object>
+</objects>
+
+service.config：
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object type="ItcastOA.BLL.UserInfoService, ItcastOA.BLL" singleton="false" name="UserInfoService" >
+  </object>
+</objects>
+
+
+4 修改Global文件，继承SpringMvcApplication 
+public class MvcApplication : SpringMvcApplication//System.Web.HttpApplication
+
+5 在控制器中直接使用属性注入业务类
+IBLL.IUserInfoService UserInfoService { get; set; }//Spring.Net IOC注入
+
 
 
 
