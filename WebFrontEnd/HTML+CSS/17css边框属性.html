@@ -4,8 +4,74 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style type="text/css">
+        div {
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-right: 10px;
+            background-color: #f60;
+            border-width: 10px;
+            border-color: green blue yellow black;
+        }
+
+        .div0 {
+            border-style: solid;
+            border-width: 5px;
+        }
+
+        .div1 {
+            border-top-style: solid;
+        }
+
+        .div2 {
+            border-bottom-style: dashed;
+        }
+
+        .div3 {
+            border-left-style: dotted;
+        }
+
+        .div4 {
+            border-left-style: dotted;
+            border-right-style: double;
+        }
+
+        .div5, .div6, .div7, .div8 {
+            width: 80px;
+            height: 40px;
+            /*border-width:20px;
+                background:none;
+                border-color:#ddd;*/
+            border: solid 2px black;
+        }
+
+        .div5 {
+            border-style: groove;
+        }
+
+        .div6 {
+            border-style: ridge;
+        }
+
+        .div7 {
+            border-style: inset;
+        }
+
+        .div8 {
+            border-style: outset;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="div0">div0</div>
+    <div class="div1">solid</div>
+    <div class="div2">dashed</div>
+    <div class="div3">dotted</div>
+    <div class="div4">double</div>
+    <div class="div5">凸槽边框</div>
+    <div class="div6">垄状边框</div>
+    <div class="div7">inset</div>
+    <div class="div8">outset</div>
 </body>
 </html>

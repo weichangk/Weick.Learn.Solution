@@ -3,9 +3,74 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>定义CSS样式（CSS选择器）</title>
+    <style type="text/css">
+        
+        p { color:red; font-size:28px; }
+        .p { color:green; font-size:28px; }
+        .pp{ color:red; }
+        #ppp { color:blue; }
+        #ppp p { color:red; }
+
+
+        div { color:red;  }
+        .p { color:green;  }
+        #pp {  color:blue;   }
+
+
+
+        .p { color:red;  }
+        .p { color:green;  }
+
+
+
+        h1 , h2 , h3 , h4 , p, .div ,#div{ color:red ; font-size:40px }
+
+            
+        a:link {
+            color: red;
+        }
+
+        a:hover {
+            color: green;
+        }
+
+        a:active {
+            color: yellow;
+        }
+
+        a:visited {
+            color: blue;
+        }
+    </style>
 </head>
 <body>
 
+    <div id="pp" class="p">
+        <h1>定义CSS样式（CSS选择器）</h1>
+        <h2>定义CSS样式（CSS选择器）</h2>
+        <h3>定义CSS样式（CSS选择器）</h3>
+        <h4>定义CSS样式（CSS选择器）</h4>
+    </div>
+    <p>
+        定义CSS样式（CSS选择器）
+    </p>
+    <div class="div">
+        定义CSS样式（CSS选择器）
+    </div>
+
+    <div id="div">
+        定义CSS样式（CSS选择器）
+    </div>
+
+
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <a href="http://www.baidu.com/ddddd" target="_blank">百度ddd</a>
+    <a href="http://www.baidu.com/ddddsasad" target="_blank">百度dasdd</a>
+    <a href="http://www.baidu.com/dasasadddd" target="_blank">百度asaddd</a>
+    <a href="http://www.baidu.com/dsaadddd" target="_blank">百度ddsad</a>
+    <a href="http://www.baidu.com/dsasaddd" target="_blank">百度ddd</a>
+    <a href="http://www.baidu.com/dddasasdd" target="_blank">百度asaddd</a>
+    <a href="http://www.baidu.com/dsaadddd" target="_blank">百度ddd</a>
 </body>
 </html>
