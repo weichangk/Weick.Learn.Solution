@@ -4,8 +4,65 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        /*
+            div{
+                background-color:green;
+                color:#fff;
+            }
+            span{
+                background-color:green;
+                color:#fff;
+            }
+
+            div{
+                width:500px;
+                height:500px;
+                padding:0px;
+                margin:0px;
+                border:solid 10px;
+            }*/
+
+        .div {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;/*居中*/
+            background-color: green;
+        }
+
+        .diva {
+            float: left;
+            width: 240px;
+            height: 240px;
+            background-color: red;
+        }
+
+        .divb {
+            float: left;
+            width: 240px;
+            height: 240px;
+            background-color: yellow;
+        }
+
+        .div div {
+            margin: 10px; /*盒外边距，不影响盒宽度*/
+            padding: 10px; /*盒内边距，盒宽度=盒宽度+padding*/
+            border: solid 10px; /*盒边框宽度，盒宽度=盒宽度+border，solid显示边框*/
+        }
+    </style>
 </head>
 <body>
-
+    <!--div>DIVDIVDIV</div>
+    <div>DIVDIVDIV</div>
+    <span>SPANSPANSPAN</span>
+    <span>SPANSPANSPAN</span-->
+    <div class="div">
+        <div class="diva"></div>
+        <div class="divb"></div>
+    </div>
 </body>
 </html>
