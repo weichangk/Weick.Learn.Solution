@@ -304,6 +304,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML+CSS", "HTML+CSS", "{84
 		WebFrontEnd\HTML+CSS\bottom.html = WebFrontEnd\HTML+CSS\bottom.html
 		WebFrontEnd\HTML+CSS\left.html = WebFrontEnd\HTML+CSS\left.html
 		WebFrontEnd\HTML+CSS\right.html = WebFrontEnd\HTML+CSS\right.html
+		WebFrontEnd\HTML+CSS\shizhan.html = WebFrontEnd\HTML+CSS\shizhan.html
+		WebFrontEnd\HTML+CSS\style.css = WebFrontEnd\HTML+CSS\style.css
 		WebFrontEnd\HTML+CSS\top.html = WebFrontEnd\HTML+CSS\top.html
 	EndProjectSection
 EndProject
@@ -323,6 +325,26 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{93ACC52F-6240-4A08-AC38-3699B5BABB0D}"
 	ProjectSection(SolutionItems) = preProject
 		WebFrontEnd\HTML+CSS\css\11style.css = WebFrontEnd\HTML+CSS\css\11style.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{27BFE73F-9425-4337-B012-C5B8460EA5B6}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML+CSS\images\ad.jpg = WebFrontEnd\HTML+CSS\images\ad.jpg
+		WebFrontEnd\HTML+CSS\images\chanpin.jpg = WebFrontEnd\HTML+CSS\images\chanpin.jpg
+		WebFrontEnd\HTML+CSS\images\chanpin_img.jpg = WebFrontEnd\HTML+CSS\images\chanpin_img.jpg
+		WebFrontEnd\HTML+CSS\images\footer_bg.jpg = WebFrontEnd\HTML+CSS\images\footer_bg.jpg
+		WebFrontEnd\HTML+CSS\images\jianjie.jpg = WebFrontEnd\HTML+CSS\images\jianjie.jpg
+		WebFrontEnd\HTML+CSS\images\jianjie_img.jpg = WebFrontEnd\HTML+CSS\images\jianjie_img.jpg
+		WebFrontEnd\HTML+CSS\images\list_bg.jpg = WebFrontEnd\HTML+CSS\images\list_bg.jpg
+		WebFrontEnd\HTML+CSS\images\list_img.jpg = WebFrontEnd\HTML+CSS\images\list_img.jpg
+		WebFrontEnd\HTML+CSS\images\logo.jpg = WebFrontEnd\HTML+CSS\images\logo.jpg
+		WebFrontEnd\HTML+CSS\images\nav_bg.jpg = WebFrontEnd\HTML+CSS\images\nav_bg.jpg
+		WebFrontEnd\HTML+CSS\images\nav_hover.jpg = WebFrontEnd\HTML+CSS\images\nav_hover.jpg
+		WebFrontEnd\HTML+CSS\images\s_c.jpg = WebFrontEnd\HTML+CSS\images\s_c.jpg
+		WebFrontEnd\HTML+CSS\images\s_r.jpg = WebFrontEnd\HTML+CSS\images\s_r.jpg
+		WebFrontEnd\HTML+CSS\images\s_z.jpg = WebFrontEnd\HTML+CSS\images\s_z.jpg
+		WebFrontEnd\HTML+CSS\images\top_tool.jpg = WebFrontEnd\HTML+CSS\images\top_tool.jpg
+		WebFrontEnd\HTML+CSS\images\xinwen.jpg = WebFrontEnd\HTML+CSS\images\xinwen.jpg
 	EndProjectSection
 EndProject
 Global
@@ -747,6 +769,7 @@ Global
 		{C3C93259-4C9F-42E2-B7CA-46712BCB66FE} = {E18DAC5F-8224-49BD-A0EE-2F4A9A21C8C5}
 		{A0D84A88-1CE9-4BCE-A8BA-53AA8B3EBA27} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
 		{93ACC52F-6240-4A08-AC38-3699B5BABB0D} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
+		{27BFE73F-9425-4337-B012-C5B8460EA5B6} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
