@@ -332,6 +332,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML5+CSS3", "HTML5+CSS3", 
 		WebFrontEnd\HTML5+CSS3\22canvas保存文件.html = WebFrontEnd\HTML5+CSS3\22canvas保存文件.html
 		WebFrontEnd\HTML5+CSS3\23canvas绘制动画.html = WebFrontEnd\HTML5+CSS3\23canvas绘制动画.html
 		WebFrontEnd\HTML5+CSS3\24WebStorage本地储存.html = WebFrontEnd\HTML5+CSS3\24WebStorage本地储存.html
+		WebFrontEnd\HTML5+CSS3\25简单的网页留言板.html = WebFrontEnd\HTML5+CSS3\25简单的网页留言板.html
+		WebFrontEnd\HTML5+CSS3\26video元素与audio元素的基础.html = WebFrontEnd\HTML5+CSS3\26video元素与audio元素的基础.html
+		WebFrontEnd\HTML5+CSS3\27audio元素和video元素的常用属性.html = WebFrontEnd\HTML5+CSS3\27audio元素和video元素的常用属性.html
+		WebFrontEnd\HTML5+CSS3\28HTML5拖放.html = WebFrontEnd\HTML5+CSS3\28HTML5拖放.html
+		WebFrontEnd\HTML5+CSS3\29CSS3中新增的属性选择器.html = WebFrontEnd\HTML5+CSS3\29CSS3中新增的属性选择器.html
 		WebFrontEnd\HTML5+CSS3\canvas保存文件.js = WebFrontEnd\HTML5+CSS3\canvas保存文件.js
 		WebFrontEnd\HTML5+CSS3\canvas绘制动画.js = WebFrontEnd\HTML5+CSS3\canvas绘制动画.js
 		WebFrontEnd\HTML5+CSS3\canvas绘制圆形.js = WebFrontEnd\HTML5+CSS3\canvas绘制圆形.js
@@ -380,6 +385,197 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{BF0C87
 		WebFrontEnd\HTML5+CSS3\images\1.jpg = WebFrontEnd\HTML5+CSS3\images\1.jpg
 		WebFrontEnd\HTML5+CSS3\images\2.jpg = WebFrontEnd\HTML5+CSS3\images\2.jpg
 		WebFrontEnd\HTML5+CSS3\images\3.jpg = WebFrontEnd\HTML5+CSS3\images\3.jpg
+		WebFrontEnd\HTML5+CSS3\images\html5.png = WebFrontEnd\HTML5+CSS3\images\html5.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "audio", "audio", "{701A1049-C521-420E-A827-523D08D32616}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\audio\MP3.mp3 = WebFrontEnd\HTML5+CSS3\audio\MP3.mp3
+		WebFrontEnd\HTML5+CSS3\audio\video.m4v = WebFrontEnd\HTML5+CSS3\audio\video.m4v
+		WebFrontEnd\HTML5+CSS3\audio\video.mp4 = WebFrontEnd\HTML5+CSS3\audio\video.mp4
+		WebFrontEnd\HTML5+CSS3\audio\video.ogv = WebFrontEnd\HTML5+CSS3\audio\video.ogv
+		WebFrontEnd\HTML5+CSS3\audio\video.webm = WebFrontEnd\HTML5+CSS3\audio\video.webm
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "37伪类选择器以及伪元素", "37伪类选择器以及伪元素", "{1406A067-F73D-42B9-BE5F-1F84F9D9D6A7}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\index.html = WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\index.html
+		WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\index1.html = WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\index1.html
+		WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\index2.html = WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\index2.html
+		WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\TARGET.html = WebFrontEnd\HTML5+CSS3\37伪类选择器以及伪元素\TARGET.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "39UI元素状态伪类选择器", "39UI元素状态伪类选择器", "{F772CCDB-3B54-4493-9823-14D6693644F2}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index1.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index1.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index2.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index2.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index3.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index3.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index4-1.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index4-1.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index4-2.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index4-2.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index4.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index4.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index5.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index5.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index6.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index6.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index7.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index7.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index8.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index8.html
+		WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index9.html = WebFrontEnd\HTML5+CSS3\39UI元素状态伪类选择器\index9.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "41使用选择器来插入内容", "41使用选择器来插入内容", "{A8C297AD-BE6C-4BC9-B7F8-28CB585B5ECE}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\digest.gif = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\digest.gif
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\hot.gif = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\hot.gif
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index1.html = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index1.html
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index2.html = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index2.html
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index3.html = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index3.html
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index4.html = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index4.html
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index5.html = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\index5.html
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\mao.jpg = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\mao.jpg
+		WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\xinren.gif = WebFrontEnd\HTML5+CSS3\41使用选择器来插入内容\xinren.gif
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "42文字阴影与自动换行", "42文字阴影与自动换行", "{DA199C97-5409-491D-B63B-8FE0552A292F}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index.html = WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index.html
+		WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index2.html = WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index2.html
+		WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index3.html = WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index3.html
+		WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index4.html = WebFrontEnd\HTML5+CSS3\42文字阴影与自动换行\index4.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "43服务器端字体和@font-face属性", "43服务器端字体和@font-face属性", "{8D7C2724-F84C-46C7-8538-B8FF0DCB5920}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\43服务器端字体和@font-face属性\index4.html = WebFrontEnd\HTML5+CSS3\43服务器端字体和@font-face属性\index4.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "44各种盒的类型", "44各种盒的类型", "{E7DC179E-4713-4BC6-AA92-A94CACC99094}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index1.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index1.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index10.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index10.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index2.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index2.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index3.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index3.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index4.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index4.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index5.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index5.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index6.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index6.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index7.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index7.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index8.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index8.html
+		WebFrontEnd\HTML5+CSS3\44各种盒的类型\index9.html = WebFrontEnd\HTML5+CSS3\44各种盒的类型\index9.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "47CSS3中新增的背景属性", "47CSS3中新增的背景属性", "{40834CF2-0A47-4F57-9DEB-02FD9312B2BA}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj.png = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj.png
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj1.jpg = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj1.jpg
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj2.png = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj2.png
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj3.png = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj3.png
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj4.png = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\bj4.png
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\index.html = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\index.html
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\index1.html = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\index1.html
+		WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\index2.html = WebFrontEnd\HTML5+CSS3\47CSS3中新增的背景属性\index2.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "48CSS3中边框相关的样式", "48CSS3中边框相关的样式", "{CF4F66E4-672B-475D-9ACB-E1B64F208033}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\1.jpg = WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\1.jpg
+		WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\2.png = WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\2.png
+		WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\3.jpg = WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\3.jpg
+		WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\index.html = WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\index.html
+		WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\index1.html = WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\index1.html
+		WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\切割.jpg = WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\切割.jpg
+		WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\未标题-4.jpg = WebFrontEnd\HTML5+CSS3\48CSS3中边框相关的样式\未标题-4.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "49CSS3中的变形功能", "49CSS3中的变形功能", "{1DB979B5-FCC7-48B3-87E9-E503F5578EDC}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index1.html = WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index1.html
+		WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index2.html = WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index2.html
+		WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index3.html = WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index3.html
+		WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index4.html = WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\index4.html
+		WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\transform-origin.jpg = WebFrontEnd\HTML5+CSS3\49CSS3中的变形功能\transform-origin.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50CSS3中的动画效果", "50CSS3中的动画效果", "{D6ABB0C2-4074-4328-B0C6-8D830961B384}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\50CSS3中的动画效果\fzdh.html = WebFrontEnd\HTML5+CSS3\50CSS3中的动画效果\fzdh.html
+		WebFrontEnd\HTML5+CSS3\50CSS3中的动画效果\index.html = WebFrontEnd\HTML5+CSS3\50CSS3中的动画效果\index.html
+		WebFrontEnd\HTML5+CSS3\50CSS3中的动画效果\index2.html = WebFrontEnd\HTML5+CSS3\50CSS3中的动画效果\index2.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "51布局相关的样式多栏布局", "51布局相关的样式多栏布局", "{6B3F6509-6230-46CF-9BAD-8E5C9EBCC19E}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\51布局相关的样式多栏布局\index.html = WebFrontEnd\HTML5+CSS3\51布局相关的样式多栏布局\index.html
+		WebFrontEnd\HTML5+CSS3\51布局相关的样式多栏布局\index1.html = WebFrontEnd\HTML5+CSS3\51布局相关的样式多栏布局\index1.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "52布局相关的样式盒布局", "52布局相关的样式盒布局", "{3518A4E3-C352-43D1-AD2F-74AFA86762F8}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\52布局相关的样式盒布局\index.html = WebFrontEnd\HTML5+CSS3\52布局相关的样式盒布局\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "53布局相关的样式弹性盒布局", "53布局相关的样式弹性盒布局", "{174E459B-790C-4814-9006-4C7DEDA37F75}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\53布局相关的样式弹性盒布局\index.html = WebFrontEnd\HTML5+CSS3\53布局相关的样式弹性盒布局\index.html
+		WebFrontEnd\HTML5+CSS3\53布局相关的样式弹性盒布局\index1.html = WebFrontEnd\HTML5+CSS3\53布局相关的样式弹性盒布局\index1.html
+		WebFrontEnd\HTML5+CSS3\53布局相关的样式弹性盒布局\index2.html = WebFrontEnd\HTML5+CSS3\53布局相关的样式弹性盒布局\index2.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "54MediaQueries与自适应布局", "54MediaQueries与自适应布局", "{3C0E6DF9-35F1-4F90-8214-9ECD5BCE5AC7}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\54MediaQueries与自适应布局\index.html = WebFrontEnd\HTML5+CSS3\54MediaQueries与自适应布局\index.html
+		WebFrontEnd\HTML5+CSS3\54MediaQueries与自适应布局\index1.html = WebFrontEnd\HTML5+CSS3\54MediaQueries与自适应布局\index1.html
+		WebFrontEnd\HTML5+CSS3\54MediaQueries与自适应布局\index2.html = WebFrontEnd\HTML5+CSS3\54MediaQueries与自适应布局\index2.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "网站实战", "网站实战", "{26C7C7AA-3F7D-473A-881E-3CB073CA6FEF}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\网站实战\content.html = WebFrontEnd\HTML5+CSS3\网站实战\content.html
+		WebFrontEnd\HTML5+CSS3\网站实战\index.html = WebFrontEnd\HTML5+CSS3\网站实战\index.html
+		WebFrontEnd\HTML5+CSS3\网站实战\list.html = WebFrontEnd\HTML5+CSS3\网站实战\list.html
+		WebFrontEnd\HTML5+CSS3\网站实战\piclist.html = WebFrontEnd\HTML5+CSS3\网站实战\piclist.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{9B1F11C5-1925-40D9-8980-83484AA2EAC9}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\网站实战\css\list.css = WebFrontEnd\HTML5+CSS3\网站实战\css\list.css
+		WebFrontEnd\HTML5+CSS3\网站实战\css\style.css = WebFrontEnd\HTML5+CSS3\网站实战\css\style.css
+		WebFrontEnd\HTML5+CSS3\网站实战\css\style_note.css = WebFrontEnd\HTML5+CSS3\网站实战\css\style_note.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{FFE31129-D678-474B-B5C8-8E6AFC4CECFB}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\网站实战\images\a1.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\a1.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\a2.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\a2.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\a3.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\a3.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\a4.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\a4.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\a5.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\a5.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\a6.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\a6.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\about_13.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\about_13.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\bowen_06.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\bowen_06.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\hd2.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\hd2.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\hd3.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\hd3.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\hd_1.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\hd_1.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\hd_17.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\hd_17.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\hdd_20.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\hdd_20.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\logo.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\logo.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\menber_19.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\menber_19.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\news_10.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\news_10.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\news_11.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\news_11.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\pic1.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\pic1.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\pic2.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\pic2.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\pic3.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\pic3.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\pic4.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\pic4.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\pic5.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\pic5.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\pic6.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\pic6.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\pic7.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\pic7.jpg
+		WebFrontEnd\HTML5+CSS3\网站实战\images\silde-nav.png = WebFrontEnd\HTML5+CSS3\网站实战\images\silde-nav.png
+		WebFrontEnd\HTML5+CSS3\网站实战\images\title_bg.jpg = WebFrontEnd\HTML5+CSS3\网站实战\images\title_bg.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{80B1CB8B-032E-45DA-8F1F-A0A53144DB60}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\网站实战\js\html5shiv.min.js = WebFrontEnd\HTML5+CSS3\网站实战\js\html5shiv.min.js
+		WebFrontEnd\HTML5+CSS3\网站实战\js\jquery.js = WebFrontEnd\HTML5+CSS3\网站实战\js\jquery.js
+		WebFrontEnd\HTML5+CSS3\网站实战\js\respond.min.js = WebFrontEnd\HTML5+CSS3\网站实战\js\respond.min.js
+		WebFrontEnd\HTML5+CSS3\网站实战\js\scripts.js = WebFrontEnd\HTML5+CSS3\网站实战\js\scripts.js
+		WebFrontEnd\HTML5+CSS3\网站实战\js\selectivizr.js = WebFrontEnd\HTML5+CSS3\网站实战\js\selectivizr.js
 	EndProjectSection
 EndProject
 Global
@@ -806,6 +1002,25 @@ Global
 		{93ACC52F-6240-4A08-AC38-3699B5BABB0D} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
 		{27BFE73F-9425-4337-B012-C5B8460EA5B6} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
 		{BF0C878D-4657-4996-A444-17A70E92615B} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{701A1049-C521-420E-A827-523D08D32616} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{1406A067-F73D-42B9-BE5F-1F84F9D9D6A7} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{F772CCDB-3B54-4493-9823-14D6693644F2} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{A8C297AD-BE6C-4BC9-B7F8-28CB585B5ECE} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{DA199C97-5409-491D-B63B-8FE0552A292F} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{8D7C2724-F84C-46C7-8538-B8FF0DCB5920} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{E7DC179E-4713-4BC6-AA92-A94CACC99094} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{40834CF2-0A47-4F57-9DEB-02FD9312B2BA} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{CF4F66E4-672B-475D-9ACB-E1B64F208033} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{1DB979B5-FCC7-48B3-87E9-E503F5578EDC} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{D6ABB0C2-4074-4328-B0C6-8D830961B384} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{6B3F6509-6230-46CF-9BAD-8E5C9EBCC19E} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{3518A4E3-C352-43D1-AD2F-74AFA86762F8} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{174E459B-790C-4814-9006-4C7DEDA37F75} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{3C0E6DF9-35F1-4F90-8214-9ECD5BCE5AC7} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{26C7C7AA-3F7D-473A-881E-3CB073CA6FEF} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
+		{9B1F11C5-1925-40D9-8980-83484AA2EAC9} = {26C7C7AA-3F7D-473A-881E-3CB073CA6FEF}
+		{FFE31129-D678-474B-B5C8-8E6AFC4CECFB} = {26C7C7AA-3F7D-473A-881E-3CB073CA6FEF}
+		{80B1CB8B-032E-45DA-8F1F-A0A53144DB60} = {26C7C7AA-3F7D-473A-881E-3CB073CA6FEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}

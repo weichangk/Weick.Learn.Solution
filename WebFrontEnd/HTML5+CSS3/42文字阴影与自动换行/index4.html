@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>在页面上显示服务器端的字体</title>
+    <style>
+        /*@font-face {*/
+            /*font-family: webfont;*/
+            /*src: url(qtgg.otf);*/
+        /*}*/
+        /*@font-face {*/
+            /*font-family: webfont;*/
+            /*font-style: italic;*/
+            /*src: url(jpzk.otf);*/
+        /*}*/
+
+        /*h1{*/
+            /*font-family: webfont;*/
+        /*}*/
+        /*h2{*/
+            /*font-family: webfont;*/
+            /*font-style: italic;*/
+        /*}*/
+        @font-face{
+            font-family:Arial;
+            src:local('Arial');
+        }
+        /*h1{*/
+            /*font-family: Arial;*/
+            /*font-variant: small-caps;*/
+        /*}*/
+        h1{
+            font-family: Arial;
+            font-weight: lighter;
+            font-size: 10px;
+        }
+        h1.bold{
+            font-weight:  bold;
+            font-size: 30px;
+        }
+        h1.bolder{
+            font-weight:  bolder;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1>在页面上显示服务器端的字体</h1>
+<h1>Hello Html5  Css3</h1>
+<h1 class=" bold">Hello Html5  Css3</h1>
+<h1 class=" bolder">Hello Html5  Css3</h1>
+</body>
+</html>

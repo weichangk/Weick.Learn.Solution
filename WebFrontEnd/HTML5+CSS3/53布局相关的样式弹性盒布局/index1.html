@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>元素的宽度与高度自适应</title>
+    <style>
+        div#conterbody{
+            display: -moz-box;
+            display: -webkit-box;
+            border: solid 5px green;
+            /*-webkit-box-orient:horizontal;*/
+            /*-moz-box-orient:horizontal;*/
+            -webkit-box-orient:vertical;
+            -moz-box-orient:vertical;
+            width: 501px;
+            height: 400px;
+        }
+        div#div1{
+            background-color: #0064ff;
+            -webkit-box-flex:1;
+            -moz-box-flex:1;
+        }
+        div#div2{
+            background-color: #ff39ca;
+            -webkit-box-flex:2;
+            -moz-box-flex:2;
+        }
+        div#div3{
+            background-color: #198000;
+            -webkit-box-flex:3;
+            -moz-box-flex:3;
+        }
+        div#div1,div#div2,div#div3{
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="conterbody">
+    <div id="div1">这是DIV1</div>
+    <div id="div2">这是DIV2</div>
+    <div id="div3">这是DIV3</div>
+</div>
+</body>
+</html>

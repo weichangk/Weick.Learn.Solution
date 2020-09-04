@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>在多个标题前加上连续编号</title>
+    <style>
+        h1:before{
+            content:counter(hajsq)'.';
+            color: green;
+            font-size: 24px;
+        }
+        h1{
+            counter-increment: hajsq;
+            counter-reset: subhb;
+        }
+        h2:before{
+            content:counter(hajsq) '-' counter(subhb);
+            color: #ff6600;
+            font-size: 18px;
+        }
+        h2{
+            counter-increment: subhb;
+        }
+    </style>
+</head>
+<body>
+<h1>在多个标题前加上连续编号</h1>
+<h2>编号嵌套、重置编号</h2>
+<h2>编号嵌套、重置编号</h2>
+<h2>编号嵌套、重置编号</h2>
+<h2>编号嵌套、重置编号</h2>
+<h1>在多个标题前加上连续编号</h1>
+<h2>编号嵌套、重置编号</h2>
+<h2>编号嵌套、重置编号</h2>
+<h2>编号嵌套、重置编号</h2>
+<h2>编号嵌套、重置编号</h2>
+<h1>在多个标题前加上连续编号</h1>
+<h1>在多个标题前加上连续编号</h1>
+<h2>编号嵌套、重置编号</h2>
+<h2>编号嵌套、重置编号</h2>
+<h1>在多个标题前加上连续编号</h1>
+</body>
+</html>

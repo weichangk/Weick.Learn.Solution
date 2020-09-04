@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <h1>audio元素和video元素的常用属性</h1>
+    <audio src="audio/MP3.mp3" controls="controls" loop="loop"></audio>
+    <video src="audio/1video.mp4" controls="controls" width="600" height="250"  poster="images/1.jpg" loop="loop"></video>
+    <video id="video" src="audio/1video.mp4"></video>
+    <script type="text/javascript">
+        var video = document.getElementById('video');
+        video.addEventListener("error", function () {
+            var error = video.error;
+            switch (error.code) {
+                case 1:
+                    alert('取回过程被用户中止。');
+                    break;
+                case 2:
+                    alert('当下载时发生错误。');
+                    break;
+                case 3:
+                    alert('当解码时发生错误。');
+                    break;
+                case 4:
+                    alert('媒体不可用或者不支持音频/视频。');
+                    break;
+            }
+        }, false);
+    </script>
+
+    </body>
+</html>

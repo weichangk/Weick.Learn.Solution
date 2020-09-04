@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>案例</title>
+    <style>
+       body{
+           margin: 20px 0;
+       }
+        #container{
+            width: 960px;
+            margin: auto;
+        }
+        #left{
+            width: 740px;
+            float: left;
+        }
+        p{
+            line-height: 600px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            color: #ffffff;
+        }
+        #left-z{
+            width: 520px;
+            float: left;
+            background-color: #656aba;
+        }
+        #left-y{
+            width: 200px;
+            float: left;
+            background-color: #ff2dc4;
+        }
+        #right{
+            width: 200px;
+            float: right;
+            background-color: #41db50;
+        }
+        @media screen and (min-width: 1000px){
+            #container{
+                width: 1000px;
+            }
+            #left{
+                width: 780px;
+                float: left;
+            }
+            #left-z{
+                width: 560px;
+                float: right;
+            }
+            #left-y{
+                width: 200px;
+                float: left;
+            }
+            #right{
+                width: 200px;
+                float: right;
+            }
+        }
+       @media screen and (min-width: 640px) and (max-width: 999px){
+           #container{
+               width: 640px;
+           }
+           #left{
+               width: 640px;
+               float: none;
+           }
+           p{
+               line-height: 400px;
+           }
+           #left-z{
+               width: 420px;
+               float: right;
+           }
+           #left-y{
+               width: 200px;
+               float: left;
+           }
+           #right{
+               width: 100%;
+               float: none;
+               clear: both;
+               line-height: 150px;
+           }
+       }
+
+       @media screen and (max-width: 639px){
+           #container{
+               width: 100%;
+           }
+           #left{
+               width: 100%;
+               float: noen;
+           }
+           p{
+               line-height: 300px;
+           }
+           #left-z{
+               width: 100%;
+               float: none;
+           }
+           #left-y{
+               width:100%;
+               float: none;
+           }
+           #right{
+               width: 100%;
+               float: none;
+               clear: both;
+               line-height: 150px;
+           }
+       }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="left">
+        <p id="left-z">Conter</p>
+        <p id="left-y"> LEFT </p>
+    </div>
+    <p id="right">Right</p>
+</div>
+</body>
+</html>

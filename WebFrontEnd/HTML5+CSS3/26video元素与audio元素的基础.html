@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>video元素与audio元素的基础知识</title>
+</head>
+<body>
+    <h1>Audio元素的使用示例</h1>
+    <audio controls="controls" src="audio/MP3.mp3">
+        您的浏览器太老了，不支持我们的HTML5页面，请更新浏览器！
+    </audio>
+    <br />
+    <h1>Video元素的使用示例</h1>
+    <!--<video controls="controls" width="650" height="280" src="audio/video.mp4">-->
+    <video controls="controls" width="650" height="280">
+        <source src="audio/video.m4v" type="video/m4v" />
+        <source src="audio/video.webm" type="video/webm" />
+        <source src="audio/video.ogv" type="video/ogv" />
+        <source src="audio/video.mp4" />
+        您的浏览器太老了，不支持我们的HTML5页面，请更新浏览器！
+    </video>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function allowDrop(ev)
+        {
+            //不执行默认处理（拒绝被拖放）
+            ev.preventDefault();
+            ev.dataTransfer.dropEffect = 'link'
+        }
+
+        function drag(ev)
+        {
+//         使用setData(数据类型，携带的数据)
+//         方法将要拖放的数据存入dataTransfer对象
+//            ev.clearData();
+            ev.effeAllowed = 'all';
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+
+        function drop(ev)
+        {
+            //不执行默认处理（拒绝被拖放）
+            ev.preventDefault();
+            //使用getData()获取到数据，然后赋值给data
+            var data=ev.dataTransfer.getData("Text");
+            //使用appendChild方法把拖动的节点放到元素节点中成为他的子节点
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <style>
+        #tuo {
+            background: #e54d26;
+            width: 540px;
+            height: 320px;
+        }
+
+        #cun {
+            width: 540px;
+            height: 320px;
+            border: 2px solid #D2D2D2;
+            box-shadow: 1px 4px 8px #646464;
+        }
+    </style>
+</head>
+<body>
+    <div id="cun" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br />
+    <img src="images/html5.png" id="tuo" draggable="true" ondragstart="drag(event)" width="500" height="280" />
+</body>
+</html>

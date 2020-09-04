@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS3中的属性选择器</title>
+    <style>
+        /*[id*= section1]{*/
+        /*background: green;*/
+        /*}*/
+        /*[id*= section2]{*/
+        /*background: #ff6600;*/
+        /*}*/
+        /*[id*=section1-1]{*/
+        /*background: goldenrod;*/
+        /*}*/
+        /*[id*=section]{*/
+        /*background: #000;*/
+        /*}*/
+        /*[id^=s]{*/
+        /*background: cornflowerblue;*/
+        /*}*/
+        /*[id^=b]{*/
+        /*background: hotpink;*/
+        /*}*/
+        [id$=c] {
+            background: green;
+        }
+
+        [id$=\-1] {
+            background: saddlebrown;
+        }
+
+        [id$=\_2] {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3中的属性选择器</h1>
+    <div id="section1a">sectiona</div>
+    <div id="section1-1">section1-1</div>
+    <div id="section1-1-1c">section1-1-1c</div>
+    <div id="section1-1-2d">section1-1-2d</div>
+    <div id="section1-2e">section1-2e</div>
+    <div id="section1-2-1">section1-2-1</div>
+    <div id="bsection2">section2</div>
+    <div id="section2-1">section2-1</div>
+    <div id="section2-2">section2-2</div>
+    <div id="section2_2">section2-2</div>
+    <div id="section2_2">section2-2</div>
+    <div id="section2_2">section2-2</div>
+    <div id="section2_3">section2-2</div>
+</body>
+</html>

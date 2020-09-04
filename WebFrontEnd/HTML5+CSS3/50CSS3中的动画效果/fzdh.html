@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost:63342/untitled3/fzdh.html -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+         width: 900px;
+        margin: 0 auto;
+        /*text-align: center;*/
+        }
+         a{
+             -webkit-transition:color 1s linear,font-size 1s linear;
+             color: #000;
+         }
+        a:hover{
+           color: #f60;
+            font-size:28px ;
+        }
+        div#transition{
+            width: 200px;
+            height: 200px;
+            margin: 100px 0;
+            background-color: #ff6600;
+            -webkit-transition:transform 1s linear , background-color 1s linear;
+            /*-webkit-transition:background-color 1s linear;*/
+        }
+        div#transition:hover{
+        -webkit-transform:rotate(90deg);
+            background-color: #600864;
+        }
+
+
+        div#Animations{
+            background-color: #f60;
+            width: 20px;
+            height: 20px;
+        }
+        @-webkit-keyframes mymove{
+            0%{
+                background-color: #f60;
+                width: 20px;
+                height: 20px;
+            }
+            10%{
+                background-color: #0D220F;
+                width: 70px;
+            }
+            80%{
+                background-color: #00baff;
+                width: 960px;
+            }
+            100%{
+                background-color: #600864;
+                width: 80px;
+            }
+
+        }
+        div#Animations:hover{
+            -webkit-animation-name:mymove;
+            -webkit-animation-duration:5s;
+            -webkit-animation-timing-function:linear;
+            -webkit-animation-iteration-count:infinite;
+        }
+            div#Animationsa{
+                width: 20px;
+                height: 20px;
+                background-color: #ff6600;
+            }
+            @-webkit-keyframes ma{
+                0%{
+                    background-color: #f60;
+                    width: 20px;
+                    height: 20px;
+                }
+                10%{
+                    background-color: #0D220F;
+                    width: 100px;
+                }
+                20%{
+                    background-color: #00baff;
+                    width:25px;
+                }
+                30%{
+                    background-color: #00baff;
+                    width: 200px;
+                }
+                40%{
+                    background-color: #600864;
+                    width: 30px;
+                }
+                100%{
+                    background-color: #600864;
+                    width: 230px;
+                }
+
+            }
+
+        div#Animationsa:hover{
+            -webkit-animation-name:ma;
+            -webkit-animation-duration:5s;
+            -webkit-animation-timing-function:linear;
+            -webkit-animation-iteration-count:infinite;
+        }
+    </style>
+</head>
+<body>
+<h1>transition案例</h1>
+<a href="./fzdh_files/fzdh.html">transition案例</a>
+<div id="transition"></div>
+<h1>Animations案例</h1>
+<div id="Animations"></div>
+<br>
+<div id="Animationsa"></div>
+
+</body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>伪类选择器以及伪元素</title>
+    <style>
+        :root{
+            background: #126fb0;
+        }
+        body{
+            background: #ffffff;
+        }
+        p.aaas{
+            text-align: left;
+            color: red;
+        }
+        p.right{
+            text-align: right;
+            color: green;
+        }
+        a:link{
+            color: #000;
+        }
+        a:visited{
+            color: fuchsia;
+        }
+        a:hover{
+            color :green;
+        }
+        a:active{
+            color: #ff6600;
+        }
+        p:first-line{
+            color: #f60;
+        }
+        p:first-letter{
+            color: green;
+            font-size: 24px;
+        }
+        li{
+            list-style: none;
+        }
+        li:before{
+            content:"...";
+            color: red;
+        }
+        li:after{
+            content: "__after追加";
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+<h1>类选择器</h1>
+<p class="aaas">伪类选择器以及伪元素</p>
+<p class="right">伪类选择器以及伪元素</p>
+
+<br/>
+<a href="index1.html">伪类选择器</a>
+<br/>
+<p>
+        在CSS中，主要有四个伪元素选择器<br/>
+        first-line伪元素选择器用于向某个元素中的第一行文字使用样式。
+</p>
+<ul>
+    <li><a href="index1.html">伪类选择器</a></li>
+    <li><a href="index1.html">伪类选择器</a></li>
+    <li><a href="index1.html">伪类选择器</a></li>
+    <li><a href="index1.html">伪类选择器</a></li>
+    <li><a href="index1.html">伪类选择器</a></li>
+    <li><a href="index1.html">伪类选择器</a></li>
+    <li><a href="index1.html">伪类选择器</a></li>
+</ul>
+</body>
+</html>

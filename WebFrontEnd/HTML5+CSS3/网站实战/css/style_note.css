@@ -1,0 +1,604 @@
+
+
+/*
+经典布局
+********************************************
+*			header						   *	
+********************************************
+****************************  **************
+*						   *  *			   *
+*						   *  *            *
+*	main或		article    *  *     aside  *
+*						   *  *            *
+*						   *  *            *
+*						   *  *            *
+****************************  **************
+
+********************************************
+*				footer					   *	
+********************************************
+
+使用div结合以下标签构建网页基本结构
+
+<header> 标签定义文档的页眉
+
+<article>
+<article>标签中的内容是独立的、完整的、摘自外部的内容。
+它可以是博客文章、新闻文章、论坛帖子、网友评论等独立的内容。
+<article>标签中的内容通常有它自己的标题，甚至有时候还有自己的脚注。
+它可以嵌套使用，但是一般需要外部内容和内部内容有关系。
+比如：一篇博客文章，它的评论就可以使用嵌套的形式，将评论内容嵌套在整体内容中。
+
+<aside>
+被包含在article元素中作为主要内容的附属信息部分，
+其中的内容可以是与当前文章有关的相关资料、名次解释，等等。
+在article元素之外使用作为页面或站点全局的附属信息部分。
+最典型的是侧边栏，其中的内容可以使友情链接，博客中的其它文章列表、广告单元等。
+
+<footer>文档中的页脚部分：
+
+<nav>
+在html中，nav标签是html5版本中新增的标签，是使用来定义导航链接的部分。
+nav标签只是用来表示该区域是导航链接，默认并没有什么显示效果。
+
+<section>
+section标签是html5新增标签是用来定义文档的某个区域（如：章节、页眉、页脚或者文档的其他区域）。
+section标签和div标签不一样，不是用来定义局域样式的，而是用来定义一个明确的主题，
+通常含有一个标题（h1~h6）。但如果是文章，通常会使用article标签来代替。
+
+
+*******************************
+
+隐私选择器：
+选择器用于选择鼠标指针浮动在上面的元素。
+:hover 选择器可用于所有元素，不只是链接。
+:link 选择器设置指向未被访问页面的链接的样式，
+:visited 选择器用于设置指向已被访问的页面的链接，
+:active 选择器用于活动链接。
+a:link    {color:blue;}
+a:visited {color:blue;}
+a:hover   {color:red;}
+a:active  {color:yellow;}
+
+display 属性规定元素应该生成的框的类型：
+块级元素(block)：独占一行，对宽高的属性值生效；如果不给宽度，块级元素就默认为浏览器的宽度，即就是100%宽。
+行内元素(inline)：可以多个标签存在一行，对宽高属性值不生效，完全靠内容撑开宽高。
+行内块元素(inline-block)：结合的行内和块级的优点，既可以设置长宽，可以让padding和margin生效，又可以和其他行内元素并排。
+注意：使用inline-block的块级元素属性可以将块级元素相连取消块级元素空白间隔
+
+<article>标签中的内容是独立的、完整的、摘自外部的内容。
+它可以是博客文章、新闻文章、论坛帖子、网友评论等独立的内容。
+<article>标签中的内容通常有它自己的标题，甚至有时候还有自己的脚注。
+它可以嵌套使用，但是一般需要外部内容和内部内容有关系。
+比如：一篇博客文章，它的评论就可以使用嵌套的形式，将评论内容嵌套在整体内容中。
+
+
+*****************************
+div和span区别
+在网页开发的时候使用div和span都可以，通常可以理解为没有什么区别。
+但注意的是div占用一行，span不会占用一行，内容占多大宽度，span就有多宽。
+
+display:inline-block和float:left 的区别
+display
+是指显示状态，float是针对块级元素的浮动。
+使用inline-block：控制元素的垂直对齐跟横向排列元素。
+使用浮动：
+1、让元素环绕某一个元素，对一个元素跟围绕他的一些元素进行更多控制
+2、不想处理inline-block带来的空白问题
+3、元素浮动后，它会变为 inline-block。其宽度不是100%
+
+inline-block主要是为了处理垂直对齐问题。
+若父元素中的图片等高，设置浮动就会工作正常。但一旦有一列图片比较高时，图片的排列就会出现问题。这是因为浮动后，图片脱离了文档流。
+而inline-block由于未脱离文档流，所以元素不会被某个过长的列挤上来。如果你想再创建一列图片时，不会受到上一列图片inline:block的影响。
+ 
+另一种inline-block的适用：横向导航栏。
+1、通常会设置a元素display：block然后进行浮动来制作；
+2、有时候会直接通过对列表元素设置display:inline来制作。
+ 
+当你需要将元素（图片、横向排列链接）排列成一行或者多行时，inline-block会更好：
+1、更倾向于考虑使用inline-block代替float。
+2、直接使用table也是一种方法，table是专门用来处理横向与纵向排列的元素的。当需要创建一个很复杂的包含行列的布局，table是最佳选择。
+ 
+ 
+ 
+ID选择器和类选择器的合理使用：
+1.ID唯一性,不能给多个DOM设置同一个ID（可以给，但是不符合规范）.即不能通过ID选择器去控制多个DOM节点.
+虽然在测试代码发现两个div都被设置上了颜色，但是这是不符合规范的。ID必须能够唯一的确定DOM节点！！
+
+2.在编写样式时尽量使用类选择器，即使该DOM节点可能只出现一次。
+因为ID选择器的优先级比类选择器高,在后期样式的控制中会越来越难控制。
+也许有人会问：我可不可以全篇都使用ID选择器，那么就不存在和类选择器比较优先级了。
+理论上这是可以的，但是请注意上一点——ID必须能够唯一的确定DOM节点。
+如果你全篇都使用ID选择器，那么即使两个DOM节点样式完全相同，那么你也必须把节点样式写两遍,
+如果后期要进行维护,那么你必须对两处的代码都进行维护！！！极大的增加了维护的成本。
+
+3.既然有了类选择器为什么还要规定一个ID选择器？
+在一个完整的HTML+CSS+JavaScript的页面体系中，
+对一个DOM节点的ID使用最多的其实是JavaScript(因为通过ID能唯一的确定DOM节点，方便控制),
+CSS中的使用的ID选择器一般情况下只会添加少量样式，更多对DOM节点的样式控制都是使用类选择器,
+既能够产生样式叠加,又方便后期的维护。请尽量避免在CSS中使用大量的ID选择器
+ 
+4.常规情况下，CSS中会出现大量的ID选择器的情况——JavaScript插件配套的样式表中。
+
+
+*/
+
+
+/*公共样式*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f3f3f3;
+    font-family: "微软雅黑";
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;/*居中*/
+}
+.title_bg{
+    background: url(../images/title_bg.jpg);
+    height: 45px;
+    line-height: 45px;/*行高，可以使文字上下居中*/
+    padding-left: 10px;
+}
+.title_bg h2 a{
+    color: #444444;
+    text-decoration: none;/*去除链接下划线*/
+    font-size: 16px;
+}
+img {
+    border: none;
+}
+/*头部样式*/
+div#logo{
+    display: inline-block;/*取代float:left 实现块同行*/
+    vertical-align: top;/*块同行上对齐*/
+    width: 755px;
+}
+div#sousuo{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 58px;
+    text-align: right;
+    width: 240px;
+}
+input[type="text"] {
+    font-family: "微软雅黑";
+    background: #f3f3f3;
+    border: solid 1px #ccc;/*solid指定实线*/
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+    width: 165px;
+    display: inline-block;
+    vertical-align: top;
+}
+input[type="submit"] {
+    font-family: "微软雅黑";
+    background-color: #3598db;
+    color: #fff;
+    border: solid 1px #3598db;
+    height: 42px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 20px;
+    padding: 0 10px;
+}
+div#nav{
+    background-color: #3598db;
+    height: 60px;
+}
+div#nav nav li{
+    display: inline-block;/*可以消除列表符号*/
+    line-height: 60px;
+    padding: 0 10px;/*设置内部白上下为0像素左右为10像素*/
+    border-right: solid 1px #2f89c5;
+    -webkit-transition:background 1s linear;
+    -moz-transition:background 1s linear;
+    -ms-transition:background 1s linear;
+    -o-transition:background 1s linear;
+    transition:background 1s linear;/*背景阴影渐变 以上兼容写法*/
+}
+div#nav nav li.on , div#nav nav li:hover{
+    background-color: #2f89c5;
+}
+div#nav nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+/*内容主体样式*/
+div#body_wrapper{
+    margin-top: 20px;
+}
+div#body_wrapper article{
+    width: 628px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+div#body_wrapper aside{
+    width: 352px;
+    display: inline-block;
+    vertical-align: top;
+}
+/*轮播图的样式*/
+section#lunbotu{
+    box-shadow: 1px 4px 15px #A39F9F;/*阴影  1px必需。水平阴影的位置。允许负值。4px	必需。垂直阴影的位置。允许负值。15px可选。模糊距离。*/
+}
+div.wrap a{
+    color:#fff;
+}
+div#slide-holder {
+    width : 628px;
+    height : 278px;
+}
+div#slide-runner {
+    width : 628px;
+    height : 278px;
+    overflow : hidden;
+    position : absolute;
+}
+div#slide-holder img {
+    margin : 0;
+    display : none;
+    position : absolute;
+}
+div#slide-controls {
+    left : 0;
+    bottom : 0px;
+    width : 628px;
+    height : 46px;
+    display : none;
+    position : absolute;
+}
+div#slide-controls p.text {
+    float : left;
+    color : #fff;
+    display : inline;
+    font-size : 10px;
+    line-height : 16px;
+    margin : 15px 0 0 20px;
+    text-transform : uppercase;
+}
+p#slide-nav {
+    float : right;
+    height : 24px;
+    display : inline;
+    margin : 11px 15px 0 0;
+}
+p#slide-nav a {
+    float : left;
+    width : 24px;
+    height : 24px;
+    display : inline;
+    font-size : 11px;
+    margin : 0 5px 0 0;
+    line-height : 24px;
+    font-weight : bold;
+    text-align : center;
+    text-decoration : none;
+    background-position : 0 0;
+    background-repeat : no-repeat;
+}
+p#slide-nav a.on {
+    background-position : 0 -24px;
+}
+p#slide-nav a {
+    background-image : url(../images/silde-nav.png);
+}
+
+/*新闻部分*/
+section#xinwen{
+    margin-top: 20px;
+}
+section#xinwen li{
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+    margin-top: 10px;
+}
+section#xinwen li a{
+    display: inline-block;
+    vertical-align: top;
+    height: 165px;
+}
+section#xinwen li img{
+    width: 315px;
+    height: 165px;
+}
+section#xinwen li a.ms{
+    width: 308px;
+    position: relative;/*position:absolute；position:relative绝对定位使用通常是父级定义position:relative定位，子级定义position:absolute绝对定位属性，并且子级使用left或right和top或bottom进行绝对定位。*/
+    background: rgb(53, 152, 220);
+    color: #fff;
+    padding:10px;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+   box-sizing: border-box;/*指定边框大小限定范围 width:308px;  ：border-box content-box*/
+}
+a.ms h3{
+    border-bottom: solid 1px #fff;
+    margin-bottom: 5px;
+    height: 30px;
+    width: 288px;
+    overflow: hidden;
+}
+a.ms p{
+    height: 105px;
+    overflow: hidden;
+}
+.sanjiaoxing{
+    width: 20px;
+    height: 20px;
+    background: #3598DC;
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);/*旋转45度*/
+}
+/*集团活动*/
+section#huodong{
+    margin-top: 20px;
+}
+section#huodong_a{
+    margin-top: 10px;
+}
+section#huodong_a li{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 9px;
+}
+section#huodong_a li:last-child{/*消除最后一个li的margin-right*/
+    margin-right: 0;
+}
+section#huodong_a li img{
+    width: 150px;
+    height: 150px;
+}
+section#huodong_b{
+    width: 469px;
+    display:inline-block;
+    margin-top:10px;
+    vertical-align: top;
+    margin-right: 9px;
+}
+section#huodong_b li:before{/*在li之前加入计数器content listxh*/
+    content: counter(listxh);
+    background: #444;
+    padding: 2px 5px;
+    color: #fff;
+    margin-right: 5px;
+}
+section#huodong_b li{
+    counter-increment: listxh;/*计数器listxh追加*/
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+    overflow: hidden;/*隐藏超出*/
+    white-space: nowrap;/*不换行*/
+    text-overflow: ellipsis;/*用...表示有内容超出*/
+    margin-top: 16px;
+    -webkit-transition:text-shadow 1s linear;
+    -moz-transition:text-shadow 1s linear;
+    -ms-transition:text-shadow 1s linear;
+    -o-transition:text-shadow 1s linear;
+    transition:text-shadow 1s linear;/*文字阴影渐变 以上兼容写法*/
+}
+section#huodong_b li:first-child:before,section#huodong_b li:nth-child(2):before,section#huodong_b li:nth-child(3):before{/*nth-child（指定li） 加before （指定li序号）*/
+    background: #3598DC;
+}
+section#huodong_b li:last-child:before{
+    padding: 2px;
+    font-size: 14px;
+}
+section#huodong_b a{
+    color: #444444;
+    text-decoration: none;
+}
+section#huodong_b li:hover{
+    text-shadow: 1px 4px 4px #000;/*文字阴影 1px水平方向 4px垂直方向 4px模糊范围 #000颜色*/
+}
+section#huodong_c{
+    width: 150px;
+    display:inline-block;
+}
+section#huodong_c li{
+    display:inline-block;
+    vertical-align: top;
+    margin-top:10px;
+}
+section#huodong_c li:first-child,section#huodong_c li:first-child img{
+    width:150px;
+    height:205px;
+}
+section#huodong_c li:last-child,section#huodong_c li:last-child img{
+    width:150px;
+    height:154px;
+}
+/*博文信息*/
+section#bowen_a li{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    width: 172px;
+    height: 136px;
+    text-align: center;
+    display: inline-block;
+}
+section#bowen_a a{
+    color: #444;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+}
+section#bowen_a li:first-child{
+    margin-right: 8px;
+}
+section#bowen_a li a:first-child{
+    width: 172px;
+    height: 111px;
+}
+section#bowen_a li a:last-child{
+    height: 21px;
+    overflow: hidden;
+}
+section#bowen_b{
+
+}
+section#bowen_b li:before{
+    content: counter(listxh);
+    background: #3598db;
+    padding: 2px 5px;
+    color: #fff;
+    margin-right: 5px;
+}
+section#bowen_b li{
+    counter-increment: listxh;
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 8px;
+    -webkit-transition:text-shadow 1s linear;
+    -moz-transition:text-shadow 1s linear;
+    -ms-transition:text-shadow 1s linear;
+    -o-transition:text-shadow 1s linear;
+    transition:text-shadow 1s linear;
+}
+section#bowen_b li:hover{
+    text-shadow: 1px 4px 4px #000;
+}
+section#bowen_b a{
+    color: #444444;
+    text-decoration: none;
+}
+/*招聘信息*/
+section#zhaoping{
+    margin-top: 20px;
+}
+section#zhaoping li:before{
+    content: counter(listxh);
+    background: #3598db;
+    padding: 2px 5px;
+    color: #fff;
+    margin-right: 5px;
+}
+section#zhaoping li{
+    counter-increment: listxh;
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 14px;
+    -webkit-transition:text-shadow 1s linear;
+    -moz-transition:text-shadow 1s linear;
+    -ms-transition:text-shadow 1s linear;
+    -o-transition:text-shadow 1s linear;
+    transition:text-shadow 1s linear;
+}
+section#zhaoping li:hover{
+    text-shadow: 1px 4px 4px #000;
+}
+section#zhaoping a{
+    color: #444444;
+    text-decoration: none;
+}
+section#zhaoping li:last-child:before{
+    padding: 2px;
+    font-size: 14px;
+}
+/*联系我们*/
+section#lianxi{
+    margin-top: 20px;
+}
+section#lianxi a ,section#lianxi img{
+    display: inline-block;
+    width: 352px;
+    height: 199px;
+}
+/*子公司*/
+section#zigongsi{
+
+}
+section#zigongsi li{
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    margin-top: 10px;
+}
+section#zigongsi li a{
+    color: #444;
+    text-decoration: none;
+}
+section#zigongsi li h4{
+    font-size: 16px;
+    height: 28px;
+    line-height: 28px;
+}
+.zgsjj{
+    -webkit-transition:padding 0.5s linear;
+    -moz-transition:padding 0.5s linear;
+    -ms-transition:padding 0.5s linear;
+    -o-transition:padding 0.5s linear;
+    transition:padding 0.5s linear;/*选中时候上下变大10px 过渡*/
+}
+.zgsjj:hover{
+    border: solid 1px #3598db;
+    padding: 10px 0;/*选中时候上下变大10px*/
+}
+.zgsjj a{
+    display: inline-block;
+    vertical-align: top;
+}
+.zgsjj a:first-child{
+    text-decoration: none;
+    width: 170px;
+}
+.zgsjj a:last-child{
+    width: 175px;
+    font-size: 12px;
+    height: 50px;
+    overflow: hidden;
+}
+/*版权信息*/
+#footer_wrapper{
+    background-color: #3598db;
+    margin-top: 20px;
+    padding: 40px 0;
+}
+#footer_wrapper li{
+    display: inline-block;
+    vertical-align: top;
+    border-right:solid 1px #fff;
+    padding-right: 18px;
+    margin-left: 18px;
+}
+#footer_wrapper li:last-child{
+    border: 0;
+}
+#footer_wrapper footer{
+    text-align: center;
+}
+#footer_wrapper a{
+    color: #ffffff;
+    text-decoration: none;
+}
+#footer_wrapper p{
+    color: #ffffff;
+    margin-top: 10px;
+}

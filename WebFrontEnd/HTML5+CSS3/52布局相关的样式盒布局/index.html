@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Float属性布局</title>
+    <style>
+        #centerboy{
+            width: 1000px;
+            margin: 0 auto;
+            display: -moz-box;
+            display: -webkit-box;
+        }
+        div#left{
+            /*float: left;*/
+            width: 300px;
+            padding: 10px;
+            background-color: green;
+        }
+        div#right{
+            /*float: right;*/
+            width: 300px;
+            padding: 10px;
+            background-color: #ff39ca;
+        }
+        div#conter{
+            /*float: left;*/
+            width: 400px;
+            background-color: #0064ff;
+        }
+        div#left,div#conter,div#right{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div id="centerboy">
+    <div id="left">
+        <h2>栏目列表</h2>
+        <ul>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+            <li><a href="index.html">栏目名称</a> </li>
+        </ul>
+    </div>
+    <div id="conter">
+        <p>孙鸿志系在全国工商行政管理会议现场被带走
+            中纪委：发改委人员“调研”14天 其中12天旅游
+            南水北调供水进京 与本地水“同水同价” 问答  专题
+            吉林宝源丰致121死火灾宣判 公司董事长获刑9年
+            云南致5死10伤砍人案侦破：20岁嫌犯精神异常(图)
+            北京公交地铁明起实行新票价 7类人群可免费
+            回顾2014互联网金融：一场疯狂抓钱的游戏
+            iPhone 7无边框视频火爆 如何让用户喜欢这样的设计
+            全国164.9万人今日参加考研 人数持续第二年下降
+            威海村民举报检察长被拘 政法委先定性警方后立案</p>
+    </div>
+    <div id="right">
+        <h2>推荐文章</h2>
+        <ul>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+            <li><a href="index.html">推荐文章</a> </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

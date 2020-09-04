@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>使用inline-block类型来执行分列显示</title>
+    <style>
+        div.div{
+            width:400px
+        }
+        div.div1{
+            width: 200px;
+            background-color: green;
+            float: left;
+        }
+        div.div2{
+            width: 200px;
+            background-color: #ff6600;
+            float: left;
+        }
+        div.div3{
+            clear: both;
+            background-color: #d829ff;
+        }
+    </style>
+</head>
+<body>
+<h1>使用inline-block类型来执行分列显示</h1>
+<div class="div">
+    <div class="div1">
+        2、inline-block类型
+        inline-block类型是css2.1中追加的一个盒类型。
+        inline-block类型盒属于block盒的一种，但是在显示时具有inline类型盒的特点。
+        例如：
+        在DIV元素中分别将display设置为inline-block和inline后他们的效果一样。
+
+        如果我们给他们都指定宽度和高度结果会是怎样？
+
+    </div>
+    <div class="div2">
+        2.2使用inline-block类型来执行分列显示
+        在css2.1之前，如果需要在一行中并列显示多个block类型的元素，需要用float属性或者position属性，但是这样会让我们的样式变的复杂，
+
+    </div>
+    <div class="div3">
+        css2.1之前，如果需要在一行中并列显示多个block类型的元素，需要用float属性或者position属性，但是这样会让我们的样式变的复杂，所以在CSS2.1中就追加了inline-block类型，使得并列显示多个block类型的元素操作变的很简单。
+
+        示例对比：
+        block类型
+        首先新建三个div元素，给前两个DIV使用float让前两个div元素并列显示，第三个div的话就会显示在前两个div元素的下部，但是因为前两个的高度不一样所以我们要使用clear属性清除浮动。
+
+
+
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Animations属性</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #ff6600;
+        }
+        @-webkit-keyframes mycolor {
+            0%{
+                background-color: #ff6600;
+                -webkit-transform:rotate(0deg);
+                transform:translate(0px,0px);
+            }
+            10%{
+                background-color: green;
+                -webkit-transform:rotate(30deg);
+                transform:translate(100px,0px);
+            }
+            20%{
+                background-color: red;
+                -webkit-transform:rotate(0deg);
+            }
+            80%{
+                background-color: #000;
+                -webkit-transform:rotate(30deg);
+            }
+            100%{
+                background-color: #ff6600;
+                -webkit-transform:rotate(0deg);
+            }
+        }
+        div:hover{
+            -webkit-animation-name:mycolor;
+            -webkit-animation-duration:5s;
+            -webkit-animation-timing-function:linear;
+            -webkit-animation-iteration-count:2;
+        }
+    </style>
+</head>
+<body>
+<h1>Animations属性</h1>
+<div></div>
+</body>
+</html>
