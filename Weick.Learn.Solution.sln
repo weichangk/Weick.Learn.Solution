@@ -310,6 +310,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML+CSS", "HTML+CSS", "{84
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HTML5+CSS3", "HTML5+CSS3", "{C3C93259-4C9F-42E2-B7CA-46712BCB66FE}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\04section.html = WebFrontEnd\HTML5+CSS3\04section.html
+		WebFrontEnd\HTML5+CSS3\05aside.html = WebFrontEnd\HTML5+CSS3\05aside.html
+		WebFrontEnd\HTML5+CSS3\06nav.html = WebFrontEnd\HTML5+CSS3\06nav.html
+		WebFrontEnd\HTML5+CSS3\07pubdate.html = WebFrontEnd\HTML5+CSS3\07pubdate.html
+		WebFrontEnd\HTML5+CSS3\08header.html = WebFrontEnd\HTML5+CSS3\08header.html
+		WebFrontEnd\HTML5+CSS3\09hgroup.html = WebFrontEnd\HTML5+CSS3\09hgroup.html
+		WebFrontEnd\HTML5+CSS3\10footer.html = WebFrontEnd\HTML5+CSS3\10footer.html
+		WebFrontEnd\HTML5+CSS3\11address.html = WebFrontEnd\HTML5+CSS3\11address.html
+		WebFrontEnd\HTML5+CSS3\12figure.html = WebFrontEnd\HTML5+CSS3\12figure.html
+		WebFrontEnd\HTML5+CSS3\13details.html = WebFrontEnd\HTML5+CSS3\13details.html
+		WebFrontEnd\HTML5+CSS3\14mark.html = WebFrontEnd\HTML5+CSS3\14mark.html
+		WebFrontEnd\HTML5+CSS3\15progress.html = WebFrontEnd\HTML5+CSS3\15progress.html
+		WebFrontEnd\HTML5+CSS3\16meter.html = WebFrontEnd\HTML5+CSS3\16meter.html
+		WebFrontEnd\HTML5+CSS3\17ol.html = WebFrontEnd\HTML5+CSS3\17ol.html
+		WebFrontEnd\HTML5+CSS3\18dl.html = WebFrontEnd\HTML5+CSS3\18dl.html
+		WebFrontEnd\HTML5+CSS3\19canvas绘制矩形.html = WebFrontEnd\HTML5+CSS3\19canvas绘制矩形.html
+		WebFrontEnd\HTML5+CSS3\20canvas绘制圆形.html = WebFrontEnd\HTML5+CSS3\20canvas绘制圆形.html
+		WebFrontEnd\HTML5+CSS3\21canvas绘制文字.html = WebFrontEnd\HTML5+CSS3\21canvas绘制文字.html
+		WebFrontEnd\HTML5+CSS3\22canvas保存文件.html = WebFrontEnd\HTML5+CSS3\22canvas保存文件.html
+		WebFrontEnd\HTML5+CSS3\23canvas绘制动画.html = WebFrontEnd\HTML5+CSS3\23canvas绘制动画.html
+		WebFrontEnd\HTML5+CSS3\24WebStorage本地储存.html = WebFrontEnd\HTML5+CSS3\24WebStorage本地储存.html
+		WebFrontEnd\HTML5+CSS3\canvas保存文件.js = WebFrontEnd\HTML5+CSS3\canvas保存文件.js
+		WebFrontEnd\HTML5+CSS3\canvas绘制动画.js = WebFrontEnd\HTML5+CSS3\canvas绘制动画.js
+		WebFrontEnd\HTML5+CSS3\canvas绘制圆形.js = WebFrontEnd\HTML5+CSS3\canvas绘制圆形.js
+		WebFrontEnd\HTML5+CSS3\canvas绘制文字.js = WebFrontEnd\HTML5+CSS3\canvas绘制文字.js
+		WebFrontEnd\HTML5+CSS3\canvas绘制矩形.js = WebFrontEnd\HTML5+CSS3\canvas绘制矩形.js
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{A0D84A88-1CE9-4BCE-A8BA-53AA8B3EBA27}"
 	ProjectSection(SolutionItems) = preProject
@@ -345,6 +373,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{27BFE7
 		WebFrontEnd\HTML+CSS\images\s_z.jpg = WebFrontEnd\HTML+CSS\images\s_z.jpg
 		WebFrontEnd\HTML+CSS\images\top_tool.jpg = WebFrontEnd\HTML+CSS\images\top_tool.jpg
 		WebFrontEnd\HTML+CSS\images\xinwen.jpg = WebFrontEnd\HTML+CSS\images\xinwen.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{BF0C878D-4657-4996-A444-17A70E92615B}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\HTML5+CSS3\images\1.jpg = WebFrontEnd\HTML5+CSS3\images\1.jpg
+		WebFrontEnd\HTML5+CSS3\images\2.jpg = WebFrontEnd\HTML5+CSS3\images\2.jpg
+		WebFrontEnd\HTML5+CSS3\images\3.jpg = WebFrontEnd\HTML5+CSS3\images\3.jpg
 	EndProjectSection
 EndProject
 Global
@@ -770,6 +805,7 @@ Global
 		{A0D84A88-1CE9-4BCE-A8BA-53AA8B3EBA27} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
 		{93ACC52F-6240-4A08-AC38-3699B5BABB0D} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
 		{27BFE73F-9425-4337-B012-C5B8460EA5B6} = {84FC66F6-2B45-4350-9CAA-2018968D01C0}
+		{BF0C878D-4657-4996-A444-17A70E92615B} = {C3C93259-4C9F-42E2-B7CA-46712BCB66FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
