@@ -701,10 +701,88 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day07", "day07", "{5B8B39B9
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day08", "day08", "{CD13EC03-7FC8-4AB0-96EF-CF1704B7D546}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day08\01.数组的剩余方法.html = WebFrontEnd\JavaScript\day08\01.数组的剩余方法.html
+		WebFrontEnd\JavaScript\day08\02.函数的方法.html = WebFrontEnd\JavaScript\day08\02.函数的方法.html
+		WebFrontEnd\JavaScript\day08\03.arguments.html = WebFrontEnd\JavaScript\day08\03.arguments.html
+		WebFrontEnd\JavaScript\day08\04.Date.html = WebFrontEnd\JavaScript\day08\04.Date.html
+		WebFrontEnd\JavaScript\day08\05.Math.html = WebFrontEnd\JavaScript\day08\05.Math.html
+		WebFrontEnd\JavaScript\day08\06.包装类.html = WebFrontEnd\JavaScript\day08\06.包装类.html
+		WebFrontEnd\JavaScript\day08\07.字符串的相关方法.html = WebFrontEnd\JavaScript\day08\07.字符串的相关方法.html
+		WebFrontEnd\JavaScript\day08\08.正则表达式.html = WebFrontEnd\JavaScript\day08\08.正则表达式.html
+		WebFrontEnd\JavaScript\day08\09.正则表达式.html = WebFrontEnd\JavaScript\day08\09.正则表达式.html
+		WebFrontEnd\JavaScript\day08\10.字符串和正则相关的方法.html = WebFrontEnd\JavaScript\day08\10.字符串和正则相关的方法.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day09", "day09", "{465F9BA1-1FC4-4B62-BD06-D9870BA09FFD}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\01.复习.html = WebFrontEnd\JavaScript\day09\01.复习.html
+		WebFrontEnd\JavaScript\day09\02.正则表达式.html = WebFrontEnd\JavaScript\day09\02.正则表达式.html
+		WebFrontEnd\JavaScript\day09\03.正则表达式.html = WebFrontEnd\JavaScript\day09\03.正则表达式.html
+		WebFrontEnd\JavaScript\day09\04.邮件的正则.html = WebFrontEnd\JavaScript\day09\04.邮件的正则.html
+		WebFrontEnd\JavaScript\day09\05.DOM.html = WebFrontEnd\JavaScript\day09\05.DOM.html
+		WebFrontEnd\JavaScript\day09\06.事件.html = WebFrontEnd\JavaScript\day09\06.事件.html
+		WebFrontEnd\JavaScript\day09\07.文档的加载.html = WebFrontEnd\JavaScript\day09\07.文档的加载.html
+		WebFrontEnd\JavaScript\day09\08.dom查询.html = WebFrontEnd\JavaScript\day09\08.dom查询.html
+		WebFrontEnd\JavaScript\day09\09.练习.html = WebFrontEnd\JavaScript\day09\09.练习.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day10", "day10", "{DD43B9FF-CE21-43D8-A33F-B44727A4AC3D}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day10\01.dom查询.html = WebFrontEnd\JavaScript\day10\01.dom查询.html
+		WebFrontEnd\JavaScript\day10\02.全选练习.html = WebFrontEnd\JavaScript\day10\02.全选练习.html
+		WebFrontEnd\JavaScript\day10\03.dom查询的其他的方法.html = WebFrontEnd\JavaScript\day10\03.dom查询的其他的方法.html
+		WebFrontEnd\JavaScript\day10\04.dom增删改.html = WebFrontEnd\JavaScript\day10\04.dom增删改.html
+		WebFrontEnd\JavaScript\day10\05.练习.html = WebFrontEnd\JavaScript\day10\05.练习.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "style", "style", "{7062FCFB-7671-4A83-B0AA-322B167C4723}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\style\css.css = WebFrontEnd\JavaScript\day09\style\css.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{E2199412-98EE-4590-9861-FA667EC4D8D6}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\img\1.jpg = WebFrontEnd\JavaScript\day09\img\1.jpg
+		WebFrontEnd\JavaScript\day09\img\2.jpg = WebFrontEnd\JavaScript\day09\img\2.jpg
+		WebFrontEnd\JavaScript\day09\img\3.jpg = WebFrontEnd\JavaScript\day09\img\3.jpg
+		WebFrontEnd\JavaScript\day09\img\4.jpg = WebFrontEnd\JavaScript\day09\img\4.jpg
+		WebFrontEnd\JavaScript\day09\img\5.jpg = WebFrontEnd\JavaScript\day09\img\5.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOM", "DOM", "{1F3FE3E8-D1DB-4FC2-BD52-D998BF14E865}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\DOM\01.dom查询.html = WebFrontEnd\JavaScript\day09\DOM\01.dom查询.html
+		WebFrontEnd\JavaScript\day09\DOM\02.dom增删改.html = WebFrontEnd\JavaScript\day09\DOM\02.dom增删改.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "style", "style", "{BB56632F-85B6-4BC5-8D01-66A1E78CE6A8}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\DOM\style\css.css = WebFrontEnd\JavaScript\day09\DOM\style\css.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "练习1 Checkbox全选", "练习1 Checkbox全选", "{7AC60D06-DCB9-4B4C-90C3-93411496BC95}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\DOM\练习1 Checkbox全选\ex-1.html = WebFrontEnd\JavaScript\day09\DOM\练习1 Checkbox全选\ex-1.html
+		WebFrontEnd\JavaScript\day09\DOM\练习1 Checkbox全选\ex-1空白.html = WebFrontEnd\JavaScript\day09\DOM\练习1 Checkbox全选\ex-1空白.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "练习2 添加删除记录", "练习2 添加删除记录", "{62357936-C1CC-4F88-B044-27B35D3E8C67}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\DOM\练习2 添加删除记录\ex-2.html = WebFrontEnd\JavaScript\day09\DOM\练习2 添加删除记录\ex-2.html
+		WebFrontEnd\JavaScript\day09\DOM\练习2 添加删除记录\ex-2空白.html = WebFrontEnd\JavaScript\day09\DOM\练习2 添加删除记录\ex-2空白.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ex_2_style", "ex_2_style", "{88310847-D994-442C-B407-7AB73D282540}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day09\DOM\练习2 添加删除记录\ex_2_style\css.css = WebFrontEnd\JavaScript\day09\DOM\练习2 添加删除记录\ex_2_style\css.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "style", "style", "{58A270EF-7EA5-4CB7-87EC-CD24E9A1D5C4}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day10\style\css.css = WebFrontEnd\JavaScript\day10\style\css.css
+		WebFrontEnd\JavaScript\day10\style\ex_2_style.css = WebFrontEnd\JavaScript\day10\style\ex_2_style.css
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1161,6 +1239,14 @@ Global
 		{CD13EC03-7FC8-4AB0-96EF-CF1704B7D546} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
 		{465F9BA1-1FC4-4B62-BD06-D9870BA09FFD} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
 		{DD43B9FF-CE21-43D8-A33F-B44727A4AC3D} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{7062FCFB-7671-4A83-B0AA-322B167C4723} = {465F9BA1-1FC4-4B62-BD06-D9870BA09FFD}
+		{E2199412-98EE-4590-9861-FA667EC4D8D6} = {465F9BA1-1FC4-4B62-BD06-D9870BA09FFD}
+		{1F3FE3E8-D1DB-4FC2-BD52-D998BF14E865} = {465F9BA1-1FC4-4B62-BD06-D9870BA09FFD}
+		{BB56632F-85B6-4BC5-8D01-66A1E78CE6A8} = {1F3FE3E8-D1DB-4FC2-BD52-D998BF14E865}
+		{7AC60D06-DCB9-4B4C-90C3-93411496BC95} = {1F3FE3E8-D1DB-4FC2-BD52-D998BF14E865}
+		{62357936-C1CC-4F88-B044-27B35D3E8C67} = {1F3FE3E8-D1DB-4FC2-BD52-D998BF14E865}
+		{88310847-D994-442C-B407-7AB73D282540} = {62357936-C1CC-4F88-B044-27B35D3E8C67}
+		{58A270EF-7EA5-4CB7-87EC-CD24E9A1D5C4} = {DD43B9FF-CE21-43D8-A33F-B44727A4AC3D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
