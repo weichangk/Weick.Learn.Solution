@@ -665,8 +665,40 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day05", "day05", "{9C26FE9A
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day06", "day06", "{55F99E8A-AB14-427B-B556-38AF23DBA200}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day06\01.返回值.html = WebFrontEnd\JavaScript\day06\01.返回值.html
+		WebFrontEnd\JavaScript\day06\02.练习.html = WebFrontEnd\JavaScript\day06\02.练习.html
+		WebFrontEnd\JavaScript\day06\03.return.html = WebFrontEnd\JavaScript\day06\03.return.html
+		WebFrontEnd\JavaScript\day06\04.立即执行函数.html = WebFrontEnd\JavaScript\day06\04.立即执行函数.html
+		WebFrontEnd\JavaScript\day06\05.对象.html = WebFrontEnd\JavaScript\day06\05.对象.html
+		WebFrontEnd\JavaScript\day06\06.枚举对象中的属性.html = WebFrontEnd\JavaScript\day06\06.枚举对象中的属性.html
+		WebFrontEnd\JavaScript\day06\07.作用域（Scope）.html = WebFrontEnd\JavaScript\day06\07.作用域（Scope）.html
+		WebFrontEnd\JavaScript\day06\08.变量的声明提前.html = WebFrontEnd\JavaScript\day06\08.变量的声明提前.html
+		WebFrontEnd\JavaScript\day06\09.函数作用域.html = WebFrontEnd\JavaScript\day06\09.函数作用域.html
+		WebFrontEnd\JavaScript\day06\10.debug.html = WebFrontEnd\JavaScript\day06\10.debug.html
+		WebFrontEnd\JavaScript\day06\11.this.html = WebFrontEnd\JavaScript\day06\11.this.html
+		WebFrontEnd\JavaScript\day06\12.this.html = WebFrontEnd\JavaScript\day06\12.this.html
+		WebFrontEnd\JavaScript\day06\13.对象.html = WebFrontEnd\JavaScript\day06\13.对象.html
+		WebFrontEnd\JavaScript\day06\14.构造函数.html = WebFrontEnd\JavaScript\day06\14.构造函数.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day07", "day07", "{5B8B39B9-72A8-474E-B4BD-4E9E58A81D96}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day07\01.复习.html = WebFrontEnd\JavaScript\day07\01.复习.html
+		WebFrontEnd\JavaScript\day07\02.构造函数.html = WebFrontEnd\JavaScript\day07\02.构造函数.html
+		WebFrontEnd\JavaScript\day07\03.原型.html = WebFrontEnd\JavaScript\day07\03.原型.html
+		WebFrontEnd\JavaScript\day07\04.原型.html = WebFrontEnd\JavaScript\day07\04.原型.html
+		WebFrontEnd\JavaScript\day07\05.toString.html = WebFrontEnd\JavaScript\day07\05.toString.html
+		WebFrontEnd\JavaScript\day07\06.垃圾回收.html = WebFrontEnd\JavaScript\day07\06.垃圾回收.html
+		WebFrontEnd\JavaScript\day07\07.数组.html = WebFrontEnd\JavaScript\day07\07.数组.html
+		WebFrontEnd\JavaScript\day07\08.数组.html = WebFrontEnd\JavaScript\day07\08.数组.html
+		WebFrontEnd\JavaScript\day07\09.数组的方法.html = WebFrontEnd\JavaScript\day07\09.数组的方法.html
+		WebFrontEnd\JavaScript\day07\10.数组的遍历.html = WebFrontEnd\JavaScript\day07\10.数组的遍历.html
+		WebFrontEnd\JavaScript\day07\11.练习.html = WebFrontEnd\JavaScript\day07\11.练习.html
+		WebFrontEnd\JavaScript\day07\12.forEach.html = WebFrontEnd\JavaScript\day07\12.forEach.html
+		WebFrontEnd\JavaScript\day07\13.数组的方法.html = WebFrontEnd\JavaScript\day07\13.数组的方法.html
+		WebFrontEnd\JavaScript\day07\14.练习.html = WebFrontEnd\JavaScript\day07\14.练习.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day08", "day08", "{CD13EC03-7FC8-4AB0-96EF-CF1704B7D546}"
 EndProject
