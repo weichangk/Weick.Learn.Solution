@@ -603,6 +603,52 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{788E1CEA-9550-
 		WebFrontEnd\JavaScript\day01\js\script.js = WebFrontEnd\JavaScript\day01\js\script.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day02", "day02", "{B1B8E644-8D34-40A5-8E57-B6584A4D465D}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day02\01.数据类型.html = WebFrontEnd\JavaScript\day02\01.数据类型.html
+		WebFrontEnd\JavaScript\day02\02.Number.html = WebFrontEnd\JavaScript\day02\02.Number.html
+		WebFrontEnd\JavaScript\day02\03.Boolean.html = WebFrontEnd\JavaScript\day02\03.Boolean.html
+		WebFrontEnd\JavaScript\day02\04.Null和Undefined.html = WebFrontEnd\JavaScript\day02\04.Null和Undefined.html
+		WebFrontEnd\JavaScript\day02\05.强制类型转换.html = WebFrontEnd\JavaScript\day02\05.强制类型转换.html
+		WebFrontEnd\JavaScript\day02\06.转换为Number.html = WebFrontEnd\JavaScript\day02\06.转换为Number.html
+		WebFrontEnd\JavaScript\day02\07.其他的进制的数字.html = WebFrontEnd\JavaScript\day02\07.其他的进制的数字.html
+		WebFrontEnd\JavaScript\day02\08.转换为Boolean.html = WebFrontEnd\JavaScript\day02\08.转换为Boolean.html
+		WebFrontEnd\JavaScript\day02\09.运算符.html = WebFrontEnd\JavaScript\day02\09.运算符.html
+		WebFrontEnd\JavaScript\day02\10.一元运算符.html = WebFrontEnd\JavaScript\day02\10.一元运算符.html
+		WebFrontEnd\JavaScript\day02\11.自增和自减.html = WebFrontEnd\JavaScript\day02\11.自增和自减.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day03", "day03", "{BF2EF2E4-7CBB-40C1-B7BC-A2F4529E95D3}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day03\01.复习.html = WebFrontEnd\JavaScript\day03\01.复习.html
+		WebFrontEnd\JavaScript\day03\02.练习.html = WebFrontEnd\JavaScript\day03\02.练习.html
+		WebFrontEnd\JavaScript\day03\03.逻辑运算符.html = WebFrontEnd\JavaScript\day03\03.逻辑运算符.html
+		WebFrontEnd\JavaScript\day03\04.逻辑运算符.html = WebFrontEnd\JavaScript\day03\04.逻辑运算符.html
+		WebFrontEnd\JavaScript\day03\05.赋值运算符.html = WebFrontEnd\JavaScript\day03\05.赋值运算符.html
+		WebFrontEnd\JavaScript\day03\06.关系运算符.html = WebFrontEnd\JavaScript\day03\06.关系运算符.html
+		WebFrontEnd\JavaScript\day03\07.编码.html = WebFrontEnd\JavaScript\day03\07.编码.html
+		WebFrontEnd\JavaScript\day03\08.相等运算符.html = WebFrontEnd\JavaScript\day03\08.相等运算符.html
+		WebFrontEnd\JavaScript\day03\09.条件运算符.html = WebFrontEnd\JavaScript\day03\09.条件运算符.html
+		WebFrontEnd\JavaScript\day03\10.运算符的优先级.html = WebFrontEnd\JavaScript\day03\10.运算符的优先级.html
+		WebFrontEnd\JavaScript\day03\11.代码块.html = WebFrontEnd\JavaScript\day03\11.代码块.html
+		WebFrontEnd\JavaScript\day03\12.流程控制语句.html = WebFrontEnd\JavaScript\day03\12.流程控制语句.html
+		WebFrontEnd\JavaScript\day03\13.if语句.html = WebFrontEnd\JavaScript\day03\13.if语句.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day04", "day04", "{5E8A6E42-01B0-4DF8-A6CF-76E8DB153C89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day05", "day05", "{9C26FE9A-0CDB-4A1F-AA62-6B79C6A9A685}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day06", "day06", "{55F99E8A-AB14-427B-B556-38AF23DBA200}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day07", "day07", "{5B8B39B9-72A8-474E-B4BD-4E9E58A81D96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day08", "day08", "{CD13EC03-7FC8-4AB0-96EF-CF1704B7D546}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day09", "day09", "{465F9BA1-1FC4-4B62-BD06-D9870BA09FFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day10", "day10", "{DD43B9FF-CE21-43D8-A33F-B44727A4AC3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1049,6 +1095,15 @@ Global
 		{2F397174-7467-47F5-8BC6-97E77F4DAAF6} = {E18DAC5F-8224-49BD-A0EE-2F4A9A21C8C5}
 		{54420228-68A9-44FE-AE90-1E59F1201B5E} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
 		{788E1CEA-9550-4F89-AD28-A80559623B19} = {54420228-68A9-44FE-AE90-1E59F1201B5E}
+		{B1B8E644-8D34-40A5-8E57-B6584A4D465D} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{BF2EF2E4-7CBB-40C1-B7BC-A2F4529E95D3} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{5E8A6E42-01B0-4DF8-A6CF-76E8DB153C89} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{9C26FE9A-0CDB-4A1F-AA62-6B79C6A9A685} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{55F99E8A-AB14-427B-B556-38AF23DBA200} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{5B8B39B9-72A8-474E-B4BD-4E9E58A81D96} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{CD13EC03-7FC8-4AB0-96EF-CF1704B7D546} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{465F9BA1-1FC4-4B62-BD06-D9870BA09FFD} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
+		{DD43B9FF-CE21-43D8-A33F-B44727A4AC3D} = {2F397174-7467-47F5-8BC6-97E77F4DAAF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
