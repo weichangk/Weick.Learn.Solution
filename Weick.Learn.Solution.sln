@@ -636,8 +636,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day03", "day03", "{BF2EF2E4
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day04", "day04", "{5E8A6E42-01B0-4DF8-A6CF-76E8DB153C89}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day04\01.if.html = WebFrontEnd\JavaScript\day04\01.if.html
+		WebFrontEnd\JavaScript\day04\02.条件分支语句.html = WebFrontEnd\JavaScript\day04\02.条件分支语句.html
+		WebFrontEnd\JavaScript\day04\03.循环语句.html = WebFrontEnd\JavaScript\day04\03.循环语句.html
+		WebFrontEnd\JavaScript\day04\04.while练习.html = WebFrontEnd\JavaScript\day04\04.while练习.html
+		WebFrontEnd\JavaScript\day04\05.while练习.html = WebFrontEnd\JavaScript\day04\05.while练习.html
+		WebFrontEnd\JavaScript\day04\06.for循环.html = WebFrontEnd\JavaScript\day04\06.for循环.html
+		WebFrontEnd\JavaScript\day04\07.for循环的练习.html = WebFrontEnd\JavaScript\day04\07.for循环的练习.html
+		WebFrontEnd\JavaScript\day04\08.for练习.html = WebFrontEnd\JavaScript\day04\08.for练习.html
+		WebFrontEnd\JavaScript\day04\09.for练习.html = WebFrontEnd\JavaScript\day04\09.for练习.html
+		WebFrontEnd\JavaScript\day04\10.for练习.html = WebFrontEnd\JavaScript\day04\10.for练习.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day05", "day05", "{9C26FE9A-0CDB-4A1F-AA62-6B79C6A9A685}"
+	ProjectSection(SolutionItems) = preProject
+		WebFrontEnd\JavaScript\day05\01.嵌套的for循环.html = WebFrontEnd\JavaScript\day05\01.嵌套的for循环.html
+		WebFrontEnd\JavaScript\day05\02.99乘法表.html = WebFrontEnd\JavaScript\day05\02.99乘法表.html
+		WebFrontEnd\JavaScript\day05\03.质数练习.html = WebFrontEnd\JavaScript\day05\03.质数练习.html
+		WebFrontEnd\JavaScript\day05\04.break和continue.html = WebFrontEnd\JavaScript\day05\04.break和continue.html
+		WebFrontEnd\JavaScript\day05\05.质数练习补充.html = WebFrontEnd\JavaScript\day05\05.质数练习补充.html
+		WebFrontEnd\JavaScript\day05\06.对象.html = WebFrontEnd\JavaScript\day05\06.对象.html
+		WebFrontEnd\JavaScript\day05\07.属性名和属性值.html = WebFrontEnd\JavaScript\day05\07.属性名和属性值.html
+		WebFrontEnd\JavaScript\day05\08.基本和引用数据类型.html = WebFrontEnd\JavaScript\day05\08.基本和引用数据类型.html
+		WebFrontEnd\JavaScript\day05\09.对象字面量.html = WebFrontEnd\JavaScript\day05\09.对象字面量.html
+		WebFrontEnd\JavaScript\day05\10.函数.html = WebFrontEnd\JavaScript\day05\10.函数.html
+		WebFrontEnd\JavaScript\day05\11.函数的参数.html = WebFrontEnd\JavaScript\day05\11.函数的参数.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "day06", "day06", "{55F99E8A-AB14-427B-B556-38AF23DBA200}"
 EndProject
