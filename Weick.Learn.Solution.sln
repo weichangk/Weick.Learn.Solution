@@ -889,6 +889,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{5F48D964-B389-
 		WebFrontEnd\JavaScript\day14\js\tools.js = WebFrontEnd\JavaScript\day14\js\tools.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builder Pattern", "Builder Pattern", "{2C569FFE-7AFC-4337-9BFB-51EACDB349E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderPattern", "Design Patterns\Builder Pattern\BuilderPattern\BuilderPattern.csproj", "{3B8D8B93-D085-42F2-B2FB-937572B47018}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1211,6 +1215,10 @@ Global
 		{8C984B1A-BDAA-49E3-AE9C-9E0DD7B2ED43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C984B1A-BDAA-49E3-AE9C-9E0DD7B2ED43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C984B1A-BDAA-49E3-AE9C-9E0DD7B2ED43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8D8B93-D085-42F2-B2FB-937572B47018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8D8B93-D085-42F2-B2FB-937572B47018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8D8B93-D085-42F2-B2FB-937572B47018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8D8B93-D085-42F2-B2FB-937572B47018}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1363,6 +1371,8 @@ Global
 		{003F5193-AD88-4377-A55A-3AB2C0526CF8} = {44054CF4-81AC-4C9D-A18D-72F826076004}
 		{9CACF20E-40E0-4816-A902-22FEBA6363CA} = {44054CF4-81AC-4C9D-A18D-72F826076004}
 		{5F48D964-B389-4242-9088-2C27EA9938AB} = {44054CF4-81AC-4C9D-A18D-72F826076004}
+		{2C569FFE-7AFC-4337-9BFB-51EACDB349E9} = {1B3798FA-E5EE-45AC-BA9F-77B4F954D988}
+		{3B8D8B93-D085-42F2-B2FB-937572B47018} = {2C569FFE-7AFC-4337-9BFB-51EACDB349E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
