@@ -2,6 +2,11 @@
 
 /packages/
 
+WindowsForms/WindowsFormsApp1/bin/
+WindowsForms/WindowsFormsApp1/obj/
+WindowsForms/WindowsFormsApp2/bin/
+WindowsForms/WindowsFormsApp2/obj/
+
 /CSharpProfessional/DelegatesAndEvents/AnonymousMethods/bin/
 /CSharpProfessional/DelegatesAndEvents/AnonymousMethods/obj/
 /CSharpProfessional/DelegatesAndEvents/BubbleSorter/bin/
