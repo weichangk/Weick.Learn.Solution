@@ -12,6 +12,9 @@ namespace WindowsFormsApp2
 {
     public partial class Form2 : Form
     {
+        //窗体组合经常会使用到，但是要避免循环引用的问题。
+        //窗体对象相互引用的可以使用单例模式，用窗体类静态方法获取实例对象再去调用具体内容。在窗体间相互引用时，使用单例可以解决循环引用问题。
+
         public TextBox TextBox1
         {
             get
@@ -70,5 +73,10 @@ namespace WindowsFormsApp2
         {
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
+        }
     }
 }
