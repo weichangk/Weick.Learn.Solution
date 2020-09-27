@@ -899,6 +899,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "WindowsForms\WindowsFormsApp2\WindowsFormsApp2.csproj", "{73332EFB-5E2E-48A8-8ECD-00C0A48541F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prototype Pattern", "Prototype Pattern", "{9A236451-F038-49C3-9673-7C6C29A5965E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypePattern", "Design Patterns\Prototype Pattern\PrototypePattern\PrototypePattern.csproj", "{171A49E3-A2EE-45BC-A096-C6522E30BE10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1233,6 +1237,10 @@ Global
 		{73332EFB-5E2E-48A8-8ECD-00C0A48541F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73332EFB-5E2E-48A8-8ECD-00C0A48541F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73332EFB-5E2E-48A8-8ECD-00C0A48541F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171A49E3-A2EE-45BC-A096-C6522E30BE10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171A49E3-A2EE-45BC-A096-C6522E30BE10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171A49E3-A2EE-45BC-A096-C6522E30BE10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171A49E3-A2EE-45BC-A096-C6522E30BE10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1389,6 +1397,8 @@ Global
 		{3B8D8B93-D085-42F2-B2FB-937572B47018} = {2C569FFE-7AFC-4337-9BFB-51EACDB349E9}
 		{ABB53FC7-780F-48ED-95DA-F8098DEFE539} = {583D5415-32B7-49FF-B7B3-4882F5CD4464}
 		{73332EFB-5E2E-48A8-8ECD-00C0A48541F3} = {583D5415-32B7-49FF-B7B3-4882F5CD4464}
+		{9A236451-F038-49C3-9673-7C6C29A5965E} = {1B3798FA-E5EE-45AC-BA9F-77B4F954D988}
+		{171A49E3-A2EE-45BC-A096-C6522E30BE10} = {9A236451-F038-49C3-9673-7C6C29A5965E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23824680-3407-426F-8E47-0FE6D34D8F4A}
