@@ -912,6 +912,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompsitePattern", "Design Patterns\Compsite Pattern\CompsitePattern\CompsitePattern.csproj", "{2FEA8603-7D6B-44C0-8D4B-FFA085B6A6AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp1200", "CSharp1200", "{AA53732C-2551-44A2-BD27-103C641B9D4D}"
+	ProjectSection(SolutionItems) = preProject
+		CSharp1200\CSharp1200.txt = CSharp1200\CSharp1200.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "第Ⅰ卷", "第Ⅰ卷", "{8B44F95D-97FF-4591-9144-29791B9E4711}"
 EndProject
@@ -1024,6 +1027,204 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumGame", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第2章 语言基础应用\2.4 流程控制语句的使用\实例033 制作一个数字猜猜看小游戏\NumGame\NumGame\NumGame.csproj", "{FAD2A6F5-2507-4BFD-B5C6-E3802A11EBAF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goto", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第2章 语言基础应用\2.4 流程控制语句的使用\实例034 使用goto语句在数组中搜索指定图书\Goto\Goto\Goto.csproj", "{DA45AAAC-A398-4036-B2F2-91E58D620F33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 字符及字符串转换", "3.1 字符及字符串转换", "{4F2FCFF2-F303-4720-AF14-4E6EEE110F66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例035 将字母全部转换为大写或小写", "实例035 将字母全部转换为大写或小写", "{4E5F23DF-9308-48D7-80EE-1C86D96DF00D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToUpperOrLower", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.1 字符及字符串转换\实例035 将字母全部转换为大写或小写\ToUpperOrLower\ToUpperOrLower\ToUpperOrLower.csproj", "{67B349A2-3C7C-4FAA-B6BD-46E99540EAF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例036 字母与ASCII码的转换", "实例036 字母与ASCII码的转换", "{BBF6770D-C495-47F4-BFFE-3ED2782B8E1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASCII", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.1 字符及字符串转换\实例036 字母与ASCII码的转换\ASCII\ASCII\ASCII.csproj", "{C896D9C2-88F9-4C7F-B4CA-5E0E980F6EF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例037 汉字与区位码的转换", "实例037 汉字与区位码的转换", "{0FB80EE0-5F5E-4C42-8CB2-ACCBBDFFDC05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例038 将汉字转换为拼音", "实例038 将汉字转换为拼音", "{B3864C05-038B-48FA-AB24-420AB688843C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseCode", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.1 字符及字符串转换\实例037 汉字与区位码的转换\ChineseCode\ChineseCode\ChineseCode.csproj", "{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseToABC", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.1 字符及字符串转换\实例038 将汉字转换为拼音\ChineseToABC\ChineseToABC\ChineseToABC.csproj", "{2343DD4C-A1EA-4B05-BCCB-24C84A35A875}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 常用字符及字符串操作", "3.2 常用字符及字符串操作", "{E24F7551-43F6-4637-ABCB-F14314013309}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例039 根据标点符号对字符串进行分行", "实例039 根据标点符号对字符串进行分行", "{8AC448C1-1027-42C3-A630-C86D450DE8CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例040 判断用户输入的用户名是否正确", "实例040 判断用户输入的用户名是否正确", "{823CADCC-56DC-4A4F-8C59-A03892E76352}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例041 将字符串的每个字符进行颠倒输出", "实例041 将字符串的每个字符进行颠倒输出", "{D04ED8DD-A64B-4406-88A0-0516BE02BE47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例042 去掉字符串中的所有空格", "实例042 去掉字符串中的所有空格", "{115FAF77-5D63-44A4-867B-00495B968C89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例043 从字符串中分离文件路径文件名及扩展名", "实例043 从字符串中分离文件路径文件名及扩展名", "{C1BABC2C-4410-4ADF-9267-666D5526D2BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例044 获取字符串中汉字的个数", "实例044 获取字符串中汉字的个数", "{0D76F5A3-37A1-4073-8EB5-BCA2F37DE05D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例045 批量替换某一类字符串", "实例045 批量替换某一类字符串", "{097DEC2E-B110-4838-B629-DD0209CA30F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例046 对字符串进行加密与解密", "实例046 对字符串进行加密与解密", "{53E00313-14EF-4BE2-B416-02C3696F8F76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lines", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例039 根据标点符号对字符串进行分行\Lines\Lines\Lines.csproj", "{6044F0AB-1716-4241-AE0A-227591831102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserName", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例040 判断用户输入的用户名是否正确\UserName\UserName\UserName.csproj", "{D5BC4163-1B02-464A-AA46-EF02EA288B17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseStr", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例041 将字符串的每个字符进行颠倒输出\ReverseStr\ReverseStr\ReverseStr.csproj", "{C9417B0D-F5E9-4393-875F-2FBDB4BC2C31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveBlank", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例042 去掉字符串中的所有空格\RemoveBlank\RemoveBlank\RemoveBlank.csproj", "{FD945D07-ED7C-4D01-9126-6ED0476E2B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilePathString", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例043 从字符串中分离文件路径文件名及扩展名\FilePathString\FilePathString\FilePathString.csproj", "{35765E64-F9CF-4AAD-8C10-D94AE1BDD0E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCount", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例044 获取字符串中汉字的个数\GetCount\GetCount\GetCount.csproj", "{A48B7519-8863-439C-B9F2-28F009329DBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceString", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例045 批量替换某一类字符串\ReplaceString\ReplaceString\ReplaceString.csproj", "{AA9A13CC-3400-42F7-9389-0E2A7EDBD303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringEncrypt", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.2 常用字符及字符串操作\实例046 对字符串进行加密与解密\StringEncrypt\StringEncrypt\StringEncrypt.csproj", "{02E9B0D7-6A03-44EF-86D5-53AD17D33728}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.3 常用数字处理技术", "3.3 常用数字处理技术", "{CC8CF14B-1C28-40F2-811B-18478DC72BA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例047 判断输入的货币值是否为数字", "实例047 判断输入的货币值是否为数字", "{5ADFCEA9-1551-4425-B976-E864EC36798D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例048 对计算结果进行四舍五入", "实例048 对计算结果进行四舍五入", "{057F3806-D163-43B4-A35A-E703EADC18CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例049 商品金额的大小写转换", "实例049 商品金额的大小写转换", "{E8A4328E-51C2-431B-8118-6DCE2625B382}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例050 设置货币值中使用的小数位数", "实例050 设置货币值中使用的小数位数", "{4AEF5735-5516-4A69-B6E5-A7DBA86EFE86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例051 格式化输入数据为货币格式", "实例051 格式化输入数据为货币格式", "{FA10DDB8-B723-4E42-ABF1-1D77EFE96881}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例052 开发一个进制转换器", "实例052 开发一个进制转换器", "{7AFEC041-C071-4DE1-97D5-F433C15D57F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryNum", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.3 常用数字处理技术\实例047 判断输入的货币值是否为数字\TryNum\TryNum\TryNum.csproj", "{C2D1D567-BB78-4E42-87F0-F66AFE5D5277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Round", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.3 常用数字处理技术\实例048 对计算结果进行四舍五入\Round\Round\Round.csproj", "{416F3300-1D7C-4C6C-8799-088BA57BD9DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transform", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.3 常用数字处理技术\实例049 商品金额的大小写转换\Transform\Transform\Transform.csproj", "{D9CFB24A-9698-4164-BD3B-5527525464CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetValue", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.3 常用数字处理技术\实例050 设置货币值中使用的小数位数\SetValue\SetValue\SetValue.csproj", "{9C429582-3D0E-46E3-B5D3-F6CD3DC4D768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Format", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.3 常用数字处理技术\实例051 格式化输入数据为货币格式\Format\Format\Format.csproj", "{B05612D9-E853-4FAD-8590-FBC69FEA9DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conversion", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.3 常用数字处理技术\实例052 开发一个进制转换器\Conversion\Conversion\Conversion.csproj", "{E913A889-BDCF-4A4C-BE48-ED7BC7B9AFAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.4 日期时间格式的数据处理", "3.4 日期时间格式的数据处理", "{A9688113-D125-49C1-91CF-54DC5EF8852A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例053 动态获得系统当前日期和时间", "实例053 动态获得系统当前日期和时间", "{C88896D2-DC33-45D6-A575-12299F61999F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例054 手动设置系统日期时间", "实例054 手动设置系统日期时间", "{2CB77AFA-8688-435F-8098-B1F71947B222}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例055 根据生日自动计算员工年龄", "实例055 根据生日自动计算员工年龄", "{F68E112A-3B8C-4B37-9782-5AC9B7BB3A3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例056 根据年份判断十二生肖", "实例056 根据年份判断十二生肖", "{3E18A977-34FB-4057-BB3D-36EA8DB6F824}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例057 获取当前日期是星期几", "实例057 获取当前日期是星期几", "{0C3B05C4-7703-43E5-8800-6ED4D91BD602}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例058 获取当前年的天数", "实例058 获取当前年的天数", "{1D0ECAF6-2599-44C1-8099-D884089A15EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例059 获取当前月的天数", "实例059 获取当前月的天数", "{3520B3E7-A979-4DC3-B636-00DA5D4625CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例060 取得当前日期的前一天", "实例060 取得当前日期的前一天", "{AED42761-FF80-4B12-B729-5986C0D7460F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例061 将日期格式化为指定格式", "实例061 将日期格式化为指定格式", "{071B9CFD-EF40-4FB5-9A52-FF920308A7CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例062 使用DateDiff方法获取日期时间的间隔数", "实例062 使用DateDiff方法获取日期时间的间隔数", "{DA8120FE-573E-4E1B-9A68-984F095767BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例063 使用DateAdd方法向指定日期添加一段时间间隔", "实例063 使用DateAdd方法向指定日期添加一段时间间隔", "{B8ADDC3F-8DA2-4BA2-8CF3-8666B9190554}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例064 使用TimeSpan对象获取时间间隔", "实例064 使用TimeSpan对象获取时间间隔", "{5BDE350E-3949-4F4D-B9EC-CF7B4C3E3868}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例065 使用Sleep方法延迟时间", "实例065 使用Sleep方法延迟时间", "{9E1AD505-D352-4A04-B5A3-1AAC5A864463}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例066 如何确定程序的运行时间", "实例066 如何确定程序的运行时间", "{EBAE92B5-ACEF-4F5E-874C-7AF26A7E433A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例067 使用ParseExact方法将字符串转化为日期格式", "实例067 使用ParseExact方法将字符串转化为日期格式", "{410D4C15-B2E2-4B3D-BFFF-69CEBAD6C803}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例068 使用ToString方法格式化日期", "实例068 使用ToString方法格式化日期", "{3BE18614-1565-4058-8E05-4CC2B0D1167E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例069 使用ToDateTime方法转换日期显示格式", "实例069 使用ToDateTime方法转换日期显示格式", "{33CF111E-C5CF-42D3-8B2D-4A5FF33DE677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetTime", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例053 动态获得系统当前日期和时间\GetTime\GetTime\GetTime.csproj", "{853BC93A-1CE5-42AC-90A2-4AF74ADB8274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetDate", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例054 手动设置系统日期时间\SetDate\SetDate\SetDate.csproj", "{E11BC254-502C-49E0-8DD7-9EF66290110F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetAge", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例055 根据生日自动计算员工年龄\GetAge\GetAge\GetAge.csproj", "{BE68A62F-1269-4EFA-846A-B18B29FCEB1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetShengXiao", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例056 根据年份判断十二生肖\GetShengXiao\GetShengXiao\GetShengXiao.csproj", "{24BF89A2-7202-4FC5-A3D1-CA16FA9BB3E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetWeek", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例057 获取当前日期是星期几\GetWeek\GetWeek\GetWeek.csproj", "{560EADB5-EECD-4B44-8BC0-543C7484FF24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDays", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例058 获取当前年的天数\GetDays\GetDays\GetDays.csproj", "{DB175A23-7FBA-444E-9400-1F9B721A279C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaysInMonth", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例059 获取当前月的天数\DaysInMonth\DaysInMonth\DaysInMonth.csproj", "{9B5C6086-FDE3-4852-BCAA-19DE848FB373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetYesterDay", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例060 取得当前日期的前一天\GetYesterDay\GetYesterDay\GetYesterDay.csproj", "{9A48D0E5-099E-4EB4-B212-7919F6B16FE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TmrFormat", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例061 将日期格式化为指定格式\TmrFormat\TmrFormat\TmrFormat.csproj", "{ABAEAB23-D3AA-45B5-BB26-29A0C4380395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDateDiff", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例062 使用DateDiff方法获取日期时间的间隔数\GetDateDiff\GetDateDiff\GetDateDiff.csproj", "{D5E83ED2-E861-4E01-80EC-8C8B6F058DB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddDate", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例063 使用DateAdd方法向指定日期添加一段时间间隔\AddDate\AddDate\AddDate.csproj", "{5332BF58-EEF0-4520-A476-2D6904FBB84F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetInterval", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例064 使用TimeSpan对象获取时间间隔\GetInterval\GetInterval\GetInterval.csproj", "{668B2335-FBB0-4E31-A87E-C223DC572446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseSleep", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例065 使用Sleep方法延迟时间\UseSleep\UseSleep\UseSleep.csproj", "{0314DE45-133B-4821-A1C1-58EDA3AB95E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayRunTime", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例066 如何确定程序的运行时间\DisplayRunTime\DisplayRunTime\DisplayRunTime.csproj", "{4B57AA72-107F-4B6D-BA86-0CCD1B569CE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertToString", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例067 使用ParseExact方法将字符串转化为日期格式\ConvertToString\ConvertToString\ConvertToString.csproj", "{1D2E449D-D1C1-45D9-83C2-EA95D21330C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToStringFormat", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例068 使用ToString方法格式化日期\ToStringFormat\ToStringFormat\ToStringFormat.csproj", "{975696A2-39DD-469B-8ECD-180040BBFCDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertToString", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.4 日期时间格式的数据处理\实例069 使用ToDateTime方法转换日期显示格式\ConvertToString\ConvertToString\ConvertToString.csproj", "{D1235E49-AB2B-4B8B-AD14-A72B3E38E5ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.5 常用数字验证技巧", "3.5 常用数字验证技巧", "{CAE16FFE-50BE-4845-877A-A3567B386F45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例070 使用正则表达式验证电话号码", "实例070 使用正则表达式验证电话号码", "{8C5DD9E2-7C08-4CE2-89F5-A3F34E407047}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例071 使用正则表达式验证输入密码条件", "实例071 使用正则表达式验证输入密码条件", "{5CD74755-7664-4DB0-8059-3B23EA80ECEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例072 使用正则表达式验证邮政编号", "实例072 使用正则表达式验证邮政编号", "{654C8096-772C-440B-9AD1-CD2205F7CB7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例073 使用正则表达式验证手机号", "实例073 使用正则表达式验证手机号", "{C333B247-E3ED-4A87-86B1-ABFA251EC65A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例074 使用正则表达式验证身份证号", "实例074 使用正则表达式验证身份证号", "{31B9E3FE-0EFA-41C3-9F12-0C3C606E6B04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例075 使用正则表达式验证两位小数", "实例075 使用正则表达式验证两位小数", "{D870FBFE-5535-47B6-9E86-ACB0679E0DFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例076 使用正则表达式验证一年的12个月份", "实例076 使用正则表达式验证一年的12个月份", "{76A80EC5-64A6-4E00-8075-EAA73E8E2E31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例077 使用正则表达式验证一个月的31天", "实例077 使用正则表达式验证一个月的31天", "{4A3F536A-04B6-4444-AA00-15DD41B7F975}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例078 使用正则表达式验证数字输入", "实例078 使用正则表达式验证数字输入", "{C392404F-AEC2-4F25-AE52-E765184B74AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例079 使用正则表达式验证密码长度", "实例079 使用正则表达式验证密码长度", "{839D3325-046B-448D-BB4C-6CE90A17D91E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例080 使用正则表达式验证非零的正整数", "实例080 使用正则表达式验证非零的正整数", "{2FA8DE4A-373B-49C5-ACF9-777298464493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例081 使用正则表达式验证非零的负整数", "实例081 使用正则表达式验证非零的负整数", "{E4C00C8B-60ED-41C3-90F2-151DF98178BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatePhone", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例070 使用正则表达式验证电话号码\ValidatePhone\ValidatePhone\ValidatePhone.csproj", "{8B91885F-E322-4203-8B08-815FFE14BB6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatePassWord", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例071 使用正则表达式验证输入密码条件\ValidatePassWord\ValidatePassWord\ValidatePassWord.csproj", "{7BE9960B-DEF8-4DEA-B2B7-358ED45A4B9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateCode", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例072 使用正则表达式验证邮政编号\ValidateCode\ValidateCode\ValidateCode.csproj", "{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileValidate", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例073 使用正则表达式验证手机号\MobileValidate\MobileValidate\MobileValidate.csproj", "{5F7A4DC7-5744-459F-85A2-6E6993F3614E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatePerson", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例074 使用正则表达式验证身份证号\ValidatePerson\ValidatePerson\ValidatePerson.csproj", "{64ECA72E-BD28-4DB1-BC4E-32DC2EBCB887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateDecimal", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例075 使用正则表达式验证两位小数\ValidateDecimal\ValidateDecimal\ValidateDecimal.csproj", "{F6625E77-CBFB-485B-B3B6-D46ADC14C022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateMonth", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例076 使用正则表达式验证一年的12个月份\ValidateMonth\ValidateMonth\ValidateMonth.csproj", "{33EED5AB-4E6F-47DA-B273-BC93A92B7DFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateDay", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例077 使用正则表达式验证一个月的31天\ValidateDay\ValidateDay\ValidateDay.csproj", "{DB546555-BDD5-46F4-9766-25BEE5B62633}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateValue", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例078 使用正则表达式验证数字输入\ValidateValue\ValidateValue\ValidateValue.csproj", "{CEFA8046-F3F5-4AF6-B9AA-661866C1722E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateLength", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例079 使用正则表达式验证密码长度\ValidateLength\ValidateLength\ValidateLength.csproj", "{80719FAF-1AE2-4099-9132-95D0AB0CEE2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateInteger", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例080 使用正则表达式验证非零的正整数\ValidateInteger\ValidateInteger\ValidateInteger.csproj", "{5054856E-B5DE-4FBE-B861-9E7D2CA4826B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateInteger", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第3章 字符串处理技术\3.5 常用数字验证技巧\实例081 使用正则表达式验证非零的负整数\ValidateInteger\ValidateInteger\ValidateInteger.csproj", "{AFE230AD-7FA7-484B-BB53-724515B8D14A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1459,6 +1660,194 @@ Global
 		{DA45AAAC-A398-4036-B2F2-91E58D620F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA45AAAC-A398-4036-B2F2-91E58D620F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA45AAAC-A398-4036-B2F2-91E58D620F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B349A2-3C7C-4FAA-B6BD-46E99540EAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B349A2-3C7C-4FAA-B6BD-46E99540EAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B349A2-3C7C-4FAA-B6BD-46E99540EAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B349A2-3C7C-4FAA-B6BD-46E99540EAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C896D9C2-88F9-4C7F-B4CA-5E0E980F6EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C896D9C2-88F9-4C7F-B4CA-5E0E980F6EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C896D9C2-88F9-4C7F-B4CA-5E0E980F6EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C896D9C2-88F9-4C7F-B4CA-5E0E980F6EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2343DD4C-A1EA-4B05-BCCB-24C84A35A875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2343DD4C-A1EA-4B05-BCCB-24C84A35A875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2343DD4C-A1EA-4B05-BCCB-24C84A35A875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2343DD4C-A1EA-4B05-BCCB-24C84A35A875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6044F0AB-1716-4241-AE0A-227591831102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6044F0AB-1716-4241-AE0A-227591831102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6044F0AB-1716-4241-AE0A-227591831102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6044F0AB-1716-4241-AE0A-227591831102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5BC4163-1B02-464A-AA46-EF02EA288B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5BC4163-1B02-464A-AA46-EF02EA288B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5BC4163-1B02-464A-AA46-EF02EA288B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5BC4163-1B02-464A-AA46-EF02EA288B17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9417B0D-F5E9-4393-875F-2FBDB4BC2C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9417B0D-F5E9-4393-875F-2FBDB4BC2C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9417B0D-F5E9-4393-875F-2FBDB4BC2C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9417B0D-F5E9-4393-875F-2FBDB4BC2C31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD945D07-ED7C-4D01-9126-6ED0476E2B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD945D07-ED7C-4D01-9126-6ED0476E2B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD945D07-ED7C-4D01-9126-6ED0476E2B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD945D07-ED7C-4D01-9126-6ED0476E2B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35765E64-F9CF-4AAD-8C10-D94AE1BDD0E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35765E64-F9CF-4AAD-8C10-D94AE1BDD0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35765E64-F9CF-4AAD-8C10-D94AE1BDD0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35765E64-F9CF-4AAD-8C10-D94AE1BDD0E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A48B7519-8863-439C-B9F2-28F009329DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A48B7519-8863-439C-B9F2-28F009329DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A48B7519-8863-439C-B9F2-28F009329DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A48B7519-8863-439C-B9F2-28F009329DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9A13CC-3400-42F7-9389-0E2A7EDBD303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9A13CC-3400-42F7-9389-0E2A7EDBD303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9A13CC-3400-42F7-9389-0E2A7EDBD303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9A13CC-3400-42F7-9389-0E2A7EDBD303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9B0D7-6A03-44EF-86D5-53AD17D33728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9B0D7-6A03-44EF-86D5-53AD17D33728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9B0D7-6A03-44EF-86D5-53AD17D33728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9B0D7-6A03-44EF-86D5-53AD17D33728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D1D567-BB78-4E42-87F0-F66AFE5D5277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D1D567-BB78-4E42-87F0-F66AFE5D5277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D1D567-BB78-4E42-87F0-F66AFE5D5277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D1D567-BB78-4E42-87F0-F66AFE5D5277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{416F3300-1D7C-4C6C-8799-088BA57BD9DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{416F3300-1D7C-4C6C-8799-088BA57BD9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{416F3300-1D7C-4C6C-8799-088BA57BD9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{416F3300-1D7C-4C6C-8799-088BA57BD9DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9CFB24A-9698-4164-BD3B-5527525464CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9CFB24A-9698-4164-BD3B-5527525464CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9CFB24A-9698-4164-BD3B-5527525464CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9CFB24A-9698-4164-BD3B-5527525464CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C429582-3D0E-46E3-B5D3-F6CD3DC4D768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C429582-3D0E-46E3-B5D3-F6CD3DC4D768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C429582-3D0E-46E3-B5D3-F6CD3DC4D768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C429582-3D0E-46E3-B5D3-F6CD3DC4D768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B05612D9-E853-4FAD-8590-FBC69FEA9DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B05612D9-E853-4FAD-8590-FBC69FEA9DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B05612D9-E853-4FAD-8590-FBC69FEA9DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B05612D9-E853-4FAD-8590-FBC69FEA9DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E913A889-BDCF-4A4C-BE48-ED7BC7B9AFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E913A889-BDCF-4A4C-BE48-ED7BC7B9AFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E913A889-BDCF-4A4C-BE48-ED7BC7B9AFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E913A889-BDCF-4A4C-BE48-ED7BC7B9AFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{853BC93A-1CE5-42AC-90A2-4AF74ADB8274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853BC93A-1CE5-42AC-90A2-4AF74ADB8274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853BC93A-1CE5-42AC-90A2-4AF74ADB8274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853BC93A-1CE5-42AC-90A2-4AF74ADB8274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E11BC254-502C-49E0-8DD7-9EF66290110F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E11BC254-502C-49E0-8DD7-9EF66290110F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E11BC254-502C-49E0-8DD7-9EF66290110F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E11BC254-502C-49E0-8DD7-9EF66290110F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE68A62F-1269-4EFA-846A-B18B29FCEB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE68A62F-1269-4EFA-846A-B18B29FCEB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE68A62F-1269-4EFA-846A-B18B29FCEB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE68A62F-1269-4EFA-846A-B18B29FCEB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24BF89A2-7202-4FC5-A3D1-CA16FA9BB3E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BF89A2-7202-4FC5-A3D1-CA16FA9BB3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BF89A2-7202-4FC5-A3D1-CA16FA9BB3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BF89A2-7202-4FC5-A3D1-CA16FA9BB3E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{560EADB5-EECD-4B44-8BC0-543C7484FF24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560EADB5-EECD-4B44-8BC0-543C7484FF24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560EADB5-EECD-4B44-8BC0-543C7484FF24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560EADB5-EECD-4B44-8BC0-543C7484FF24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB175A23-7FBA-444E-9400-1F9B721A279C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB175A23-7FBA-444E-9400-1F9B721A279C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB175A23-7FBA-444E-9400-1F9B721A279C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB175A23-7FBA-444E-9400-1F9B721A279C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5C6086-FDE3-4852-BCAA-19DE848FB373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5C6086-FDE3-4852-BCAA-19DE848FB373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5C6086-FDE3-4852-BCAA-19DE848FB373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5C6086-FDE3-4852-BCAA-19DE848FB373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A48D0E5-099E-4EB4-B212-7919F6B16FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A48D0E5-099E-4EB4-B212-7919F6B16FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A48D0E5-099E-4EB4-B212-7919F6B16FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A48D0E5-099E-4EB4-B212-7919F6B16FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABAEAB23-D3AA-45B5-BB26-29A0C4380395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABAEAB23-D3AA-45B5-BB26-29A0C4380395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABAEAB23-D3AA-45B5-BB26-29A0C4380395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABAEAB23-D3AA-45B5-BB26-29A0C4380395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E83ED2-E861-4E01-80EC-8C8B6F058DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E83ED2-E861-4E01-80EC-8C8B6F058DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E83ED2-E861-4E01-80EC-8C8B6F058DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E83ED2-E861-4E01-80EC-8C8B6F058DB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5332BF58-EEF0-4520-A476-2D6904FBB84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5332BF58-EEF0-4520-A476-2D6904FBB84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5332BF58-EEF0-4520-A476-2D6904FBB84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5332BF58-EEF0-4520-A476-2D6904FBB84F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{668B2335-FBB0-4E31-A87E-C223DC572446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{668B2335-FBB0-4E31-A87E-C223DC572446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{668B2335-FBB0-4E31-A87E-C223DC572446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{668B2335-FBB0-4E31-A87E-C223DC572446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0314DE45-133B-4821-A1C1-58EDA3AB95E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0314DE45-133B-4821-A1C1-58EDA3AB95E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0314DE45-133B-4821-A1C1-58EDA3AB95E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0314DE45-133B-4821-A1C1-58EDA3AB95E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B57AA72-107F-4B6D-BA86-0CCD1B569CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B57AA72-107F-4B6D-BA86-0CCD1B569CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B57AA72-107F-4B6D-BA86-0CCD1B569CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B57AA72-107F-4B6D-BA86-0CCD1B569CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2E449D-D1C1-45D9-83C2-EA95D21330C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2E449D-D1C1-45D9-83C2-EA95D21330C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2E449D-D1C1-45D9-83C2-EA95D21330C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2E449D-D1C1-45D9-83C2-EA95D21330C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{975696A2-39DD-469B-8ECD-180040BBFCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{975696A2-39DD-469B-8ECD-180040BBFCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{975696A2-39DD-469B-8ECD-180040BBFCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{975696A2-39DD-469B-8ECD-180040BBFCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1235E49-AB2B-4B8B-AD14-A72B3E38E5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1235E49-AB2B-4B8B-AD14-A72B3E38E5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1235E49-AB2B-4B8B-AD14-A72B3E38E5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1235E49-AB2B-4B8B-AD14-A72B3E38E5ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B91885F-E322-4203-8B08-815FFE14BB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B91885F-E322-4203-8B08-815FFE14BB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B91885F-E322-4203-8B08-815FFE14BB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B91885F-E322-4203-8B08-815FFE14BB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE9960B-DEF8-4DEA-B2B7-358ED45A4B9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE9960B-DEF8-4DEA-B2B7-358ED45A4B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE9960B-DEF8-4DEA-B2B7-358ED45A4B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE9960B-DEF8-4DEA-B2B7-358ED45A4B9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7A4DC7-5744-459F-85A2-6E6993F3614E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7A4DC7-5744-459F-85A2-6E6993F3614E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7A4DC7-5744-459F-85A2-6E6993F3614E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7A4DC7-5744-459F-85A2-6E6993F3614E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64ECA72E-BD28-4DB1-BC4E-32DC2EBCB887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64ECA72E-BD28-4DB1-BC4E-32DC2EBCB887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64ECA72E-BD28-4DB1-BC4E-32DC2EBCB887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64ECA72E-BD28-4DB1-BC4E-32DC2EBCB887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6625E77-CBFB-485B-B3B6-D46ADC14C022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6625E77-CBFB-485B-B3B6-D46ADC14C022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6625E77-CBFB-485B-B3B6-D46ADC14C022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6625E77-CBFB-485B-B3B6-D46ADC14C022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33EED5AB-4E6F-47DA-B273-BC93A92B7DFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33EED5AB-4E6F-47DA-B273-BC93A92B7DFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33EED5AB-4E6F-47DA-B273-BC93A92B7DFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33EED5AB-4E6F-47DA-B273-BC93A92B7DFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB546555-BDD5-46F4-9766-25BEE5B62633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB546555-BDD5-46F4-9766-25BEE5B62633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB546555-BDD5-46F4-9766-25BEE5B62633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB546555-BDD5-46F4-9766-25BEE5B62633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFA8046-F3F5-4AF6-B9AA-661866C1722E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFA8046-F3F5-4AF6-B9AA-661866C1722E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFA8046-F3F5-4AF6-B9AA-661866C1722E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFA8046-F3F5-4AF6-B9AA-661866C1722E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80719FAF-1AE2-4099-9132-95D0AB0CEE2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80719FAF-1AE2-4099-9132-95D0AB0CEE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80719FAF-1AE2-4099-9132-95D0AB0CEE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80719FAF-1AE2-4099-9132-95D0AB0CEE2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5054856E-B5DE-4FBE-B861-9E7D2CA4826B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5054856E-B5DE-4FBE-B861-9E7D2CA4826B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5054856E-B5DE-4FBE-B861-9E7D2CA4826B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5054856E-B5DE-4FBE-B861-9E7D2CA4826B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE230AD-7FA7-484B-BB53-724515B8D14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE230AD-7FA7-484B-BB53-724515B8D14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE230AD-7FA7-484B-BB53-724515B8D14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE230AD-7FA7-484B-BB53-724515B8D14A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1677,8 +2066,107 @@ Global
 		{D9552836-375E-4D5A-A24E-C22CD256F31D} = {37889B97-D6A6-499A-A2B7-4034C10B4B96}
 		{FAD2A6F5-2507-4BFD-B5C6-E3802A11EBAF} = {A85D9027-C10F-41C2-8BF8-9EC69F3A8B5C}
 		{DA45AAAC-A398-4036-B2F2-91E58D620F33} = {B8A175AF-029F-471F-8726-362DE95E1DBA}
+		{4F2FCFF2-F303-4720-AF14-4E6EEE110F66} = {3189D4DC-A9FD-4A65-AD31-4D2FB69C67C9}
+		{4E5F23DF-9308-48D7-80EE-1C86D96DF00D} = {4F2FCFF2-F303-4720-AF14-4E6EEE110F66}
+		{67B349A2-3C7C-4FAA-B6BD-46E99540EAF5} = {4E5F23DF-9308-48D7-80EE-1C86D96DF00D}
+		{BBF6770D-C495-47F4-BFFE-3ED2782B8E1E} = {4F2FCFF2-F303-4720-AF14-4E6EEE110F66}
+		{C896D9C2-88F9-4C7F-B4CA-5E0E980F6EF0} = {BBF6770D-C495-47F4-BFFE-3ED2782B8E1E}
+		{0FB80EE0-5F5E-4C42-8CB2-ACCBBDFFDC05} = {4F2FCFF2-F303-4720-AF14-4E6EEE110F66}
+		{B3864C05-038B-48FA-AB24-420AB688843C} = {4F2FCFF2-F303-4720-AF14-4E6EEE110F66}
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D} = {0FB80EE0-5F5E-4C42-8CB2-ACCBBDFFDC05}
+		{2343DD4C-A1EA-4B05-BCCB-24C84A35A875} = {B3864C05-038B-48FA-AB24-420AB688843C}
+		{E24F7551-43F6-4637-ABCB-F14314013309} = {3189D4DC-A9FD-4A65-AD31-4D2FB69C67C9}
+		{8AC448C1-1027-42C3-A630-C86D450DE8CB} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{823CADCC-56DC-4A4F-8C59-A03892E76352} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{D04ED8DD-A64B-4406-88A0-0516BE02BE47} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{115FAF77-5D63-44A4-867B-00495B968C89} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{C1BABC2C-4410-4ADF-9267-666D5526D2BD} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{0D76F5A3-37A1-4073-8EB5-BCA2F37DE05D} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{097DEC2E-B110-4838-B629-DD0209CA30F2} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{53E00313-14EF-4BE2-B416-02C3696F8F76} = {E24F7551-43F6-4637-ABCB-F14314013309}
+		{6044F0AB-1716-4241-AE0A-227591831102} = {8AC448C1-1027-42C3-A630-C86D450DE8CB}
+		{D5BC4163-1B02-464A-AA46-EF02EA288B17} = {823CADCC-56DC-4A4F-8C59-A03892E76352}
+		{C9417B0D-F5E9-4393-875F-2FBDB4BC2C31} = {D04ED8DD-A64B-4406-88A0-0516BE02BE47}
+		{FD945D07-ED7C-4D01-9126-6ED0476E2B7B} = {115FAF77-5D63-44A4-867B-00495B968C89}
+		{35765E64-F9CF-4AAD-8C10-D94AE1BDD0E6} = {C1BABC2C-4410-4ADF-9267-666D5526D2BD}
+		{A48B7519-8863-439C-B9F2-28F009329DBE} = {0D76F5A3-37A1-4073-8EB5-BCA2F37DE05D}
+		{AA9A13CC-3400-42F7-9389-0E2A7EDBD303} = {097DEC2E-B110-4838-B629-DD0209CA30F2}
+		{02E9B0D7-6A03-44EF-86D5-53AD17D33728} = {53E00313-14EF-4BE2-B416-02C3696F8F76}
+		{CC8CF14B-1C28-40F2-811B-18478DC72BA3} = {3189D4DC-A9FD-4A65-AD31-4D2FB69C67C9}
+		{5ADFCEA9-1551-4425-B976-E864EC36798D} = {CC8CF14B-1C28-40F2-811B-18478DC72BA3}
+		{057F3806-D163-43B4-A35A-E703EADC18CA} = {CC8CF14B-1C28-40F2-811B-18478DC72BA3}
+		{E8A4328E-51C2-431B-8118-6DCE2625B382} = {CC8CF14B-1C28-40F2-811B-18478DC72BA3}
+		{4AEF5735-5516-4A69-B6E5-A7DBA86EFE86} = {CC8CF14B-1C28-40F2-811B-18478DC72BA3}
+		{FA10DDB8-B723-4E42-ABF1-1D77EFE96881} = {CC8CF14B-1C28-40F2-811B-18478DC72BA3}
+		{7AFEC041-C071-4DE1-97D5-F433C15D57F2} = {CC8CF14B-1C28-40F2-811B-18478DC72BA3}
+		{C2D1D567-BB78-4E42-87F0-F66AFE5D5277} = {5ADFCEA9-1551-4425-B976-E864EC36798D}
+		{416F3300-1D7C-4C6C-8799-088BA57BD9DE} = {057F3806-D163-43B4-A35A-E703EADC18CA}
+		{D9CFB24A-9698-4164-BD3B-5527525464CF} = {E8A4328E-51C2-431B-8118-6DCE2625B382}
+		{9C429582-3D0E-46E3-B5D3-F6CD3DC4D768} = {4AEF5735-5516-4A69-B6E5-A7DBA86EFE86}
+		{B05612D9-E853-4FAD-8590-FBC69FEA9DC5} = {FA10DDB8-B723-4E42-ABF1-1D77EFE96881}
+		{E913A889-BDCF-4A4C-BE48-ED7BC7B9AFAE} = {7AFEC041-C071-4DE1-97D5-F433C15D57F2}
+		{A9688113-D125-49C1-91CF-54DC5EF8852A} = {3189D4DC-A9FD-4A65-AD31-4D2FB69C67C9}
+		{C88896D2-DC33-45D6-A575-12299F61999F} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{2CB77AFA-8688-435F-8098-B1F71947B222} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{F68E112A-3B8C-4B37-9782-5AC9B7BB3A3E} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{3E18A977-34FB-4057-BB3D-36EA8DB6F824} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{0C3B05C4-7703-43E5-8800-6ED4D91BD602} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{1D0ECAF6-2599-44C1-8099-D884089A15EC} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{3520B3E7-A979-4DC3-B636-00DA5D4625CE} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{AED42761-FF80-4B12-B729-5986C0D7460F} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{071B9CFD-EF40-4FB5-9A52-FF920308A7CA} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{DA8120FE-573E-4E1B-9A68-984F095767BE} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{B8ADDC3F-8DA2-4BA2-8CF3-8666B9190554} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{5BDE350E-3949-4F4D-B9EC-CF7B4C3E3868} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{9E1AD505-D352-4A04-B5A3-1AAC5A864463} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{EBAE92B5-ACEF-4F5E-874C-7AF26A7E433A} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{410D4C15-B2E2-4B3D-BFFF-69CEBAD6C803} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{3BE18614-1565-4058-8E05-4CC2B0D1167E} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{33CF111E-C5CF-42D3-8B2D-4A5FF33DE677} = {A9688113-D125-49C1-91CF-54DC5EF8852A}
+		{853BC93A-1CE5-42AC-90A2-4AF74ADB8274} = {C88896D2-DC33-45D6-A575-12299F61999F}
+		{E11BC254-502C-49E0-8DD7-9EF66290110F} = {2CB77AFA-8688-435F-8098-B1F71947B222}
+		{BE68A62F-1269-4EFA-846A-B18B29FCEB1C} = {F68E112A-3B8C-4B37-9782-5AC9B7BB3A3E}
+		{24BF89A2-7202-4FC5-A3D1-CA16FA9BB3E2} = {3E18A977-34FB-4057-BB3D-36EA8DB6F824}
+		{560EADB5-EECD-4B44-8BC0-543C7484FF24} = {0C3B05C4-7703-43E5-8800-6ED4D91BD602}
+		{DB175A23-7FBA-444E-9400-1F9B721A279C} = {1D0ECAF6-2599-44C1-8099-D884089A15EC}
+		{9B5C6086-FDE3-4852-BCAA-19DE848FB373} = {3520B3E7-A979-4DC3-B636-00DA5D4625CE}
+		{9A48D0E5-099E-4EB4-B212-7919F6B16FE6} = {AED42761-FF80-4B12-B729-5986C0D7460F}
+		{ABAEAB23-D3AA-45B5-BB26-29A0C4380395} = {071B9CFD-EF40-4FB5-9A52-FF920308A7CA}
+		{D5E83ED2-E861-4E01-80EC-8C8B6F058DB9} = {DA8120FE-573E-4E1B-9A68-984F095767BE}
+		{5332BF58-EEF0-4520-A476-2D6904FBB84F} = {B8ADDC3F-8DA2-4BA2-8CF3-8666B9190554}
+		{668B2335-FBB0-4E31-A87E-C223DC572446} = {5BDE350E-3949-4F4D-B9EC-CF7B4C3E3868}
+		{0314DE45-133B-4821-A1C1-58EDA3AB95E5} = {9E1AD505-D352-4A04-B5A3-1AAC5A864463}
+		{4B57AA72-107F-4B6D-BA86-0CCD1B569CE1} = {EBAE92B5-ACEF-4F5E-874C-7AF26A7E433A}
+		{1D2E449D-D1C1-45D9-83C2-EA95D21330C1} = {410D4C15-B2E2-4B3D-BFFF-69CEBAD6C803}
+		{975696A2-39DD-469B-8ECD-180040BBFCDC} = {3BE18614-1565-4058-8E05-4CC2B0D1167E}
+		{D1235E49-AB2B-4B8B-AD14-A72B3E38E5ED} = {33CF111E-C5CF-42D3-8B2D-4A5FF33DE677}
+		{CAE16FFE-50BE-4845-877A-A3567B386F45} = {3189D4DC-A9FD-4A65-AD31-4D2FB69C67C9}
+		{8C5DD9E2-7C08-4CE2-89F5-A3F34E407047} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{5CD74755-7664-4DB0-8059-3B23EA80ECEE} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{654C8096-772C-440B-9AD1-CD2205F7CB7A} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{C333B247-E3ED-4A87-86B1-ABFA251EC65A} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{31B9E3FE-0EFA-41C3-9F12-0C3C606E6B04} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{D870FBFE-5535-47B6-9E86-ACB0679E0DFE} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{76A80EC5-64A6-4E00-8075-EAA73E8E2E31} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{4A3F536A-04B6-4444-AA00-15DD41B7F975} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{C392404F-AEC2-4F25-AE52-E765184B74AC} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{839D3325-046B-448D-BB4C-6CE90A17D91E} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{2FA8DE4A-373B-49C5-ACF9-777298464493} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{E4C00C8B-60ED-41C3-90F2-151DF98178BA} = {CAE16FFE-50BE-4845-877A-A3567B386F45}
+		{8B91885F-E322-4203-8B08-815FFE14BB6F} = {8C5DD9E2-7C08-4CE2-89F5-A3F34E407047}
+		{7BE9960B-DEF8-4DEA-B2B7-358ED45A4B9F} = {5CD74755-7664-4DB0-8059-3B23EA80ECEE}
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037} = {654C8096-772C-440B-9AD1-CD2205F7CB7A}
+		{5F7A4DC7-5744-459F-85A2-6E6993F3614E} = {C333B247-E3ED-4A87-86B1-ABFA251EC65A}
+		{64ECA72E-BD28-4DB1-BC4E-32DC2EBCB887} = {31B9E3FE-0EFA-41C3-9F12-0C3C606E6B04}
+		{F6625E77-CBFB-485B-B3B6-D46ADC14C022} = {D870FBFE-5535-47B6-9E86-ACB0679E0DFE}
+		{33EED5AB-4E6F-47DA-B273-BC93A92B7DFB} = {76A80EC5-64A6-4E00-8075-EAA73E8E2E31}
+		{DB546555-BDD5-46F4-9766-25BEE5B62633} = {4A3F536A-04B6-4444-AA00-15DD41B7F975}
+		{CEFA8046-F3F5-4AF6-B9AA-661866C1722E} = {C392404F-AEC2-4F25-AE52-E765184B74AC}
+		{80719FAF-1AE2-4099-9132-95D0AB0CEE2C} = {839D3325-046B-448D-BB4C-6CE90A17D91E}
+		{5054856E-B5DE-4FBE-B861-9E7D2CA4826B} = {2FA8DE4A-373B-49C5-ACF9-777298464493}
+		{AFE230AD-7FA7-484B-BB53-724515B8D14A} = {E4C00C8B-60ED-41C3-90F2-151DF98178BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4613DF5E-1576-4E34-B010-88B1BAF29731}
+		SolutionGuid = {3CE918B4-5492-4805-817A-4F7825B7D105}
 	EndGlobalSection
 EndGlobal

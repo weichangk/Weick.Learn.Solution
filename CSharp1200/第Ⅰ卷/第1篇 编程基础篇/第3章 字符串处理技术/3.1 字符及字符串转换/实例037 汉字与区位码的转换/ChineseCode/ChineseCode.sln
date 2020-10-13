@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseCode", "ChineseCode\ChineseCode.csproj", "{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683C5FE1-B33E-4E55-AE21-6FB6156FA41D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A40B36A-D13C-4B46-AE53-F60D4395D190}
+	EndGlobalSection
+EndGlobal

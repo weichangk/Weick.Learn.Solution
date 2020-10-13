@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateCode", "ValidateCode\ValidateCode.csproj", "{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5839B01C-2755-4DDB-AE0A-22ADBA0C1037}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEA0AB5F-8214-4849-B7CE-E0C271DFAD2D}
+	EndGlobalSection
+EndGlobal
