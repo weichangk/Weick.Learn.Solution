@@ -1328,6 +1328,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse", "CSharp1200\第�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyDown", "WindowsForms\KeyDown\KeyDown.csproj", "{EE29C648-74BA-4BF2-8162-C1938D843FDD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3 常用集合的使用", "4.3 常用集合的使用", "{2752F74D-3FB7-4F66-9C61-F194C64782AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例106 向班级集合中添加学生信息", "实例106 向班级集合中添加学生信息", "{91214D52-06B9-493B-BCA5-B03AABC18824}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例107 使用哈希表对XML文件进行查询", "实例107 使用哈希表对XML文件进行查询", "{1C75D169-51F5-4FAC-B178-04DB677AC344}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "实例108 计算两个矩形矩阵的乘积", "实例108 计算两个矩形矩阵的乘积", "{073E8EA5-86A9-4901-A7F5-5B686A75F6BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddStudentINList", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第4章 数组和集合的使用\4.3 常用集合的使用\实例106 向班级集合中添加学生信息\AddStudentINList\AddStudentINList\AddStudentINList.csproj", "{2D213DB9-0447-44CB-B2A3-E9EF3B0FE247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectXMLByHasTable", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第4章 数组和集合的使用\4.3 常用集合的使用\实例107 使用哈希表对XML文件进行查询\SelectXMLByHasTable\SelectXMLByHasTable\SelectXMLByHasTable.csproj", "{059498C5-08FB-4B29-A1E8-2987408970E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcRMatrix", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第4章 数组和集合的使用\4.3 常用集合的使用\实例108 计算两个矩形矩阵的乘积\CalcRMatrix\CalcRMatrix\CalcRMatrix.csproj", "{35473D7E-BBE1-4345-9AEA-0821A08B72D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2050,6 +2064,18 @@ Global
 		{EE29C648-74BA-4BF2-8162-C1938D843FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE29C648-74BA-4BF2-8162-C1938D843FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE29C648-74BA-4BF2-8162-C1938D843FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D213DB9-0447-44CB-B2A3-E9EF3B0FE247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D213DB9-0447-44CB-B2A3-E9EF3B0FE247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D213DB9-0447-44CB-B2A3-E9EF3B0FE247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D213DB9-0447-44CB-B2A3-E9EF3B0FE247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{059498C5-08FB-4B29-A1E8-2987408970E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{059498C5-08FB-4B29-A1E8-2987408970E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{059498C5-08FB-4B29-A1E8-2987408970E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{059498C5-08FB-4B29-A1E8-2987408970E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35473D7E-BBE1-4345-9AEA-0821A08B72D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35473D7E-BBE1-4345-9AEA-0821A08B72D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35473D7E-BBE1-4345-9AEA-0821A08B72D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35473D7E-BBE1-4345-9AEA-0821A08B72D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2418,6 +2444,13 @@ Global
 		{EB95A2D4-F2ED-4114-9FDB-99EF6B115DFD} = {18D09CAE-E1FD-4DBC-91AA-0576B7577C72}
 		{165D8264-DCB6-41DB-AB10-114AA204CFEC} = {578EA8D4-7E6E-4EA9-8745-768277FDF96B}
 		{EE29C648-74BA-4BF2-8162-C1938D843FDD} = {583D5415-32B7-49FF-B7B3-4882F5CD4464}
+		{2752F74D-3FB7-4F66-9C61-F194C64782AA} = {A321E785-6A1B-48AA-8800-3BF242701BBC}
+		{91214D52-06B9-493B-BCA5-B03AABC18824} = {2752F74D-3FB7-4F66-9C61-F194C64782AA}
+		{1C75D169-51F5-4FAC-B178-04DB677AC344} = {2752F74D-3FB7-4F66-9C61-F194C64782AA}
+		{073E8EA5-86A9-4901-A7F5-5B686A75F6BD} = {2752F74D-3FB7-4F66-9C61-F194C64782AA}
+		{2D213DB9-0447-44CB-B2A3-E9EF3B0FE247} = {91214D52-06B9-493B-BCA5-B03AABC18824}
+		{059498C5-08FB-4B29-A1E8-2987408970E2} = {1C75D169-51F5-4FAC-B178-04DB677AC344}
+		{35473D7E-BBE1-4345-9AEA-0821A08B72D6} = {073E8EA5-86A9-4901-A7F5-5B686A75F6BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B36550EB-6BF4-4BE8-9622-DE9CB0F22418}
