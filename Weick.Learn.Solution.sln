@@ -1326,6 +1326,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortArray", "CSharp1200\第
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse", "CSharp1200\第Ⅰ卷\第1篇 编程基础篇\第4章 数组和集合的使用\4.2 常用数组排序算法\实例105 反转数组中元素的顺序\Reverse\Reverse\Reverse.csproj", "{165D8264-DCB6-41DB-AB10-114AA204CFEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyDown", "WindowsForms\KeyDown\KeyDown.csproj", "{EE29C648-74BA-4BF2-8162-C1938D843FDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2044,6 +2046,10 @@ Global
 		{165D8264-DCB6-41DB-AB10-114AA204CFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{165D8264-DCB6-41DB-AB10-114AA204CFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{165D8264-DCB6-41DB-AB10-114AA204CFEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE29C648-74BA-4BF2-8162-C1938D843FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE29C648-74BA-4BF2-8162-C1938D843FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE29C648-74BA-4BF2-8162-C1938D843FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE29C648-74BA-4BF2-8162-C1938D843FDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2411,6 +2417,7 @@ Global
 		{190FE141-EDAC-436C-9BF6-746D260B46DC} = {3C20F11D-6C63-4D72-9628-2AC35C58F16A}
 		{EB95A2D4-F2ED-4114-9FDB-99EF6B115DFD} = {18D09CAE-E1FD-4DBC-91AA-0576B7577C72}
 		{165D8264-DCB6-41DB-AB10-114AA204CFEC} = {578EA8D4-7E6E-4EA9-8745-768277FDF96B}
+		{EE29C648-74BA-4BF2-8162-C1938D843FDD} = {583D5415-32B7-49FF-B7B3-4882F5CD4464}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B36550EB-6BF4-4BE8-9622-DE9CB0F22418}
